@@ -1,0 +1,181 @@
+label,n,term,count
+CLEAN,1,là,2479
+CLEAN,1,có,2420
+CLEAN,1,anh,1737
+CLEAN,1,mà,1672
+CLEAN,1,cho,1541
+CLEAN,1,đi,1493
+CLEAN,1,này,1425
+CLEAN,1,thì,1371
+CLEAN,1,em,1213
+CLEAN,1,của,1162
+CLEAN,1,quá,1152
+CLEAN,1,không,1113
+CLEAN,1,rồi,1100
+CLEAN,1,người,1096
+CLEAN,1,thầy,1078
+CLEAN,1,ko,1058
+CLEAN,1,con,963
+CLEAN,1,cũng,962
+CLEAN,1,làm,940
+CLEAN,1,nói,927
+OFFENSIVE,1,là,210
+OFFENSIVE,1,cái,208
+OFFENSIVE,1,mà,197
+OFFENSIVE,1,có,196
+OFFENSIVE,1,thì,178
+OFFENSIVE,1,nó,161
+OFFENSIVE,1,đi,139
+OFFENSIVE,1,đéo,136
+OFFENSIVE,1,gì,132
+OFFENSIVE,1,cho,131
+OFFENSIVE,1,như,123
+OFFENSIVE,1,con,115
+OFFENSIVE,1,vl,103
+OFFENSIVE,1,ra,103
+OFFENSIVE,1,mẹ,100
+OFFENSIVE,1,làm,96
+OFFENSIVE,1,cũng,94
+OFFENSIVE,1,này,91
+OFFENSIVE,1,rồi,90
+OFFENSIVE,1,nói,89
+HATE,1,là,680
+HATE,1,có,606
+HATE,1,con,572
+HATE,1,nó,548
+HATE,1,mà,510
+HATE,1,cái,478
+HATE,1,thì,443
+HATE,1,cho,426
+HATE,1,này,401
+HATE,1,như,366
+HATE,1,đi,349
+HATE,1,người,349
+HATE,1,thằng,333
+HATE,1,của,328
+HATE,1,làm,308
+HATE,1,gì,308
+HATE,1,nói,300
+HATE,1,ko,297
+HATE,1,mày,273
+HATE,1,ra,271
+CLEAN,2,thuyết phục,342
+CLEAN,2,việt nam,233
+CLEAN,2,cực kì,231
+CLEAN,2,kì thuyết,196
+CLEAN,2,trần dần,188
+CLEAN,2,acc clone,172
+CLEAN,2,mọi người,150
+CLEAN,2,các bạn,147
+CLEAN,2,dễ thương,145
+CLEAN,2,minh hiếu,144
+CLEAN,2,người ta,143
+CLEAN,2,fan cứng,128
+CLEAN,2,anh em,114
+CLEAN,2,xin video,114
+CLEAN,2,nói chuyện,113
+CLEAN,2,đây là,113
+CLEAN,2,đẹp trai,110
+CLEAN,2,sống chậm,107
+CLEAN,2,anh độ,106
+CLEAN,2,thầy ơi,106
+OFFENSIVE,2,ý thức,21
+OFFENSIVE,2,cho nó,16
+OFFENSIVE,2,cái lồn,15
+OFFENSIVE,2,mẹ nó,14
+OFFENSIVE,2,người ta,13
+OFFENSIVE,2,con mẹ,12
+OFFENSIVE,2,đéo gì,11
+OFFENSIVE,2,gọi là,11
+OFFENSIVE,2,mẹ đi,11
+OFFENSIVE,2,ăn mặc,11
+OFFENSIVE,2,đéo biết,10
+OFFENSIVE,2,gì cũng,10
+OFFENSIVE,2,có cái,10
+OFFENSIVE,2,gì mà,10
+OFFENSIVE,2,thức như,10
+OFFENSIVE,2,quần què,10
+OFFENSIVE,2,đụ má,10
+OFFENSIVE,2,chết mẹ,10
+OFFENSIVE,2,đúng là,9
+OFFENSIVE,2,đéo hiểu,9
+HATE,2,người ta,62
+HATE,2,việt nam,60
+HATE,2,mấy thằng,53
+HATE,2,chúng nó,53
+HATE,2,con chó,47
+HATE,2,con này,41
+HATE,2,đất nước,41
+HATE,2,lãnh đạo,41
+HATE,2,nhà nước,39
+HATE,2,chúng mày,38
+HATE,2,thằng ad,36
+HATE,2,làm gì,36
+HATE,2,ý thức,36
+HATE,2,cộng sản,34
+HATE,2,chị ba,34
+HATE,2,ko có,34
+HATE,2,con mẹ,33
+HATE,2,bây giờ,32
+HATE,2,phản động,32
+HATE,2,nói chuyện,29
+CLEAN,3,cực kì thuyết,194
+CLEAN,3,kì thuyết phục,188
+CLEAN,3,cô minh hiếu,69
+CLEAN,3,dễ thương quá,64
+CLEAN,3,cực kỳ thuyết,52
+CLEAN,3,kỳ thuyết phục,50
+CLEAN,3,chu cà mo,48
+CLEAN,3,nhà tiên tri,44
+CLEAN,3,ông trần dần,43
+CLEAN,3,sống chậm thôi,43
+CLEAN,3,nghe có vẻ,36
+CLEAN,3,rất thuyết phục,35
+CLEAN,3,sống chậm lại,32
+CLEAN,3,chúc mừng năm,31
+CLEAN,3,lớp du chu,31
+CLEAN,3,i love you,29
+CLEAN,3,cua hoàng đế,28
+CLEAN,3,ai lớp du,28
+CLEAN,3,huyền khánh phùng,27
+CLEAN,3,tiên tri vũ,26
+OFFENSIVE,3,ý thức như,10
+OFFENSIVE,3,là có thật,6
+OFFENSIVE,3,cái máu lồn,5
+OFFENSIVE,3,im mẹ mồm,4
+OFFENSIVE,3,ăn mặc như,4
+OFFENSIVE,3,già mà non,4
+OFFENSIVE,3,chết mẹ nó,4
+OFFENSIVE,3,như thế nào,4
+OFFENSIVE,3,thì kệ mẹ,4
+OFFENSIVE,3,tưởng thế là,4
+OFFENSIVE,3,cái đéo gì,3
+OFFENSIVE,3,hiểu kiểu gì,3
+OFFENSIVE,3,ông im mẹ,3
+OFFENSIVE,3,mẹ mồm đi,3
+OFFENSIVE,3,tốn thời gian,3
+OFFENSIVE,3,cái lồn má,3
+OFFENSIVE,3,thế đéo nào,3
+OFFENSIVE,3,con mẹ nó,3
+OFFENSIVE,3,đi du lịch,3
+OFFENSIVE,3,cái quần què,3
+HATE,3,linh cá lóc,15
+HATE,3,làm lãnh đạo,10
+HATE,3,con mẹ mày,9
+HATE,3,con linh cá,9
+HATE,3,cái đéo gì,8
+HATE,3,nhanh hơn não,8
+HATE,3,con này nó,8
+HATE,3,con đàn bà,8
+HATE,3,ảnh hưởng đến,7
+HATE,3,tay nhanh hơn,7
+HATE,3,ý thức của,7
+HATE,3,đi du lịch,7
+HATE,3,ko có não,7
+HATE,3,chứ không phải,6
+HATE,3,dâm loạn viên,6
+HATE,3,ba vàng ngọc,6
+HATE,3,chết mẹ nó,6
+HATE,3,im mẹ mồm,6
+HATE,3,như con chó,6
+HATE,3,mẹ mồm đi,6

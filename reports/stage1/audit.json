@@ -1,0 +1,151 @@
+{
+  "splits": {
+    "train": {
+      "rows": 24048,
+      "empty_raw": 2,
+      "empty_clean": 2,
+      "label_counts": {
+        "0": 19886,
+        "1": 1606,
+        "2": 2556
+      },
+      "raw_duplicate_excess": 1490,
+      "normalized_duplicate_excess": 1535,
+      "conflicting_normalized_groups": 132,
+      "changed_rows": 994,
+      "whitespace_length": {
+        "count": 24048.0,
+        "mean": 11.507526613439786,
+        "std": 19.963694995690055,
+        "min": 0.0,
+        "50%": 8.0,
+        "90%": 22.0,
+        "95%": 32.0,
+        "99%": 60.0,
+        "max": 1701.0
+      }
+    },
+    "validation": {
+      "rows": 2672,
+      "empty_raw": 0,
+      "empty_clean": 0,
+      "label_counts": {
+        "0": 2190,
+        "1": 212,
+        "2": 270
+      },
+      "raw_duplicate_excess": 22,
+      "normalized_duplicate_excess": 22,
+      "conflicting_normalized_groups": 1,
+      "changed_rows": 119,
+      "whitespace_length": {
+        "count": 2672.0,
+        "mean": 11.509356287425149,
+        "std": 11.70986084111648,
+        "min": 1.0,
+        "50%": 8.0,
+        "90%": 23.0,
+        "95%": 33.44999999999982,
+        "99%": 61.289999999999964,
+        "max": 130.0
+      }
+    },
+    "test": {
+      "rows": 6680,
+      "empty_raw": 0,
+      "empty_clean": 0,
+      "label_counts": {
+        "0": 5548,
+        "1": 444,
+        "2": 688
+      },
+      "raw_duplicate_excess": 104,
+      "normalized_duplicate_excess": 107,
+      "conflicting_normalized_groups": 6,
+      "changed_rows": 281,
+      "whitespace_length": {
+        "count": 6680.0,
+        "mean": 11.484580838323353,
+        "std": 12.44290696728175,
+        "min": 1.0,
+        "50%": 8.0,
+        "90%": 23.0,
+        "95%": 33.0,
+        "99%": 60.0,
+        "max": 411.0
+      }
+    }
+  },
+  "cross_split_overlap": {
+    "train__validation": {
+      "unique_normalized_texts": 322,
+      "train_rows": 357,
+      "validation_rows": 325,
+      "conflicting_label_groups": 28
+    },
+    "train__test": {
+      "unique_normalized_texts": 792,
+      "train_rows": 857,
+      "test_rows": 809,
+      "conflicting_label_groups": 80
+    },
+    "validation__test": {
+      "unique_normalized_texts": 92,
+      "validation_rows": 96,
+      "test_rows": 95,
+      "conflicting_label_groups": 13
+    }
+  },
+  "decontaminated_train": {
+    "rows": 21292,
+    "excluded_by_primary_reason": {
+      "duplicate_train": 1312,
+      "holdout_overlap": 1190,
+      "conflicting_train_labels": 252,
+      "empty_text": 2
+    }
+  },
+  "class_weights": {
+    "official_train": {
+      "0": 0.40309765664286434,
+      "1": 4.991282689912827,
+      "2": 3.136150234741784
+    },
+    "decontaminated_train": {
+      "0": 0.4049371445959567,
+      "1": 5.015783274440518,
+      "2": 3.020141843971631
+    }
+  },
+  "preprocessing": {
+    "lowercase": false,
+    "normalize_teencode": false,
+    "mask_urls": true,
+    "mask_mentions": true,
+    "strip_hashtag_marker": true
+  },
+  "provenance": {
+    "source": "https://github.com/sonlam1102/vihsd",
+    "note": "Local CSVs supplied by user; hashes identify files, not verified original release membership.",
+    "files": {
+      "train": {
+        "sha256": "516a4ac12bcfd64720a6de352b3c30d019377f90a5907eff80e91d0ae2526360"
+      },
+      "validation": {
+        "sha256": "1d42bc7e78b796f9a61bb30490171e5d48cbdee41f97c1235754894d28402ff7"
+      },
+      "test": {
+        "sha256": "ba8ae9b62c40caebcbe8af9a09590296bca286e83e22dd639de31a62ed16f5a5"
+      }
+    },
+    "python": "3.14.5",
+    "packages": {
+      "pandas": "3.0.6",
+      "numpy": "2.5.3",
+      "matplotlib": "3.11.2",
+      "seaborn": "0.13.2",
+      "wordcloud": "1.9.6"
+    },
+    "seed": 42
+  }
+}
