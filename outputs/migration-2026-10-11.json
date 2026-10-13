@@ -1,0 +1,66 @@
+[
+  {
+    "from": "stage2",
+    "to": "outputs/stage2"
+  },
+  {
+    "from": "outputs/stage2/segmentation_cache",
+    "to": "data/cache/segmented"
+  },
+  {
+    "from": "outputs/stage2/vncorenlp",
+    "to": "resources/vncorenlp"
+  },
+  {
+    "from": "outputs/stage2/colab_requirements_lock.txt",
+    "to": "requirements/locks/colab-stage2.txt"
+  },
+  {
+    "from": "outputs/stage2/phobert_lr2e-5_len128_seed42.json",
+    "to": "outputs/stage2/submitted_configs/phobert_lr2e-5_len128_seed42.json"
+  },
+  {
+    "from": "reports/stage1",
+    "to": "outputs/stage1"
+  },
+  {
+    "from": "reports/stage2",
+    "to": "outputs/archive/stage2_pretraining"
+  },
+  {
+    "from": "artifacts",
+    "to": "outputs/archive/local_resources"
+  },
+  {
+    "from": "requirements.txt",
+    "to": "requirements/stage1.txt"
+  },
+  {
+    "from": "requirements-stage2.txt",
+    "to": "requirements/stage2.txt"
+  },
+  {
+    "from": "requirements-lock.txt",
+    "to": "requirements/locks/windows-stage1.txt"
+  },
+  {
+    "from": "requirements-stage2-lock-windows-cpu.txt",
+    "to": "requirements/locks/windows-stage2-cpu.txt"
+  },
+  {
+    "from": "data/ViHSD_train.csv",
+    "to": "data/raw/ViHSD_train.csv"
+  },
+  {
+    "from": "data/ViHSD_validation.csv",
+    "to": "data/raw/ViHSD_validation.csv"
+  },
+  {
+    "from": "data/ViHSD_test.csv",
+    "to": "data/raw/ViHSD_test.csv"
+  },
+  {
+    "from": "scripts/package_colab.py",
+    "to": "scripts/legacy/package_colab.py"
+  }
+]

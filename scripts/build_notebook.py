@@ -31,7 +31,7 @@ from IPython.display import display, Image, Markdown
 from src.stage1 import run
 from src.data_loader import LABELS
 from src.preprocessing import preprocess_text, PreprocessingConfig
-report = run(ROOT / 'data', ROOT / 'reports/stage1', ROOT / 'data/processed')
+report = run(ROOT / 'data/raw', ROOT / 'outputs/stage1', ROOT / 'data/processed')
 train = pd.read_csv(ROOT / 'data/processed/train.csv', keep_default_na=False)
 print('Đã tái tạo audit, processed data và figures.')"""),
     md("## 1. Schema, missing values và phân bố nhãn\n\nLoader kiểm tra cột và miền nhãn. Ô trống được đếm riêng; chuỗi literal `NA` không bị chuyển thành missing. `duplicate_excess` là số dòng dư sau lần xuất hiện đầu tiên, không phải số nhóm."),
@@ -44,14 +44,14 @@ for split, values in report['splits'].items():
                  'normalized_duplicate_excess': values['normalized_duplicate_excess'],
                  'conflicting_groups': values['conflicting_normalized_groups']})
 display(pd.DataFrame(rows).set_index('split'))
-display(Image(filename=str(ROOT / 'reports/stage1/figures/label_distribution.png')))"""),
+display(Image(filename=str(ROOT / 'outputs/stage1/figures/label_distribution.png')))"""),
     md("## 2. Độ dài văn bản\n\nĐếm đơn vị phân cách bởi khoảng trắng, **không phải số từ tiếng Việt hoặc PhoBERT subword**. Histogram dùng log ở trục số lượng; box plot dùng symlog để vẫn thấy đuôi dài. Không chốt max_length=256 chỉ từ biểu đồ này."),
     code("""display(train.assign(whitespace_units=train.free_text.str.split().str.len())
         .groupby('label_id').whitespace_units.describe(percentiles=[.5, .9, .95, .99]))
-display(Image(filename=str(ROOT / 'reports/stage1/figures/text_lengths.png')))"""),
+display(Image(filename=str(ROOT / 'outputs/stage1/figures/text_lengths.png')))"""),
     md("## 3. Word clouds và top n-grams theo lớp — train only\n\nChưa tách từ: các term là đơn vị chữ. Không bỏ stopwords để tránh quyết định ngôn ngữ tùy ý; vì vậy từ chức năng có thể đứng đầu. Tần suất cao không đồng nghĩa feature có tính phân biệt hay quan hệ nhân quả."),
-    code("""display(Image(filename=str(ROOT / 'reports/stage1/figures/wordclouds.png')))
-grams = pd.read_csv(ROOT / 'reports/stage1/train_ngrams.csv')
+    code("""display(Image(filename=str(ROOT / 'outputs/stage1/figures/wordclouds.png')))
+grams = pd.read_csv(ROOT / 'outputs/stage1/train_ngrams.csv')
 for n in (1, 2, 3):
     display(Markdown(f'### Top {n}-grams'))
     display(grams[grams.n.eq(n)].groupby('label', sort=False).head(10).reset_index(drop=True))"""),
@@ -71,8 +71,8 @@ majority_fraction = train.label_id.value_counts(normalize=True).max()
 print(f'Accuracy nếu luôn đoán majority trên train: {majority_fraction:.2%}')
 print('Đây chỉ là mốc mô tả train, không phải kết quả đánh giá model.')"""),
     md("## 7. Kết luận và bàn giao Stage 2\n\nDùng Macro-F1 làm chỉ số chính, kèm F1/recall từng lớp. Làm baseline TF-IDF + Logistic Regression trước PhoBERT. So sánh official/decontaminated theo giao thức công bố rõ; cân nhắc tác động collision của preprocessing. Chọn tách từ, đo subword/truncation trên train/validation; không dùng test để tuning. Chưa có kết quả model để đưa lên CV."),
-    code("display(Markdown((ROOT / 'reports/stage1/summary.md').read_text(encoding='utf-8')))"),
-    md("## 8. Provenance và tái lập\n\nSHA-256 ghi nhận đúng đầu vào của lần chạy, không chứng minh nguồn gốc phát hành. Xem requirements-lock.txt cho toàn bộ phiên bản môi trường."),
+    code("display(Markdown((ROOT / 'outputs/stage1/summary.md').read_text(encoding='utf-8')))"),
+    md("## 8. Provenance và tái lập\n\nSHA-256 ghi nhận đúng đầu vào của lần chạy, không chứng minh nguồn gốc phát hành. Xem requirements/locks/windows-stage1.txt cho toàn bộ phiên bản môi trường."),
     code("display(report['provenance'])"),
 ]
 nb.metadata.kernelspec = {"display_name": "Python (ViToxic .venv)", "language": "python", "name": "python3"}

@@ -1,0 +1,10 @@
+services:
+  api:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - ./outputs/stage4/bundle:/bundle:ro
+    environment:
+      VITOXIC_THREADS: "4"
+    restart: unless-stopped

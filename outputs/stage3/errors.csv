@@ -1,0 +1,905 @@
+row_id,text_clean,label_id,prediction,confidence,prob_clean,prob_offensive,prob_hate,token_length,validation_overlap,correct,baseline_prediction
+test:3821,Anh em yếu sly ib,1,0,0.9984811,0.9984811,0.0009710105,0.00054788816,7,False,False,0
+test:3794,Manh thi song yeu thi chet,1,0,0.9984654,0.9984654,0.0009434056,0.000591237,10,False,False,0
+test:3327,"Vâng! Xin giới thiệu vs các bạn, đây là ông Cao Thất Đức!",2,0,0.99846244,0.99846244,0.00082219124,0.00071537617,17,False,False,0
+test:6205,Top1 ca sĩ nhưng k biết hát :)),1,0,0.9984584,0.9984584,0.000858317,0.0006833474,12,False,False,0
+test:248,Nguc em hoi nho,1,0,0.9984571,0.9984571,0.0010222687,0.00052064704,7,False,False,0
+test:3301,Huyền Khánh Phùng nếu e không tiện thì tôi sẽ book vé vào Hà Nội làm người yêu em ??? Và tối nay chúng ta sẽ địt,1,0,0.9984528,0.9984528,0.0009160626,0.00063121214,29,False,False,0
+test:1501,Bọn dầy tớ chấp chi.,2,0,0.99844736,0.99844736,0.0010043689,0.00054831966,8,False,False,0
+test:6659,Cám ơn đảng. Cám ơn nhà nc 😏,2,0,0.9984346,0.9984346,0.0009224016,0.00064301863,10,False,False,0
+test:159,Like 10 năm chất Liek bằng đầu bùi,1,0,0.99843305,0.99843305,0.0010361589,0.00053074665,12,False,False,0
+test:708,Hoàng Văn Thuận nên xử bắn hed,1,0,0.9984086,0.9984086,0.00090149546,0.00069000345,9,False,False,0
+test:1556,Vậy đủ chậm chưaaa đumaaaaaaaa,1,0,0.9983973,0.9983973,0.0010723167,0.00053033524,16,False,False,0
+test:1601,T cố gắng nghe hết nhưng đâu tai thật sự,1,0,0.99838746,0.99838746,0.00107013,0.00054251205,10,False,False,0
+test:2422,Bớt bớt dô diên dùm cái nha 😒,1,0,0.9983615,0.9983615,0.0010820035,0.000556535,11,False,False,0
+test:4895,Sáng mắt chưa Nhung :),2,0,0.9983551,0.9983551,0.0010079951,0.00063685834,8,False,False,0
+test:1924,Này khẩu phật tâm xà,1,0,0.9983524,0.9983524,0.0010869413,0.0005606643,7,False,False,0
+test:4426,Nguyễn Minh Thu chếtluondi,2,0,0.99834836,0.99834836,0.0011074045,0.0005442182,8,False,False,0
+test:2280,con di~ dang hang leo rank,1,0,0.99834156,0.99834156,0.0010571814,0.00060120306,10,False,False,0
+test:1874,Thôi anh ơi chuẩn bị về mở tiệm bánh tráng là được rồi,2,0,0.99834085,0.99834085,0.0009975942,0.0006615942,13,False,False,0
+test:516,cô Ba có râu ha ha,2,0,0.99834085,0.99834085,0.00088050007,0.00077868655,9,False,False,0
+test:6209,Đảng đã cho ta một mùa xuân đầy thất vọng!,2,0,0.9983369,0.9983369,0.000971275,0.00069186505,12,False,False,0
+test:2735,Tuổi Trâu thì nhai lại là hợp cmn lý rồi 🤣,1,0,0.9983266,0.9983266,0.0010508756,0.00062256295,14,False,False,1
+test:2939,Huhu toang,1,0,0.99832255,0.99832255,0.0011188537,0.00055864744,5,False,False,0
+test:2982,Giờ m mới sáng mắt ra và tai đã nghe đc rùi phải k,2,0,0.9983181,0.9983181,0.00096400577,0.00071795995,16,False,False,0
+test:3796,"Boxit nữa, đừng quên bùn đỏ",1,0,0.99831593,0.99831593,0.0010613991,0.00062266877,10,False,False,0
+test:787,"Tìm chó thất lạc đặc điểm""cực kì thuyết phục""",1,0,0.9983126,0.9983126,0.001074581,0.0006128626,10,False,False,0
+test:5914,Bài mai dù,1,0,0.998302,0.998302,0.00117349,0.0005245009,5,False,False,0
+test:705,Tiên tri Trần Dần về Việt Nam ở nghĩa trang bình an,2,0,0.9982999,0.9982999,0.0010582161,0.00064192375,11,False,False,0
+test:3527,Wtf,1,0,0.99829334,0.99829334,0.0011317394,0.0005748842,5,False,False,0
+test:419,"Lí do lí trấu, chắc tin😏:)))",1,0,0.998293,0.998293,0.0011898215,0.00051720045,13,False,False,0
+test:5975,Thôi tụi nhật về nước dùm tao đi,2,0,0.9982855,0.9982855,0.0010096614,0.0007048915,10,False,False,0
+test:4585,Deo hieu luon :))),1,0,0.99828327,0.99828327,0.0011379168,0.0005788537,12,False,False,0
+test:214,Đậu rồi má hay đậu má rồi các bạn nhỏ ??? :))),1,0,0.9982774,0.9982774,0.0011055815,0.00061702123,19,False,False,0
+test:6436,Đậu má thầy ok chưa ?,2,0,0.9982728,0.9982728,0.0010620145,0.000665241,8,False,False,0
+test:5587,Đậu má thầy ok chưa ?,1,0,0.9982728,0.9982728,0.0010620134,0.00066524034,8,False,False,0
+test:5694,"A đừng có giống chị Tịp đấy nhé, thông báo cách li tại nhà rồi đi quán uống cafe .☺️",2,0,0.9982663,0.9982663,0.0008584653,0.00087525387,26,False,False,0
+test:973,Con số 34 cũng làm lan rộng ra,2,0,0.9982646,0.9982646,0.0011436676,0.0005917402,9,False,False,0
+test:1400,Bớt ảo tưỡng đi,1,0,0.9982559,0.9982559,0.0012583875,0.00048568333,7,False,False,0
+test:1285,Diễm Quỳnh gét burn real vãi l,1,0,0.9982395,0.9982395,0.0012305646,0.00052986376,10,False,False,0
+test:2945,"Hoàng Văn nếu là nhà tài trợ thưởng thì ko mất thuế,nhưng sợ ko biết có tới tay mấy e đc ko nè",2,0,0.99822897,0.99822897,0.0010161926,0.0007548592,25,False,False,0
+test:2988,Ờ face dành cho con người k dành cho thú vật ok,1,0,0.99822706,0.99822706,0.0011186816,0.0006542566,13,False,False,0
+test:4025,Con ho ly tinh nay o tha thu duoc,2,0,0.99822646,0.99822646,0.0010061788,0.00076742895,12,False,False,0
+test:4,coin card :3,1,0,0.9982116,0.9982116,0.0010576277,0.00073072343,6,False,False,0
+test:1517,Cc thầy eie,2,0,0.99818677,0.99818677,0.00094767334,0.0008655949,7,False,False,0
+test:3558,Cc thầy eie,2,0,0.99818677,0.99818677,0.00094767334,0.0008655949,7,False,False,0
+test:925,Toang thực sự 😐,1,0,0.9981712,0.9981712,0.0012822474,0.00054647424,6,False,False,0
+test:6018,Nhảy ổn như mạng nhà t😕,1,0,0.99816823,0.99816823,0.0012085031,0.00062324497,9,False,False,0
+test:2259,Còn này thật hoc,2,0,0.99815804,0.99815804,0.0012611072,0.0005809223,6,False,False,0
+test:3693,Giống nhau như 2 giọt nước. Mà mỗi cái là 1 giọt nước mắt với 1 giọt nước 💩 thôi ạ 😂😂,1,0,0.99815685,0.99815685,0.0012358254,0.00060733926,25,False,False,0
+test:1647,Làm riết thấy chán. Lên cao thủ lẹ đi ông già,1,0,0.99815553,0.99815553,0.0011393653,0.0007051722,12,False,False,0
+test:1375,Da bao dung nghe cs noi !!!,2,0,0.9981248,0.9981248,0.0010832858,0.000791956,10,False,False,2
+test:2991,Nguyễn Đăng Khoa thg học trò l này :))),2,0,0.99811554,0.99811554,0.0009505904,0.0009338843,13,False,False,0
+test:6026,Củ kỉ xấu xí để mầm chi,1,0,0.9981,0.9981,0.0012370023,0.00066314056,8,False,False,1
+test:1064,Nguyễn Yến Nhi đang tính cmt luôn. :)))) Coi xong kiểu WTF?? T đã coi clg thế :)))),2,0,0.99808854,0.99808854,0.001296292,0.00061518047,33,False,False,0
+test:3783,Sau đợt này về mở 1 chuỗi cửa hàng bánh tráng đc rồi chúc mừng anh 😏,2,0,0.9980736,0.9980736,0.0011590793,0.0007673165,16,False,False,0
+test:2102,"Phúc Báo thiệt mấy ba mấy má này rãnh hàng gê, đang trong thời kì dịch bệnh mà ham bay lắm 😢",2,0,0.9980718,0.9980718,0.0009131827,0.0010149837,24,False,False,0
+test:4641,Hot link em gái ngon ngọt nước cho ae nè,1,0,0.9980368,0.9980368,0.0012853411,0.0006779301,10,False,False,0
+test:3283,Cô mina dễ thương hơn ml của thầy 😀,2,0,0.99802387,0.99802387,0.00097272446,0.001003404,10,True,False,0
+test:5042,Chết đi ông ơii,1,0,0.9980227,0.9980227,0.0010923421,0.0008850194,7,False,False,0
+test:2505,Giàu thường hay quên cách ăn mặc á :)),1,0,0.9980075,0.9980075,0.0012428798,0.0007496657,12,False,False,0
+test:3781,éo nha liu liu,1,0,0.99799025,0.99799025,0.0014328846,0.00057687564,6,False,False,0
+test:3887,And DLV come in 3...2...,2,0,0.997988,0.997988,0.0011934951,0.0008184577,11,False,False,0
+test:5821,K phải khen chứ phim dỡ vkl,1,0,0.9979803,0.9979803,0.0013345354,0.0006851819,11,False,False,0
+test:5887,Còn anh có công với ghpg đâu rồi.chắc lên cỏi niết bàn rồi thì phải???,2,0,0.99795014,0.99795014,0.0011458342,0.00090402045,26,False,False,0
+test:1955,Nhung ơi Nhung ra đây mà xem nè em :) xem em đã làm j cho đất nước nè :),2,0,0.9979437,0.9979437,0.0010383353,0.0010179753,23,False,False,2
+test:335,Thật ra là quên kéo khóa quần ngoài lộ quần trong nên để lộ hẳn thành phong cách mới cho nó đỡ quê,1,0,0.9979405,0.9979405,0.0014420161,0.0006174854,23,False,False,0
+test:3328,Ôi cát mẹt của bả,1,0,0.9979346,0.9979346,0.0013649315,0.00070043287,7,False,False,2
+test:6173,Trùm cuối cmn hú vía :)),1,0,0.99790925,0.99790925,0.0013065424,0.0007842115,10,False,False,1
+test:707,Đáng nhẽ m k nên về nước 🙂,2,0,0.9978957,0.9978957,0.0010188402,0.0010853211,10,False,False,0
+test:5227,BÀ THÁI ANH VĂN RẤT GIẢN DỊ VÀ GẦN GŨI VỚI DÂN _ NHƯNG RẤT KIÊN TRUNG _KIÊN CƯỜNG TRƯỚC KẺ THÙ _ BÀ LÀ TẤM GƯƠNG SÁNG CHO RẤT NHIỀU ĐỨA HÈN VỚI GIẶC ÁC VỚI DÂN THAM HƠN SÚC VẬT SOI VÀO ĐỂ THAY TÂM ĐỔI TÍNH,2,0,0.99788743,0.99788743,0.0011522492,0.00096036063,101,False,False,2
+test:5863,Tóc đẹp vai lon :)),1,0,0.997874,0.997874,0.0013086331,0.0008173826,9,False,False,1
+test:5886,Dành cho lũ quan ngại,2,0,0.99786913,0.99786913,0.0012299726,0.00090085284,6,False,False,2
+test:4237,hôm nay tiểu sẽ sống chết vs concac abe,2,0,0.99784863,0.99784863,0.0012539492,0.0008973291,11,False,False,0
+test:1042,Xem bực mình thêm,1,0,0.9978357,0.9978357,0.0015666145,0.00059768243,5,False,False,0
+test:4297,Rank Việt Nam mà yasuo tt6 tt5 thì del phải người Việt Nam r,1,0,0.9978356,0.9978356,0.0011879184,0.00097642,20,False,False,0
+test:1021,được vl anh độ ạ😂,1,0,0.99783164,0.99783164,0.0016297101,0.00053857727,9,False,False,0
+test:1937,Bố lạy mày Nhung ơi là Nhung,2,0,0.9977957,0.9977957,0.0010682455,0.0011360445,8,False,False,2
+test:2579,Hoang mang😱,1,0,0.99779284,0.99779284,0.0013987452,0.0008084962,5,False,False,1
+test:1259,"Lâm Quốc Huy đại học là oke ông , còn cấp 3 thì coi chừng thầy cô nứng :))",2,0,0.9977664,0.9977664,0.0012033196,0.0010302864,21,False,False,0
+test:1026,"Đơn giản đó là người SG, chứ ko phải người Tp.HCM(Đa số bake)",2,0,0.99774534,0.99774534,0.0012430754,0.0010115774,19,False,False,0
+test:2973,trời,1,0,0.9977063,0.9977063,0.0015717796,0.00072190724,3,False,False,0
+test:6670,"Tôi không dùng bảo hiểm , bởi vì bác sĩ coi thường sức khỏe bệnh nhân dùng bảo hiểm !!!!!!",2,0,0.997695,0.997695,0.0014196781,0.00088520953,20,False,False,0
+test:4856,"to su ong CAn, deu co ong CAn nao tot. ong CAn tot chi thay trog phim. sao ko co ng nao di cung chu",2,0,0.99769235,0.99769235,0.0012219464,0.0010857888,37,False,False,0
+test:4681,nghe mắc i* quá abeeee,1,0,0.99768746,0.99768746,0.0016828142,0.0006297723,10,False,False,0
+test:4967,Cái thần này.gió chieu nao .che chiei đo.khau ngiep.chet ko đau thai,2,0,0.997678,0.997678,0.0012669454,0.0010549977,24,False,False,0
+test:3256,20-10 vui vẻ con bóng sadec:)),1,0,0.9976387,0.9976387,0.0015476985,0.0008135686,12,False,False,0
+test:3466,"đầu còn lắc được là chưa kẹt nha, mấy anh nói khi nào không nhúc nhích được mới là Kẹc",1,0,0.99763393,0.99763393,0.0012283307,0.0011377647,24,False,False,0
+test:3058,học putin chỉnh đồng hồ à?,1,0,0.9976228,0.9976228,0.0017764859,0.0006006972,9,False,False,0
+test:3455,chú nói cả dân tộc việt nam cùng đồng lòng nhưng nhung thì không,2,0,0.9975828,0.9975828,0.0012219242,0.0011953003,14,False,False,0
+test:4874,Các hãng nổi tiếng calvin gucci chanel đều bên nước ngoài mắc gì đem về vn cho nhỏ đó tri ân tri nghĩa....có ăn qq quá ai nói Gì cũng tin biết cuộc đời sài chai nước hoa chính hãng chưa nữa,1,0,0.99757856,0.99757856,0.0017210584,0.00070038595,47,False,False,1
+test:1490,Đi coppy ảnh của page khác không ghi nguồn. :))) kém chuyên nghiệp,1,0,0.9975768,0.9975768,0.0017365813,0.0006866763,19,False,False,0
+test:4588,Bài nào cũng cmt nhưng vẫn đ đc fan cứng 🤦‍♀️,1,0,0.9975757,0.9975757,0.0017269461,0.0006973335,17,False,False,0
+test:5577,Tây nó lại bảo mới trốn viện,1,0,0.99757,0.99757,0.001485681,0.00094433245,9,False,False,0
+test:5143,Ông này chắc là bọn Tân thiên địa nằm vùng bên mình rồi....,2,0,0.99754685,0.99754685,0.0011429957,0.0013101418,15,False,False,2
+test:837,Những kẻ cướp ngày đang bênh vực tên trộm đêm :),1,0,0.9975293,0.9975293,0.0012081915,0.0012625323,12,False,False,0
+test:491,"Chat la kiep truoc bi cam, 🙏🙏🙏🙏🙏🙏🙏🙏🙏🙏🙏🙏🙏🙏toi ngiep cho mu nay qua ko biet kiep sao thanh loai gi nua 🙏🙏🙏🙏",2,0,0.99752,0.99752,0.001511226,0.00096868316,47,False,False,0
+test:2607,"nó ko cộng điểm, mà nó cho thí sinh rớt bớt thôi, có bà chị gặp vụ này r :)))) thi điểm cao vẫn rớt nhé",1,0,0.9975091,0.9975091,0.0014663426,0.0010245154,32,False,False,0
+test:1002,Ng Tuấn Châu uầy gắt vđ,1,0,0.9975083,0.9975083,0.0018862847,0.0006053581,11,False,False,0
+test:894,Sao giờ nhiều chương trình nhố nhăng thế khg biết,2,0,0.9974733,0.9974733,0.0017660194,0.0007606827,14,False,False,0
+test:6292,Cô ba vàng giả cái () cát không.😂,2,0,0.9974567,0.9974567,0.0014086167,0.0011346919,13,False,False,2
+test:6637,Tranh cho va bong sa ban gai cung kg gai trai chan ra trai hahahA,1,0,0.9974485,0.9974485,0.0015312729,0.0010201809,20,False,False,0
+test:3521,Vũ Thanh Huyền thấy cmt của bạn này nghe mùi ích kỉ tính vào nói vài câu mà thấy các bác nói nhiều quá thôi em xin rút hí hí,2,0,0.9974082,0.9974082,0.0016031475,0.0009886049,31,False,False,0
+test:1991,No vừa thôi ma ơi . nó nở banh hang giờ...,2,0,0.9974069,0.9974069,0.0012698758,0.0013232845,14,False,False,0
+test:1827,Bộ hết người hay sao vậy trời...,1,0,0.99734795,0.99734795,0.0010928201,0.0015591254,10,False,False,0
+test:5216,thật sự éo muốn tin,1,0,0.99730563,0.99730563,0.0020736926,0.000620745,6,False,False,0
+test:2477,Nguyễn Nghĩa mi lúc mô ko nứng,2,0,0.9972377,0.9972377,0.0017783372,0.0009840017,10,False,False,0
+test:2594,Ý Thức Như Kặc.,1,0,0.9972299,0.9972299,0.0010171592,0.0017529315,8,False,False,1
+test:144,Cái mặt con bò biểu cảm vãi haha.... đhs tự nhiên thèm thịt bò khô,1,0,0.99722147,0.99722147,0.0015137279,0.0012648707,19,False,False,2
+test:6326,Tinh Trùng Khuyết Tật,1,0,0.99720544,0.99720544,0.0015868621,0.001207703,9,False,False,0
+test:5925,"Vũ Khắc Tiệp-kẻ chân dài, đầu ngắn?",2,0,0.99719656,0.99719656,0.0017354394,0.0010680277,13,False,False,2
+test:2775,Đuma chính em :))))),1,0,0.997189,0.997189,0.0016345117,0.0011765045,12,False,False,0
+test:1593,"thằng dưới thì thấy thế này, chứ đm thằng ad mà làm quan to xem, thử mở mồm ra nói nghĩ cho dân xem nào :)) thanh niên GATO",1,2,0.9971852,0.0014189106,0.0013958984,0.9971852,36,False,False,2
+test:6348,Ba nay mat dai khoe vang cuop chac hai cai tay no di an noi mat dai,0,2,0.99715245,0.001562023,0.001285466,0.99715245,21,False,False,2
+test:4255,Hèn gì chúng nó chỉ dám nói là ko có liên quan. Cái địt mẹ mấy thằng lớn,1,2,0.99714226,0.0014440755,0.0014136314,0.99714226,21,False,False,2
+test:6634,Khi bạn muốn bợ đít ai đó nhưng bạn không có não. Ngu như lợn nhưng vẫn làm báo Đảng đĩ.,1,2,0.9971312,0.0013093654,0.0015594007,0.9971312,26,False,False,2
+test:6091,gã tâm thần.răng long râu rụng,2,0,0.9971312,0.9971312,0.0016185321,0.0012502527,10,False,False,0
+test:4071,Biết vậy bắn chết ông này trước cho ông hỏi tiên chi để khỏi có corona 👾,2,0,0.99711967,0.99711967,0.0013394563,0.0015408008,20,False,False,0
+test:670,Dan lm kho dan.do ngu,1,2,0.9970702,0.0014712438,0.001458524,0.9970702,9,False,False,0
+test:3998,Bút hình con c,1,0,0.997042,0.997042,0.0018087478,0.001149277,6,False,False,0
+test:1424,"Nhân loại giờ đây giảm bớt ác mộng rồi, chỉ còn góc châu Á còn ác mộng thôi.",2,0,0.9970392,0.9970392,0.0014267754,0.0015341073,18,False,False,2
+test:3128,"có tiền cứ làm,chỉ có bọn không có tiền làm mới ý kiến lọ chai",2,0,0.9970214,0.9970214,0.0019579805,0.0010205526,18,False,False,2
+test:3556,Ngửi cho tỉnh đi 3 Gòa,2,0,0.9970124,0.9970124,0.001412234,0.0015753459,10,False,False,0
+test:6353,Vãi lộc,1,0,0.9970124,0.9970124,0.0022851492,0.0007023938,5,False,False,1
+test:6129,"m lảm nhảm cái đéo gì thế, sai lè còn cãi, ở Việt Nam! cái hay nhất nhà chối tội đổ lỗi thanh minh, từ thằng quan tới thằng dân, sai lè thế kia mà còn lái đi đâu đâu để cãi, chúng mày vác cái đth sương chúng m, còn dân Việt Nam! bên đó với nhưng ng sau này sẽ qua thì sao?",1,2,0.9970035,0.0016082703,0.0013882694,0.9970035,73,False,False,2
+test:6107,Mẹ. Mày ko phân biệt đâu là tài năng và phá hoại hả Gin Tama?? Chẳng lẻ mày giỏi hơn thằng khác là mày phải giết nó rôi mày lên làm chủ ak?? Còn gì là luật pháp hả mậy,0,2,0.9969721,0.0017124692,0.001315434,0.9969721,47,False,False,2
+test:5026,ANH NGHỊ TRẺ VIỆT CỘNG😂🤣😅😄🤣😂,2,0,0.99696016,0.99696016,0.0014954052,0.0015444577,17,False,False,0
+test:6156,"Mấy a dlv ""chúng mày đã làm j cho tổ quốc"" đâu rồi...??",0,2,0.99695146,0.0016473505,0.0014011476,0.99695146,20,False,False,2
+test:2548,xạo thặc,0,2,0.99692994,0.001508132,0.0015619224,0.99692994,6,False,False,0
+test:4056,Chấp gì thằng thiểu năng đó Trần Ngọc Giàu ơi,1,2,0.9969212,0.001753799,0.0013250994,0.9969212,11,False,False,2
+test:6134,"Đang chuẩn bị họp, 1 ông người tàu bước vào phòng,,, búng tay cái ""póc"" 10 thằng tàu nhỏ vác 10 cái vali tiền vào phát cho 1 bộ trưởng 1 cái ... "" mấy lỉ ăn đi và im mồm dùm bọn ngộ"" !",0,2,0.99688977,0.0016405035,0.0014697443,0.99688977,54,False,False,2
+test:2667,Táng chết cha tụi mày lũ học trò l :)),0,2,0.9968849,0.0017069544,0.0014081213,0.9968849,14,False,False,2
+test:1387,"Dạo này bệnh lợn tả châu phi tạm yên !! Bây giờ lại bắt đầu bệnh bò điên hoang tưởng , rối loạn phân liệt ông giáo ạh ! Thế có nguy ko chứ",1,2,0.9968791,0.0016974625,0.001423473,0.9968791,33,False,False,2
+test:6363,Động cơ của các vị là gì?,1,0,0.9968652,0.9968652,0.0013635046,0.0017711858,9,False,False,0
+test:136,Lờ ô lờ ôn lờ ôn lôn huyền CHIM:)),0,2,0.9968533,0.0015044278,0.0016423399,0.9968533,17,False,False,1
+test:6481,"Chỉ 1/2 đất nước trong nội chiến vẫn & đã làm đc điều như này vào 60n trước....ôi!, tôi yêu mN của tôi biết nhường nào!",2,0,0.996849,0.996849,0.0014254866,0.0017254312,33,False,False,0
+test:4268,Em ơi lam ngực có sướng không nêu chồng bú con cảm giác o ?,1,0,0.996837,0.996837,0.0023438095,0.00081909413,16,False,False,0
+test:4333,Nguyễn Nhân link cái mã tổ nhà mày à,0,2,0.9968369,0.0016786559,0.0014844307,0.9968369,11,False,False,2
+test:772,"ông có tuổi rùi! cố giữ gìn sức khỏe, thỉnh thoảng tấu hài bà con coi là zui rùi! mà giác ngộ vầy là tốt rùi, chứ nhìu ông già 3/// cố chấp lắm",2,0,0.99682474,0.99682474,0.0011463526,0.002028907,41,False,False,0
+test:5418,usertoken Nhu Nguyen giả đầu m t sài r nha,2,0,0.9967945,0.9967945,0.0013632856,0.0018421795,16,False,False,0
+test:4257,"Đây là clip cũ bạn ơi, chứ lúc này bạn ấy không dám chửi như vậy nữa, nhưng phải nói...Linh cá lóc này bản chất nói năng hàm hồ, mất dạy, vơ đũa cả nắm, trùm lập...không biết thế nào là lẽ phải. Chắc bây giờ bạn ấy đã sáng mắt, dù có chút muộn màng.",0,2,0.9967775,0.0019460913,0.0012764306,0.9967775,64,False,False,2
+test:5558,Thoi bot xam lom di nhin cach an mac beo qua dzo,1,2,0.9967601,0.0017896846,0.0014503098,0.9967601,21,False,False,2
+test:2218,"Người tinh không bằng Trời tính. Nhân quả nhãn tiến. Ác giả ác báo. Bọn Truyền thông THổ TẢ và phe dân chửi mưu gian. lừa phỉnh sẽ bị lật măt gian manh .Ý dân là ý trời.Bọn người gian tham , phá thai, giết hàng tri65u sinh linh sẽ bị Trời diệt. Yêu thương ,bác ái, từ bi sẽ mãi mãi được mọi người tử tế phát huy.",0,2,0.9967437,0.0017265114,0.0015298261,0.9967437,83,False,False,2
+test:5395,Thầy làm như vậy là chết cdm tụi em ròi,0,2,0.99674314,0.0015361028,0.0017207966,0.99674314,13,False,False,2
+test:1507,Ghê vãi,1,0,0.9967259,0.9967259,0.0027142267,0.0005599302,5,False,False,1
+test:5620,Idol. Viết vậy là chết con đĩ mẹ người ta rồi,1,2,0.99672514,0.0011950132,0.0020799036,0.99672514,14,False,False,2
+test:2856,Quan điểm như con cặc!!,1,2,0.9967092,0.0012587424,0.0020319617,0.9967092,9,False,False,1
+test:131,Hải Yến bố cái con thái lọ,2,0,0.9967073,0.9967073,0.0016983383,0.0015943164,8,False,False,2
+test:59,"Chi bà nhiều tiền thì đi làm từ thiện,còn ơ đó nói tục tiểu, giơ bẩn. Làm nhục người vn trên thế giới. Làm bai hoại nền văn hóa vn. Xin yêu các cấp có thẩm quyền vào cuộc sử lý.",0,2,0.9966922,0.0018605918,0.0014472742,0.9966922,44,False,False,2
+test:3063,Nguyễn Ngọc Sơn dm chac may lam pr cho cai page nay chac,1,2,0.9966882,0.0020071117,0.0013046782,0.9966882,17,False,False,2
+test:2714,Nhanh chậm cái con mẹ chúng mày =))),1,2,0.9966834,0.0015531145,0.0017634163,0.9966834,11,False,False,2
+test:827,Quá đáng vl anh ơi ngồi nấu mì ăn xem review thịt trâu:((,1,0,0.9966593,0.9966593,0.002540572,0.0008002427,20,False,False,0
+test:522,"Ý thức người Văn Minh có khác , cao chót vót đéo với nổi .",1,2,0.9966588,0.0015322048,0.0018090176,0.9966588,15,False,False,1
+test:6434,Nhục cái lồn gì k biết?:)). Mệt người sủa ngu. Cút,2,1,0.99665326,0.0020323049,0.99665326,0.0013145745,22,False,False,1
+test:5919,Chac chan Coronaviruswuhan qua di thi The Gioi se khong de yen Trung Cong .,2,0,0.9966214,0.9966214,0.0016344688,0.0017442425,28,False,False,0
+test:2244,Từ bao giờ người nhật mất ý thức như vậy💁,2,0,0.996599,0.996599,0.0017041898,0.0016967446,12,False,False,1
+test:1049,Lại sống như rau dền :)))),1,0,0.9965545,0.9965545,0.0026293874,0.0008161562,11,False,False,0
+test:728,9. Xác. Thứi từ trinh xương gồi,0,2,0.99652255,0.0014653953,0.002012051,0.99652255,13,False,False,0
+test:1497,Quang Quang Tường cãi lộn cát không,1,0,0.9965184,0.9965184,0.0025462182,0.00093533244,9,False,False,0
+test:6002,Xạo l,2,1,0.9965168,0.0021462007,0.9965168,0.0013369482,5,False,False,2
+test:5039,Quang Minh xạo lồn vừa phải 🤣🤣🤣,0,2,0.99651414,0.0013520999,0.0021337816,0.99651414,11,False,False,2
+test:3960,Sự lươn lẹo là vậy,0,1,0.9964814,0.0020779737,0.9964814,0.0014405692,9,False,False,0
+test:4026,Sena nhìn mặc như lồn,2,1,0.99647933,0.0018019188,0.99647933,0.0017188144,9,False,False,1
+test:2841,Thấy mặc quần dậy ai ngờ vào quay mặc quần đuồi bần dễ sợ bần,0,1,0.996472,0.0023329991,0.996472,0.001195003,17,False,False,1
+test:4283,Chỉ có óc chó mới nghe giặc tàu,1,2,0.99645364,0.0015370061,0.0020093597,0.99645364,10,False,False,2
+test:5105,ý thức nd đã kém rồi nói gì đến mấy anh bụng phệ,1,2,0.99640924,0.00165883,0.0019319183,0.99640924,15,False,False,1
+test:6109,og tran dan ok bi nhiem coronna.ma bi nhiẻm beh khat la beh gi? og bi beh B 20 dan đen than kih ko on nen noi nhieu . vui,2,0,0.99636734,0.99636734,0.0016227552,0.0020099252,46,False,False,0
+test:1476,Bịt lol chạy quanh nhà là có thật 🤣🤣,0,1,0.99635077,0.0024133187,0.99635077,0.0012358323,14,False,False,1
+test:4498,Rồi sao mày làm đc củ c gì ... hay viết đọc cho hay?,2,0,0.99633837,0.99633837,0.001959383,0.0017022223,16,False,False,2
+test:3257,Dị ó hỏ,0,1,0.9963264,0.0026572982,0.9963264,0.0010163279,6,True,False,0
+test:6280,"từ dịch này thấy ý thức người nhật xăng đổ nửa bình, nhưng giấy vệ sinh không thể thiếu. không hy sinh bản thân để cứu người khác, nhưng dính dịch thì kéo nhiều người dính theo.",2,0,0.9963169,0.9963169,0.0022442571,0.001438769,36,False,False,0
+test:6463,Bú bóng cao su ha gì cười ghê z abe :)),2,0,0.9963121,0.9963121,0.0024831311,0.0012047762,15,False,False,0
+test:3751,Trân Dân.mày vê VN tao sē Công Đâu Mày....Nhơ lơi tao nói...Thương bé lăm,2,0,0.99630874,0.99630874,0.0017224449,0.001968845,25,False,False,0
+test:1941,Trương Duy lz mẹ,2,0,0.9963076,0.9963076,0.001788961,0.0019034212,7,False,False,0
+test:3942,"Quá tốt,vậy là cả thế giới noi gương theo Mỹ có biện pháp chế tài đối với cá nhân,tổ chức,nhà nước vi phạm nhân quyền, Mỹ, Canada,Úc,Nhật và các nước khối EU phối hợp về chống vi phạm nhân quyền như thế thì mới có hiệu quả,mấy thằng đàn áp nhân quyền hết đường chạy,chẳng lẽ nó chạy qua mấy nước nghèo đói lạc hậu như Châu Phi hay mấy nước nhược tiểu ở Châu Á",0,2,0.9963057,0.0021660284,0.0015282296,0.9963057,76,False,False,2
+test:1573,Đm. Rẻ rách dlv,2,1,0.99629873,0.0023449399,0.99629873,0.0013563753,11,False,False,2
+test:4679,"Thiên đường xã hội chủ nghĩa là cái từ chẳng bao giờ đc nhắc đến trong bất kỳ 1 sách vở, nghị quyết, văn kiện nào của đảng. Mà toàn là từ các nhóm chống cộng mà ra",0,2,0.99628544,0.0018864201,0.0018281657,0.99628544,34,False,False,2
+test:1419,"Có cc,t là bẩm sinh r :v",0,1,0.99628,0.0024715927,0.99628,0.0012483399,11,False,False,0
+test:4079,Tốt nhất là giết bỏ đi vài thành phần óc chó đó là vừa,1,2,0.9962598,0.0014937655,0.0022464327,0.9962598,15,False,False,2
+test:1888,Giống loài Loan luân la vây,2,0,0.9962288,0.9962288,0.002364552,0.0014066633,8,False,False,0
+test:3479,Cc j zay :)),1,0,0.99620515,0.99620515,0.002900101,0.00089484965,10,False,False,0
+test:3567,Nó đéo vi phạm gì. Chửi gato với voz à?,0,1,0.9961893,0.0026203035,0.9961893,0.0011903448,17,False,False,1
+test:4339,Nát bét bè bẹt 🤣,0,1,0.9961861,0.002628691,0.9961861,0.001185301,9,False,False,0
+test:1462,Đươc ! Đẻ bằng hậu môn à ?,0,1,0.9961444,0.00260659,0.9961444,0.0012489975,11,False,False,0
+test:1572,đảng cộng sản cho quan tham nhũng :3,0,2,0.99613684,0.0023204505,0.0015426474,0.99613684,9,False,False,2
+test:4575,bú cu không thầy,2,1,0.9961272,0.0026561564,0.9961272,0.0012166861,6,False,False,0
+test:2356,Vãi thèn tèo về cctalk ngay. =]]],0,1,0.9961242,0.0028510815,0.9961242,0.0010246554,17,False,False,1
+test:5856,bts cc,2,1,0.99611926,0.002300493,0.99611926,0.0015802849,5,False,False,2
+test:6036,dm áo vú =)),0,1,0.9961016,0.0019555166,0.9961016,0.0019428845,9,False,False,1
+test:1751,Phát biểu nguu vãi,2,1,0.9960796,0.0029627932,0.9960796,0.00095748145,6,False,False,1
+test:5614,Cho cục gạch vào cái kính,1,0,0.99607396,0.99607396,0.0026563401,0.0012696581,8,False,False,0
+test:165,Nhức óc thật,0,1,0.996073,0.0025002542,0.996073,0.0014268323,6,False,False,1
+test:5800,Bê đê dơ,2,1,0.9960705,0.0022821175,0.9960705,0.0016474024,5,False,False,1
+test:2460,Sắp tè le hột me hết r chứ ở đó mà tính hàng chục,0,1,0.9960295,0.0029347623,0.9960295,0.0010356918,16,False,False,1
+test:1188,Yêu ai thì kệ mẹ nó. Đăng làm cc gì,2,1,0.99601233,0.0018707637,0.99601233,0.0021169025,13,False,False,1
+test:3860,Like và cm tụi nó ăn được hay sao mà ham hố vậy trời. Lũ điên,1,2,0.9960056,0.0014682034,0.0025262004,0.9960056,18,False,False,2
+test:2568,Iu cô gái khơ me hàm răng trắng tác cái l** đen thui 🙏🙏,2,1,0.99599165,0.0020911589,0.99599165,0.0019171756,21,False,False,0
+test:1364,"Cocabay giờ nhìn u ám. Cách đây hai năm có người ráo riết thuyết phục mình mua, may lúc đó từ chối. Vãi cả đái !",0,1,0.99596953,0.0023712884,0.99596953,0.001659278,30,False,False,1
+test:5565,đm thầy nhớ thấy lol,2,1,0.9959651,0.0024487143,0.9959651,0.0015860467,9,False,False,1
+test:5009,Tại c t chân thật quá k quỷ ma giống m,2,0,0.9959401,0.9959401,0.0018697274,0.0021902334,12,False,False,0
+test:564,ẩu r thầy ơi,0,2,0.9959325,0.0025324724,0.0015350776,0.9959325,6,False,False,0
+test:3733,Võ Xuân Hoan điên hả m,1,2,0.99591273,0.0025815298,0.0015057471,0.99591273,8,False,False,0
+test:4075,usertoken Cục Thì hổm nay á im mình im cái người ta tưởng mình hiền người ta cứ ăn hiếp hoài vậy đó ☺,0,2,0.9958897,0.0029276728,0.0011826758,0.9958897,30,False,False,2
+test:2027,"Thôn làm vậy là do thôn lầm, thôn lầm nên dân nó ghét, nó bật lại là thôn cái lù",1,2,0.99584717,0.0017068371,0.0024460705,0.99584717,24,False,False,2
+test:1783,Toàn cocc làm thôi,0,1,0.9958371,0.0024745555,0.9958371,0.0016883222,7,False,False,0
+test:1662,nó chơi luật rừng thì mình chơi luật rừng! mạng đổi mạng! đéo phải nói nhiều! Bức xúc làm cc gì,2,1,0.9958105,0.0024720624,0.9958105,0.0017174814,26,False,False,1
+test:998,:'( Vãi nồi !,1,0,0.99580234,0.99580234,0.0029672738,0.0012304734,9,False,False,1
+test:4864,"Treo lưng lững mới hay. Giống vừa xã nghĩa vừa ""giãy chết"" vậy.",0,1,0.99579924,0.0028190732,0.99579924,0.0013816253,20,False,False,0
+test:6658,Nát từ trong ra ngoài 😏😏😏,0,1,0.9957979,0.0032202585,0.9957979,0.0009820034,11,False,False,0
+test:2249,Bắn chet moe abe h,2,0,0.9957979,0.9957979,0.0018434096,0.0023586825,8,False,False,0
+test:460,Bắn chet moe abe h,2,0,0.9957979,0.9957979,0.0018434096,0.0023586825,8,False,False,0
+test:6027,Vậy mới thấy tri thức ngu tri thức hèn là như nào,2,1,0.99578696,0.0024597626,0.99578696,0.001753313,12,False,False,2
+test:3712,"Làm chủ tịch thành phố dễ vậy sao, chắc các cháu tiểu học cũng làm được",2,0,0.9957224,0.9957224,0.0029947243,0.0012829035,16,False,False,0
+test:6131,"Đào đất đóng gạch đi,đông về khối đứa cần ủ ấm.",1,0,0.99570775,0.99570775,0.0033410382,0.0009512238,16,False,False,0
+test:1136,"Đinh Nhật Uy cho ra lò ""chuyện vui cuối tuần "" vui thật !! vì chỉ xin đi phụ bếp mà đòi phải biết 29 thứ tiếng thì gắt quá! Chỉ có bác hù mới đủ thông minh để đáp ứng sự đòi hỏi này vì nghe nói bác củng biết 29 thứ tiếng,phải công nhận bác sáng suốt qu",2,0,0.99569476,0.99569476,0.0014579323,0.0028472827,61,False,False,0
+test:0,Đừng cố biện minh =)))) choi lon,0,1,0.9956442,0.0030696923,0.9956442,0.0012861646,13,False,False,1
+test:201,Các bạn phản đối cái giè. Viện phí tăng gấp 3 ngân sách bội thu. Làm tốt thế mà còn kêu.,0,1,0.99563545,0.0028435204,0.99563545,0.0015210458,24,False,False,0
+test:945,khôn thế thầy lòn :)),0,2,0.9956327,0.0024008057,0.0019664124,0.9956327,10,False,False,0
+test:862,Thời nay có những người mãi mãi chọc người có vấn đề thần kinh để làm gì ÁC ĐỨC LẮM bỏ đi người ta có chồng có con thơ dại không có đi lừa gạt cướp bóc ???,0,2,0.9956262,0.0011674679,0.0032062929,0.9956262,40,False,False,2
+test:2968,đm biết cái gương đó là tiền ai mua không mà dám cắt =)) đm thằng nào cắt kính,2,1,0.9956189,0.002811174,0.9956189,0.001569856,25,False,False,2
+test:2880,Nhạc của Khánh nó vẫn khác. Ông nội này giả khổ thôi. Mấy cái thằng mắt lươn tin sao được.,0,2,0.99560624,0.0032032763,0.0011904174,0.99560624,25,False,False,0
+test:16,Thay Ngu,2,1,0.99559104,0.0021313415,0.99559104,0.0022777051,4,False,False,0
+test:957,"đục not ""đụt"" :3",0,1,0.9955129,0.0032002556,0.9955129,0.0012868078,10,False,False,0
+test:6076,abe ochco =))),2,0,0.9954972,0.9954972,0.0026884896,0.0018142945,9,False,False,0
+test:4925,abe ochco =))),2,0,0.9954972,0.9954972,0.0026884896,0.0018142945,9,False,False,0
+test:197,Lũlên mạng lừa đão,2,1,0.99546343,0.0035019882,0.99546343,0.0010345043,9,False,False,0
+test:6592,cho nó tù đê,0,1,0.9954554,0.0022832672,0.9954554,0.0022613695,6,False,False,1
+test:4699,trong ảnh nhìn đẹp trai mà sao trong clip nhìn hãm loll vậy a,2,1,0.9954466,0.003222569,0.9954466,0.0013306732,16,False,False,0
+test:4023,Ba chui ma co thag con ngoi ke ben hoc hoi,0,2,0.99544084,0.0032301778,0.0013289617,0.99544084,14,False,False,2
+test:1515,Bọn nó là Doanh Nghiệp nhà nước đó ....,0,2,0.9954087,0.0032800888,0.0013111412,0.9954087,10,False,False,2
+test:4881,Nguyễn Hương Giang đúng thật bọn nước ngoài quá ngây thơ ko bt j hết,2,0,0.9953819,0.9953819,0.0019799976,0.002638196,15,False,False,0
+test:6239,à m bảo ở nước ngoài nó quen rồi vậy cho m sang Ý ở nhé thàng ml,2,0,0.99536246,0.99536246,0.0018452167,0.0027923284,20,False,False,0
+test:5504,T Chưa bao giờ coi vũ khắc tiệp là một nghệ sĩ cả.,0,2,0.99536234,0.0032920246,0.0013456363,0.99536234,14,False,False,2
+test:4844,vơ vét mùa dịch tởm nhỉ,0,1,0.9953401,0.0023116486,0.9953401,0.0023483126,8,False,False,0
+test:4750,"Loạn rồi, loạn thật rồi ông giáo ạ :))",1,0,0.9953242,0.9953242,0.0029637625,0.0017120321,14,False,False,0
+test:5638,Nói ra câu ngu bị mọi người chửi thêm cho,0,1,0.99529904,0.0034295367,0.99529904,0.0012713926,12,False,False,1
+test:456,Vụ nào nghiêm trọng nhờ tụi này tốn ít nhất chầu nhậu éo dưới 30tr,0,1,0.9952814,0.0034701547,0.9952814,0.0012484493,16,False,False,0
+test:1812,Lộn cái là,0,1,0.995265,0.0038988204,0.995265,0.0008361974,6,False,False,1
+test:676,Lủ chó,2,1,0.995263,0.0030019977,0.995263,0.0017350469,5,False,False,1
+test:113,Đem ra bắn ngay cái thể loại ấy,2,0,0.9952618,0.9952618,0.0038202852,0.0009180054,9,False,False,1
+test:4427,Cmt dau,0,1,0.9952154,0.0024707878,0.9952154,0.0023137564,7,False,False,0
+test:2850,Minh Nhật chuẩn cmnr. Jack tuổi j so dislike :))) haha. K atm là ca sĩ duy nhất trên thế giới mà k cần hát mà,2,0,0.9951515,0.9951515,0.0022261008,0.0026223087,34,False,False,0
+test:6289,T làm thế đâu... Thằng ad vớ vẩn :v,0,2,0.9951444,0.0027301796,0.0021254206,0.9951444,12,False,False,2
+test:6244,Xạo xạo làm youtube kiếm tiền chứ liệu gì,0,1,0.99514353,0.0020682567,0.99514353,0.0027883137,13,False,False,1
+test:5311,chảm,0,1,0.99511343,0.0039561023,0.99511343,0.0009304971,4,False,False,0
+test:752,Hửm,0,1,0.99509674,0.0032956686,0.99509674,0.001607609,5,False,False,0
+test:2961,"Ý là bạn thích đc dí lồn vào mặt à? Vậy thì cũng giống mình. Sướng mà, nhờ 😂",2,1,0.9950594,0.0032894267,0.9950594,0.001651146,24,False,False,2
+test:2809,Tôi sin tuyên thệ .. trong nhiệm kỳ của mình sẽ cố gắng vơ vét đục khoét tàn phá đất nước này ko cho thằng sau lên ăn được gì nữa,1,2,0.9950321,0.003206226,0.0017617124,0.9950321,27,False,False,2
+test:3223,Cho những ai chưa biết quần què là gì.? :))),0,1,0.9950262,0.0040329946,0.9950262,0.00094081525,16,False,False,1
+test:5938,Cái lồn má toàn danh hài thế này :v,0,1,0.99501795,0.002394661,0.99501795,0.0025874774,11,False,False,1
+test:4791,Thay ngáo đá,2,1,0.9949988,0.0038571167,0.9949988,0.0011441415,5,False,False,1
+test:1591,"Cánh hoa ở hàn quốc thôi, về việt nam nó là cái l** đấy 🤣🤣🤣🤣",0,1,0.9949976,0.003980438,0.9949976,0.0010219612,23,False,False,2
+test:6038,zụ zì ????,0,1,0.9949974,0.004018819,0.9949974,0.0009837486,10,False,False,0
+test:2990,Cho liếm hậu m*n cái abe :)),0,2,0.99499655,0.0022190344,0.0027844687,0.99499655,13,False,False,1
+test:1430,BÓNG ĐÁ- chính là “RẠP XIẾC”.,1,0,0.99497604,0.99497604,0.0017181751,0.0033057318,19,False,False,0
+test:5722,Nhìn mặt ngu hơn bò,1,2,0.99495786,0.0011471224,0.0038950737,0.99495786,7,False,False,2
+test:674,"Tử hình luôn ko nói nhiều , ý thức như củ cải",1,0,0.9949463,0.9949463,0.0027041289,0.0023495595,12,False,False,1
+test:589,Nguyễn Mạnh Hưởng Cặn bã cái địt thag bố m =)),2,1,0.99494416,0.0031326928,0.99494416,0.0019232464,18,False,False,2
+test:3219,Trym to,1,0,0.99489355,0.99489355,0.002880735,0.0022257508,6,False,False,1
+test:1522,đứng thế lốp nó nổ nó bắn cho cái thì đéo còn bánh mỳ với nước lã mà uống,0,1,0.994879,0.00418776,0.994879,0.00093322044,21,False,False,1
+test:4069,Len tp chi vay ma cai mui cong vong,0,2,0.9948596,0.0026273963,0.0025130513,0.9948596,12,False,False,2
+test:1223,Ý thức còn ít hơn kiến thức hoá của tao,1,2,0.99485564,0.0014602143,0.003684116,0.99485564,11,False,False,1
+test:4996,"Khổ, làm ăn bố láo bị tẩy chay thì có mấy thành phần bợ đít chạy theo: ""người Việt dùng hàng Việt là yêu nước"", ""DN Việt đóng ngàn tỷ tiền thuế bị dập"".",1,2,0.9948362,0.0016338916,0.0035299025,0.9948362,43,False,False,2
+test:1804,Nguyễn Đông trẻ trâu biết j,0,1,0.9948238,0.0036458177,0.9948238,0.0015304614,8,False,False,1
+test:3795,từ ngày bác Thanh ra đi đà nẵng loạn xì ngầu còn hơn cái bồn cầu giật nước,0,2,0.99480814,0.0035337068,0.0016581368,0.99480814,20,False,False,2
+test:5765,nhà ai có người làm trong sân bay thì nhục phụ cái,2,1,0.9947636,0.0035320055,0.9947636,0.0017042849,13,False,False,1
+test:5144,Thanh xuân như một cái đụ,0,1,0.99475926,0.003885884,0.99475926,0.001354822,9,False,False,0
+test:5813,"Cương Đặng m chắc là dân miền ngoài r mở miệng là thịt chó , chúng m đeo có tình thương động vật",2,0,0.99473876,0.99473876,0.0019750686,0.003286102,23,False,False,2
+test:4146,Nó có lây qua đường máu đéo đâu,0,1,0.9947272,0.003269353,0.9947272,0.002003372,10,False,False,2
+test:246,nhìn nứng gkê ak abe ơi!!!,1,2,0.9947249,0.0034336634,0.0018413295,0.9947249,13,False,False,1
+test:3951,Sao không đền bằng rau muống?,1,0,0.99472445,0.99472445,0.0037269345,0.001548554,8,False,False,0
+test:3116,Phản động là gì vậy? Auto đéo động não à,2,1,0.9947115,0.003642852,0.9947115,0.001645595,14,False,False,1
+test:2072,Mình nói lớn mà ngu thì lại nói mình hỗn. Ý thức như đachlone,1,2,0.9947061,0.0011992387,0.004094727,0.9947061,18,False,False,2
+test:172,Không có csgt nào tốt cả .,2,0,0.9947049,0.9947049,0.003642548,0.0016524682,12,False,False,0
+test:287,Cay vl nhỉ kk,1,0,0.9946701,0.9946701,0.0044891713,0.0008406495,9,False,False,1
+test:384,Tao thấy nhiễm covid này toàn bọn nhiều tiền và thích đi du lịch đấy..,2,0,0.99465925,0.99465925,0.0030910582,0.0022496402,19,False,False,2
+test:4101,Lồn ba rọi,1,2,0.9946455,0.0018165027,0.0035380349,0.9946455,5,True,False,0
+test:5214,Cứ như thế này thì duyệt mẹ đi cho nhanh 😀,0,1,0.99461925,0.0024433457,0.99461925,0.0029373448,12,False,False,1
+test:2077,Cứ như thế này thì duyệt mẹ đi cho nhanh 😀,0,1,0.99461925,0.0024433457,0.99461925,0.0029373448,12,False,False,1
+test:4307,Tiến Chiểu sao thằng này lại là chủ tịch,0,2,0.99460995,0.004096805,0.0012932476,0.99460995,10,False,False,2
+test:4842,CÔ BA NHÀ NGÀN SAO NÊN Ở LANG THANG NGOÀI ĐƯỜNG,0,2,0.99460584,0.0031149148,0.0022792344,0.99460584,24,False,False,0
+test:4944,"Đồng chí cục trưởng chuẩn bị ăn tối món ""chao xả gich"" với đồng chí cấp phó",2,0,0.99460137,0.99460137,0.0035666716,0.0018319224,19,False,False,0
+test:1503,Kim Phượng thế con ngu ở hà nội p nó cũng nhảy bông nhông khắp nơi đó p,1,2,0.9945433,0.0037475314,0.0017091415,0.9945433,19,False,False,2
+test:32,Trần Linh dell hiểu kiểu gì :)),1,0,0.9944449,0.9944449,0.0021206175,0.0034345782,12,False,False,1
+test:6186,Ngủi thấy mùi đi tù,0,1,0.99437755,0.004778876,0.99437755,0.0008434751,8,False,False,0
+test:1638,thực sự ra chẳng có phản động đâu chỉ co người DÂN nói sự thật thì bị chính quyền chụp mũ gọi là phản động,0,2,0.9943546,0.0037140213,0.0019313373,0.9943546,23,False,False,2
+test:4708,Một mình chị nhung lây mẹ bệnh cho cả nước,2,0,0.99434114,0.99434114,0.0027409953,0.0029179065,11,False,False,2
+test:4576,"Bên Anh có vụ racist nữa, anh du học sinh Singapore bị nhóm hãm lon thượng đẳng đánh cho bờm đầu. Với cả chị này ý thức hơn hẳn chị Nhung, tôi thấy chị này chả có lỗi gì cả, quay về VN chữa trị vì rõ ràng VN đang thể hiện rất tốt phòng chống dịch",0,2,0.99431485,0.0036622935,0.002022874,0.99431485,57,False,False,2
+test:3510,Thất vọng về xã hội này khi mà sáng mở mắt ra thấy:,2,0,0.994311,0.994311,0.0042824037,0.001406619,13,False,False,0
+test:4452,Bê Lol chạy xung quanh.,1,0,0.9942992,0.9942992,0.0016829303,0.0040178946,8,False,False,1
+test:1356,MinhHieu đại chó nó dao làm người đừng làm chỗ chỗ,0,2,0.9942813,0.003225823,0.0024929154,0.9942813,16,False,False,1
+test:2947,"Tôi vẫn chưa hiểu, tại sao Saigon, một thành phố ""Ngụy"" đói khổ, bị bọn Mỹ ""Ngụy"" đàn áp, bóc lột, cần chế độ CS ta giải phóng, cứu đói, mà lại nộp ngân sách nhiều thế ! (bằng 55 tỉnh thành khác).",1,2,0.9942674,0.0042037503,0.0015289265,0.9942674,49,False,False,2
+test:145,Lại thêm một con khoác lác,0,2,0.99424934,0.0025451006,0.00320555,0.99424934,8,False,False,2
+test:2966,Nguyễn Phương Linh sống thật đéo gì,2,1,0.99422604,0.0033940985,0.99422604,0.0023798654,9,False,False,1
+test:1359,"Chửi vô tội vạ mà đéo biết báo từ đời nào rồi,và chỉ phạt các doanh nghiệp mua điện nhưng lại k sử dụng để tránh lãng phí thôi chứ dân dùng bằng nào thu bằng đấy,toàn những con bò",1,2,0.9941912,0.001464768,0.0043439334,0.9941912,42,False,False,2
+test:2000,Dc,0,1,0.9941777,0.0039979233,0.9941777,0.0018244068,4,False,False,0
+test:4514,cái này nhai đi nhai lại quài chán vl ấy,0,1,0.9941758,0.0050729294,0.9941758,0.0007512764,14,False,False,1
+test:6489,Đùa :)) nó rời khỏi eu chứ có phải nó bê cái nước nó ra khỏi châu âu đi sang châu khác k mà cứ cãi thế nhỉ ngu đ chịu được =))),1,2,0.9941591,0.002694888,0.003146057,0.9941591,41,False,False,2
+test:4900,Nhìn xấu vãi nhìn cái mặt vẫn còn dẫn og đi phẫu thuật rồi gì còn xấu còn như đàn og,2,1,0.9941571,0.003933203,0.9941571,0.0019096753,24,False,False,2
+test:5162,Trung quốc thì nói mẹ Trung quốc đi bày đặt china chi nủng. Đang nói tiếng Việt hay tiếng anh,1,0,0.99410385,0.99410385,0.0031346038,0.0027616115,22,False,False,2
+test:2999,"Đâu chỉ có HK, Vietnam cũng cần tẩy chay nhỉ, vì có hẳn cả 2 sao ủng hộ đường lưỡi bò",1,0,0.99403304,0.99403304,0.002606031,0.0033610084,23,False,False,0
+test:724,fai nói 1 điều mày khóc thuê à ad . sẽ sớm thôi mày sẽ bị dờ gáy,2,0,0.9939521,0.9939521,0.0030604214,0.0029873953,22,False,False,2
+test:1222,Cu vag đi cho bt,0,1,0.99393106,0.005193695,0.99393106,0.0008752258,9,False,False,0
+test:3109,Nhỏ Meo cái đà mất dạy dài hạn thì làm gì. Thời cơ tới rồi 🤣🤣,0,1,0.9939037,0.0043480643,0.9939037,0.0017482246,21,False,False,0
+test:6150,Trấn thành đẹp trai đụ hariwon,2,0,0.9938692,0.9938692,0.0033568637,0.0027739417,10,False,False,0
+test:6219,Ngta đẹp và bán hàng có tiếng lâu năm .và đẹp hơn mặt chó,0,1,0.9938579,0.0018141584,0.9938579,0.0043279487,18,False,False,0
+test:4696,hệ thống thủy lợi yếu kém cộng thêm Khựa chơi bẩn bựa thì lụt lội là điều tất nhiên :\,2,1,0.993849,0.0030647477,0.993849,0.0030863348,20,False,False,2
+test:5234,Gắt,0,1,0.993832,0.004913924,0.993832,0.0012540792,4,False,False,1
+test:4779,Chị ơi có rãnh không chị chửi con mẹ 65 bớt những lo đi.,0,2,0.9938047,0.003841734,0.002353566,0.9938047,16,False,False,2
+test:5593,Bạn trẻ ở trên là acc của ad hả :)) nó chửi ad chứ có chửi m đâu kệ mẹ chúg nó đi,1,2,0.9938042,0.0029767358,0.0032190534,0.9938042,29,False,False,2
+test:3602,"từ thời VNCH đã cho xây rồi, nhưng dang dở thì tới 1975, sau đó người ta lo chuyện xóa bỏ chế độ cũ hơn là nhìn tương lai xa rộng nên mấy công trình đó bị hủy hoại hết rồi. ý tôi muốn nói là đừng chơi cái kiểu "" mất mùa là tại thiên tai, được mùa là bởi thiên tài đảng ta""",0,2,0.99380046,0.0046135425,0.0015859945,0.99380046,63,False,False,2
+test:1523,cho a bu voi,1,0,0.9937784,0.9937784,0.0028310108,0.0033905827,6,False,False,0
+test:117,kicm lúc này,0,1,0.99376994,0.0049648965,0.99376994,0.0012651131,6,False,False,0
+test:1371,Tức nước vỡ bờ. Cả một lũ chó hại dân,2,1,0.9937511,0.0032122561,0.9937511,0.003036579,13,False,False,2
+test:1595,"cách đây cũng 1 2 năm nghe tin đứa trẻ sinh ra đã cõng 22 triệu giờ 29 triệu , mấy ông đi vay tiền để tăng GDP à =))",2,0,0.9936546,0.9936546,0.0051192725,0.0012261637,34,False,False,0
+test:2037,Bơ-phẹt🙂,0,1,0.9936447,0.0052007404,0.9936447,0.0011545793,7,False,False,0
+test:1138,Nham lôn quá,1,2,0.9936435,0.004534195,0.0018222757,0.9936435,7,False,False,2
+test:138,Con bóng??,0,2,0.99362576,0.002524333,0.0038498824,0.99362576,6,False,False,2
+test:2627,về 572 gia định mà đòi đất ....kkkkkk..già mà ngu vl,2,1,0.9935789,0.00339913,0.9935789,0.003022028,20,False,False,2
+test:2285,Cường Nguyễn bọn nó còn lấy cái ngón chỏ xỏ vào làm gì ý.mà xỏ xong cả lũ cười.đéo hiểu,1,2,0.9935741,0.002061984,0.0043639173,0.9935741,27,False,False,2
+test:2683,Đi làm osin mà xạo lol ghê,2,1,0.99346584,0.0015016923,0.99346584,0.0050324025,11,False,False,1
+test:6285,"Hôm bữa xin lỗi, tôi nói con này khóc là nước mắt cá sấu thôi , nhung anh này giọng nói đâu phải người dân miền Bắc đâu , mà chửi Bắc này Bắc kia , xúc phạm đến vùng miền người ta .",0,2,0.99345076,0.0046201576,0.0019290169,0.99345076,43,False,False,2
+test:3332,Tu cai mo lai bot de cho Con minh mai sau. Muon noi tieng ma khong song hay sao .,0,2,0.9933815,0.004709817,0.0019086605,0.9933815,25,False,False,2
+test:4807,Kiểu đúng quy trình vkl thớt,0,1,0.99333787,0.0050734463,0.99333787,0.0015887009,9,False,False,0
+test:3575,Nguyễn Hoàng Lực phục cái máu lồn,2,1,0.9933321,0.0019249808,0.9933321,0.004742966,9,False,False,1
+test:42,Nguyễn Thị Thủy chó con chứ dúi đâu ra,0,2,0.9933009,0.0021666798,0.0045323856,0.9933009,9,False,False,2
+test:3297,Tối qua xem đoạn này mà đéo dám cười,1,0,0.99325424,0.99325424,0.0058030533,0.00094279664,11,False,False,0
+test:4720,Thôi tục,0,1,0.9932505,0.0057786,0.9932505,0.0009709249,4,False,False,0
+test:4933,Người có 500tr giúp cái người k có 500tr 😂 đm,0,1,0.99322,0.005579123,0.99322,0.0012008492,16,False,False,1
+test:4094,"Việt Nam phải khéo, CS Việt Nam không đến nỗi ác độc như TQ đâu. Về VN đi rồi biết, thiệt đó.",0,2,0.9931705,0.005441928,0.0013875241,0.9931705,24,False,False,0
+test:6494,"Cần xử tử con thú máu lạnh này vì nếu để nó sống , xã hội sẽ nguy hiểm hơn !",1,2,0.9931197,0.004285086,0.0025951683,0.9931197,20,False,False,1
+test:3310,Mình đang tìm một con bò đặc điểm nhận dạng nó kêu cực kì thuyết phục nha có hậu tạ :;),1,0,0.99310356,0.99310356,0.0022272866,0.0046690227,20,False,False,0
+test:2859,"Vãi l Bùi thắng, uh thì chú cứ nói nữa đi :) cãi chi cho mệt",2,0,0.99305165,0.99305165,0.0055413037,0.0014071214,23,False,False,1
+test:1226,Việc đéo j cũng đến tay tao kể cả việc lái xe cho ông già,0,1,0.99300545,0.005779759,0.99300545,0.0012148254,15,False,False,1
+test:6135,Nó bị què ko làm thế đi kieu gi dc,0,1,0.99294335,0.0039960872,0.99294335,0.0030604864,14,False,False,1
+test:3706,Chat chan tay la xong.ko can lgi het.thang nao danh nguoi giet nguoi cu chat chan cat gan tay,2,1,0.99287695,0.0024926534,0.99287695,0.0046303724,29,False,False,1
+test:432,Trần Ngọc Trâm Nó mà hay thì nghe 1 câu đã nghiện rồi. Chứ nghe kiểu như bạn thì mệt lằm.😅,0,1,0.99287134,0.006139503,0.99287134,0.0009891542,26,False,False,0
+test:5004,Lúc hoạn nạn mới bt ai bạn ai thù nhưng mấy bn 3/// ăn cứt Mĩ nhiều quá đ nhận ra rồi :)))),2,0,0.9927931,0.9927931,0.0029367846,0.0042702327,34,False,False,0
+test:1242,Mồm vén lên như cái bồn cầu,2,1,0.99276066,0.0051846066,0.99276066,0.0020547754,9,False,False,1
+test:1900,Này thì thượng đẳng với chúng tôi,0,2,0.99274385,0.0046810606,0.0025751435,0.99274385,8,False,False,2
+test:6600,Chịch xã giao đêêêêê,1,0,0.9927366,0.9927366,0.0064760298,0.0007874971,10,False,False,1
+test:2847,"Các ông có làm công ăn lương k?hay hàng tháng cứ đều đặn có thêm nguồn thu nhập khác từ việc nhận hối lộ ,quà biếu?",1,0,0.9927354,0.9927354,0.0058310996,0.0014334959,29,False,False,0
+test:1036,"Hết ""cực kì thuyết phục"",giờ tới mấy con bò ""sống chậm"" :)",0,2,0.99270296,0.0051865606,0.0021105136,0.99270296,19,False,False,0
+test:6126,Có đuỹ nào thả thính hôn,1,0,0.992667,0.992667,0.004492558,0.0028403427,9,False,False,0
+test:4979,Page này của việt tân à ? Toàn đấy nz đến lật đổ xhcn là sao ?,0,2,0.9926669,0.0059808437,0.0013522552,0.9926669,21,False,False,0
+test:5352,Im ngay đi cái thằng suốt ngày chỉ đc cái nói đúng,0,2,0.992638,0.0034058988,0.0039561414,0.992638,14,False,False,2
+test:868,"Một câu chuyện cổ tích rất hay được sáng tác bởi công an Việt Nam. Giỏi lắm các chiến sĩ vì nước quên dân, vì thân phục vụ.",2,0,0.99262035,0.99262035,0.0022319723,0.005147638,26,False,False,0
+test:3349,Phan Hoài Nhân thế này chắc đéo bán dc hàng đâu,0,1,0.99261534,0.0048641935,0.99261534,0.0025205757,14,False,False,1
+test:713,Quê tao mà giơ cánh hoa ntn ra đường là đéo còn đường về quê mẹ,0,1,0.9926075,0.0064500724,0.9926075,0.0009424654,21,False,False,1
+test:4077,Hương Thảo vkl,2,0,0.9925793,0.9925793,0.005526411,0.0018943507,6,False,False,0
+test:725,Lê Hoàng Trần :V vãi cả lý luận và đổ thừa !VN ta có đảng quang vinh lãnh đạo mà ko khắc phục được mấy cái cỏn con vậy à ?,0,2,0.9925127,0.0026346461,0.004852691,0.9925127,32,False,False,2
+test:6215,VN phải có cái riêng biệt cái tự chủ độc lập toàn đi sau làm sau,1,0,0.9924516,0.9924516,0.0038562694,0.003692134,15,False,False,0
+test:495,Kg Phan dong may' chui vao trong nay lam gi ?,1,0,0.9922665,0.9922665,0.005278546,0.002454896,16,False,False,0
+test:1668,"Chơi gì cũng ngu, chơi ngu là giỏi 😆",0,1,0.9922301,0.0069144904,0.9922301,0.0008554218,12,False,False,0
+test:2686,Trung tu mù,0,1,0.9921957,0.0052825026,0.9921957,0.0025217866,5,False,False,0
+test:3212,Chầu chực đến khổ =]]z cũng được huấn luyện đấy chắc đây thuộc về nghiệp vụ :v,0,1,0.9921915,0.0069709397,0.9921915,0.0008374726,22,False,False,0
+test:1099,Giống abe vailon,0,1,0.9921697,0.0034638033,0.9921697,0.004366479,7,False,False,1
+test:2093,Tiến Lê bố m thích đấy đạo đức cl,2,1,0.9921111,0.002532647,0.9921111,0.005356291,11,False,False,2
+test:4490,Đóm mạnh vcl ☻,0,1,0.9920997,0.0065004937,0.9920997,0.0013997847,9,False,False,1
+test:616,Đỉ nhân 3.14,2,0,0.99204785,0.99204785,0.0034183664,0.004533729,7,False,False,0
+test:5294,bis bis,0,1,0.9920351,0.0063547087,0.9920351,0.0016101819,4,False,False,0
+test:4183,gào rú ngoài đường ?:>,0,1,0.9920174,0.0068965955,0.9920174,0.0010860297,9,False,False,0
+test:1116,tao lại dưới loz tao lại lên .kkk,1,0,0.9920167,0.9920167,0.005450293,0.002533034,13,False,False,2
+test:142,Bàn tay em đẹp quá. Nhìn chị là đàn bà mà xấu quá..,2,0,0.99198335,0.99198335,0.0024904741,0.0055262493,15,False,False,0
+test:5740,Bat hết cái bọn gây hoang mang dư luận .,0,2,0.99192387,0.0057898145,0.0022862642,0.99192387,11,False,False,2
+test:1195,Không hiểu sao chứ nhìn chỗ này thấy cute vcl 😁,0,1,0.9919172,0.0072776186,0.9919172,0.00080509123,16,False,False,1
+test:4156,Im mồm đi micky. Sủa nữa t dính lỗ đít m lại bgio,2,1,0.9918503,0.0036931394,0.9918503,0.0044565485,19,False,False,2
+test:3950,Con bóng sadec =]],0,2,0.99178994,0.0025779335,0.0056321477,0.99178994,10,False,False,2
+test:3207,Thà từ chức còn hơn làm một con rối!,0,1,0.9917013,0.0025452808,0.9917013,0.0057534548,10,False,False,2
+test:2748,Cái phiếu phạt 20k này csgt đéo bao giờ nghi cái gì hết nha tao bị mấy tờ có cả 50k nữa chỉ là bọn nó tự nghi vào rồi làm màu thôi,2,1,0.9916939,0.0054151923,0.9916939,0.0028909107,40,False,False,1
+test:6294,Nguyễn Đức nhìn dị vcđ ra đẹp đ đâu,0,1,0.9916192,0.006284223,0.9916192,0.0020966057,12,False,False,0
+test:2754,wibu rách,2,1,0.9914967,0.0071498128,0.9914967,0.0013535935,5,False,False,0
+test:702,"Câu trả lời rất đơn giản là người dân ở các nước dân chủ đó quan tâm đến dân quyền và nhân quyền của mình , đơn cử như các cuộc biểu tình và đi bầu cử hệ quận người dân chủ HongKong , mới đây người ta quan tâm chủ nghĩa Tự Do hơn chủ nghĩa Nồi Cơm vì",0,2,0.9914443,0.0064328844,0.0021228052,0.9914443,50,False,False,2
+test:5319,Nghe hoai ma khong chan.,0,1,0.9913536,0.0067385486,0.9913536,0.001907821,10,False,False,0
+test:373,Người dân biểu tình phản đối thằng ăn cướp bị bọn mày bắt bớ đánh đập thì tụi mày là cái gì,0,2,0.99133563,0.00645246,0.0022118378,0.99133563,18,False,False,2
+test:6410,"Thì kệ QH chứ ,quan tâm đến chuyện tc ngta làm gì",0,1,0.99129546,0.007586227,0.99129546,0.0011183129,15,False,False,1
+test:6271,Hại não vồn tốn 2 phút của cuộc đời để đọc cái sờ ta tus này và 30s để viết cmt và tốn 2p30s để. Đọc lại cái cmt 🥺😊💐😆,0,1,0.9912077,0.0076182117,0.9912077,0.0011739957,43,False,False,1
+test:1124,Cường là ÔNG CAn à ?! =)),0,2,0.9911589,0.0070482907,0.0017928468,0.9911589,13,False,False,0
+test:4542,bán linh hồn và não cho quỷ r thất vọng làm j =)),1,2,0.99107975,0.0045896033,0.0043306667,0.99107975,15,False,False,2
+test:5281,"Chúng tôi: đại đa số dân đen nước Việt, rất cảm ơn thịnh tình và sự nhiệt huyết của quí ngài dành cho môi trường nơi chúng tôi sinh sống. Chúng tôi lấy làm tiếc về sự việc đã xảy ra, mà ko biết làm sao để thay đổi, mặc dù 90tr dân nước Việt thông minh,",2,0,0.99106103,0.99106103,0.0023946823,0.0065443562,51,False,False,0
+test:3431,Sáng nào kao cũng thức lúc 4h sàng hết mài thằng assmin xăm xí đú...khỏi nhắc mài...hơ hơ hơ...,0,2,0.99101907,0.0016127068,0.007368162,0.99101907,29,False,False,2
+test:6382,chậm con cặc,1,2,0.99100924,0.0014981519,0.0074925744,0.99100924,6,False,False,1
+test:5502,"Nhiều đứa thấy rãnh hơi lắm, làm đủ mọi cách rình rập nhà ngta xong kiểu nó đi ăn trộm mà làm con quan nên thường la làng, nhảy đỏng chứ ko rụt đầu như bọn dân đen. Nhà ngta nói chuyện mà nó cứ văng vẳng chen vào trong khi chả biết nó là ai? Ở đâu? Nói",0,2,0.9909629,0.001781653,0.0072554825,0.9909629,66,False,False,2
+test:2335,QĐ ít lien quan lắm,0,2,0.990932,0.004997924,0.0040701036,0.990932,8,False,False,0
+test:3572,Tỉ phú nào đấy tẩy chay đồ vô học,2,1,0.99088717,0.0049924767,0.99088717,0.004120306,9,False,False,0
+test:3892,Nó làm cái gì đấy chú.ỉa bậy à,1,2,0.9906222,0.005175359,0.004202366,0.9906222,12,False,False,1
+test:4381,Lại một vụ ăn chia đéo công bằng :))),0,1,0.99062014,0.008303727,0.99062014,0.0010761302,13,False,False,1
+test:2862,Vẫn là câu nói quen thuột má chj chết cái má chj để lại cho chj 100 cây vàng cái h chj giàu luôn,0,1,0.9904697,0.008648224,0.9904697,0.0008819704,31,False,False,0
+test:1769,đcm cười 33 giây,0,1,0.990366,0.0073960563,0.990366,0.0022379826,7,False,False,0
+test:4632,đcm cười 33 giây,0,1,0.990366,0.007396067,0.990366,0.0022379847,7,False,False,0
+test:709,Khi buồn mình chơi lớn đi nghĩa vụ và giờ muốn ra cx éo đc,1,0,0.9903536,0.9903536,0.0087223705,0.0009240574,17,False,False,0
+test:3902,Đm crush :),2,1,0.9902774,0.004726699,0.9902774,0.0049958494,8,False,False,1
+test:6534,May quá đéo có tiền mua xe,0,1,0.9902152,0.008496562,0.9902152,0.0012881842,10,False,False,1
+test:987,"thì đã nói rồi. thế giới người ta có mỏ bạc, mỏ vàng mỏ kim cương. còn việt nam có mỏ lồn là hay :3",2,1,0.9900928,0.0076597617,0.9900928,0.002247382,30,False,False,2
+test:1347,Sân bay chưa xây mà cao tốc kẹt như cơm bữa! Đường khẩn cấp mà chạy chiếm hết ý thức!,1,0,0.9900698,0.9900698,0.005653581,0.004276671,19,False,False,1
+test:4168,1 cái cớ để rút ruột ăn bẩn thui,0,1,0.99006796,0.008671193,0.99006796,0.0012608536,10,False,False,0
+test:1836,Trần Bắc Hà cũng chết trong tù đó!,1,0,0.98991406,0.98991406,0.0032245638,0.006861379,9,False,False,2
+test:4328,usertoken gia dạy chó chuan men kkkk,1,0,0.9898476,0.9898476,0.0033170492,0.006835359,15,False,False,2
+test:5347,muon tan 1 phat vao mat,1,0,0.9898247,0.9898247,0.0062889727,0.0038863805,10,False,False,0
+test:2372,Người j đâu mà chưởi người Việt NAM MÌNH trưởi người ta quá trời ĐÚNG LÀ BÃ CHƯA THẤY QUAN TÀI CHƯA ĐỔ LỆ,2,0,0.9897872,0.9897872,0.0025301953,0.007682578,41,False,False,0
+test:3973,🤦‍♀️😪 mạng mẽo như cức chỗ các bác có v không,0,1,0.9897041,0.0035138736,0.9897041,0.00678203,19,False,False,0
+test:479,Thiên đường xhcn là cái gì mà sao từ trước đến h mình chưa đọc ở trang sách nào nhỉ,0,2,0.98969716,0.0075800074,0.002722817,0.98969716,23,False,False,0
+test:1752,"Làm được chức lớn mà cậy, chẳng hiểu cán bộ lãnh đạo làm như vậy có đẹp để noi gương không, đọc xong nghe mak hết muốn ăn",0,2,0.9896572,0.0027154894,0.0076272516,0.9896572,30,False,False,2
+test:3952,Vn ma,0,1,0.9895325,0.0064290394,0.9895325,0.0040385164,5,False,False,0
+test:4880,mặt kitz giống bò viên thế,0,1,0.98947716,0.006498259,0.98947716,0.004024565,9,False,False,2
+test:2949,Đéo hiểu page này lập nên nhầm mục đích gì :)))))))))))))),0,1,0.98934865,0.009144287,0.98934865,0.0015070636,27,False,False,0
+test:622,"doanh nghiệp nó sai thì nó bị phạt, còn thằng này thích tống tiền doanh nghiệp thì nó cũng đéo đúng đâu mà gào mồm ăn vạ :)) tưởng ăn đc tiền của ngkhác dễ à",1,2,0.9892669,0.0026697558,0.008063403,0.9892669,39,False,False,2
+test:2551,Anh em Bắc mà bớ được thì được đập mặt xây lại là ít,1,0,0.9891549,0.9891549,0.004008995,0.0068360334,15,False,False,0
+test:3764,"thì biểu tượng giống nhưng ý nghĩa của mỗi nơi nó khác, khi xài ở hq là hoa, xài ở vn là lol má ơi",0,1,0.98908603,0.008659412,0.98908603,0.0022544737,29,False,False,2
+test:5326,hết mie nó rừng vàng biển bạc rồi.,1,0,0.9890849,0.9890849,0.0044549056,0.00646021,12,False,False,0
+test:3434,Nghiệp Quật,1,0,0.9890449,0.9890449,0.0059190732,0.0050359764,5,False,False,1
+test:129,Vay về cho cán bộ xây biệt thự con em đi du học,0,1,0.98902893,0.0076793944,0.98902893,0.0032916781,11,False,False,1
+test:1605,má dầu thơm giả sức cho ghẻ người,1,0,0.988972,0.988972,0.007991319,0.0030366268,10,False,False,0
+test:4878,"Hay học pha thuốc nổ, qua bển du lịch đánh sập đập nhề?!",2,1,0.9887971,0.0073317015,0.9887971,0.0038711254,18,False,False,0
+test:2977,DLV: đây chỉ là con sâu làm rầu nồi canh thôi :v,2,0,0.988786,0.988786,0.007127883,0.0040861433,17,False,False,0
+test:5047,An Nguyen 😒😒😒 đéo biết gì về thời sự cả,0,1,0.9887467,0.009490062,0.9887467,0.0017633123,14,False,False,1
+test:2437,Lai chim chửi máy đứa trẻ trâu pat! Đi chị,0,2,0.9885555,0.0013819225,0.010062626,0.9885555,14,False,False,1
+test:2628,Anlonroi,1,0,0.98851633,0.98851633,0.007772076,0.003711669,5,False,False,1
+test:3309,Phó Chủ nhiệm UBKTTP Tân an(Long an) không có bằng cấp 3 nhưng lý luận CT rất giỏi,2,0,0.9882863,0.9882863,0.0031737494,0.008539921,22,False,False,0
+test:3404,Con người hơn nhau ở cái ý thức :))),0,1,0.9882031,0.0076568495,0.9882031,0.0041400413,12,False,False,1
+test:2268,"Bị giải tỏa nhưng đền bù không thỏa đáng, cả nhà sắp mất bát cơm nên làm liều.",2,0,0.9881592,0.9881592,0.009078501,0.0027621822,19,False,False,0
+test:6479,"Phạm Văn Đồng nước ngoài nó cho về nhà tự cách ly, về đây chữa ngon vl",0,1,0.98805004,0.006546637,0.98805004,0.005403364,17,False,False,0
+test:6331,nước mĩ văn minh mà sao có thể tồn tại mấy thành phần như vậy lên nói chuyện...?,0,2,0.9878715,0.008647065,0.0034813855,0.9878715,16,False,False,1
+test:5115,đúng là ngu dân,2,1,0.98783594,0.0025020004,0.98783594,0.00966205,6,False,False,2
+test:4733,Súc vật từ nhan sắc đến nhân cách súc phạm loài người quá đy,2,0,0.9877989,0.9877989,0.002651387,0.009549736,14,False,False,2
+test:22,(Y) page này ad nó kiến thức uyên sâu lắm từ xây dựng tài chính y tế cái j n cũng am hiểu =)))) ngu dốt + nhiệt tình = phá hoại k sai bh,2,0,0.9877577,0.9877577,0.010529597,0.0017127829,37,False,False,2
+test:6509,Phạm Văn Lộc vãi lol lộc,2,1,0.98770565,0.0080621485,0.98770565,0.0042321244,9,False,False,1
+test:6121,"ông dần tôi hơi hột phép với ông ổng nói như hài chứ lũ bán nước ,nước đâu mà về ? về với nước bên kia thế giới ngàn thu thì được ???",0,2,0.9876987,0.010523056,0.0017782805,0.9876987,37,False,False,2
+test:4605,"Giàu thì nói cứt cũng thành cơm,nói gì chả đúng",2,1,0.9876451,0.010797943,0.9876451,0.0015569432,14,False,False,1
+test:1807,". Tìm hiểu dùm mình nhen bạn, ko phải cứ tây ăn cứt thì ta cũng ăn cứt nhen !",2,0,0.98760974,0.98760974,0.0056801178,0.0067101214,26,False,False,2
+test:2008,Sao già xap xuong lô roi ma len mang chui chi vay that la xau hô,1,0,0.9874742,0.9874742,0.0025635404,0.009962356,21,False,False,0
+test:357,Diệp Bích ái Nguyễn Ái Băng coi Diệp nó láo cá nè Băng🤣🤣🤣,0,2,0.9874325,0.011153529,0.0014140538,0.9874325,18,False,False,2
+test:4837,"Ăn đc của doanh nghiệp mà dễ á :v sếp nào mà chả là người gỗ mũi dài =]] quy trình chỉ nằm trên biển hiệu :v vi phạm thì ko xử lý ! Làm thuê , quyền hạn ít thì phải chịu !",0,2,0.98741895,0.0041601015,0.008420888,0.98741895,45,False,False,0
+test:854,"Con này nếu một ngày thằng Đài Loan nó đuổi, thì nó đi đâu",0,2,0.9874013,0.010688813,0.0019098268,0.9874013,16,False,False,2
+test:6104,t khép đít lạy m!,2,1,0.98736656,0.0052317483,0.98736656,0.0074016303,8,False,False,1
+test:230,K có nghìn nào giúp dân thì nín đi!,2,0,0.9873352,0.9873352,0.007539321,0.0051254644,12,False,False,1
+test:6678,"Đúng rồi, nhìn có ria mép , với mặt giống đàn ông vcl :v",0,1,0.9871597,0.011792197,0.9871597,0.0010481032,19,False,False,0
+test:2120,Chó cắn lũ nhà nc vn,2,1,0.9871085,0.008163038,0.9871085,0.0047284653,9,False,False,2
+test:4124,Đánh chết mẹ thằng này đi,1,2,0.9870733,0.00183051,0.01109618,0.9870733,8,False,False,2
+test:2452,Dư Luận Viên là gì ?? Mấy thằng này là ai ? Họ là ngưởi bảo vệ chất độc hã ???,0,2,0.9870652,0.010917477,0.002017308,0.9870652,26,False,False,2
+test:1997,Phạm Văn Đồng ngta có chữa cho đâu! Với lại khi về việt nam chị vẫn tuân thủ đúng quy trình cách ly mà! Có phải như con kia đâu,0,2,0.9870384,0.0115434835,0.0014181316,0.9870384,29,False,False,2
+test:4482,"Dân phát hiện cục cứt lạ sắp ra, báo cáo câpm trên, cấp trên bảo chờ kinh phí mới dc ỉa",0,1,0.9867953,0.0047786976,0.9867953,0.008425994,25,False,False,2
+test:5338,Edg cmnr,0,1,0.9867791,0.009619074,0.9867791,0.0036018023,7,False,False,1
+test:5753,"Né rồi sao mà học , học ngu sao :))",0,1,0.9867648,0.011967898,0.9867648,0.0012672853,14,False,False,2
+test:2315,Quan chức nhà nước mà cứ như vầy thì sao được lòng dân 😡,0,2,0.9867318,0.010406908,0.0028612881,0.9867318,14,False,False,2
+test:1229,Chửi cũng nể nang chứ. Đkm tao báo công an bắt chết cụ mày. Phạt mày 5 tr bây giờ. 😂😂😂😂😂😂,2,1,0.98669773,0.0030662378,0.98669773,0.010236015,30,False,False,2
+test:5904,Ong nay ma biet j troi,0,2,0.9866729,0.008134453,0.005192671,0.9866729,10,False,False,1
+test:1291,"Trắng biến thành đen , có biến thành ko , ko biến thành có họ còn làm được chứ trắng biến thành xanh là chuyện nhỏ",2,0,0.9866305,0.9866305,0.010532877,0.002836687,28,False,False,0
+test:2884,"Loại này nên bắn, đéo cần bịnh hay không.",2,1,0.9866288,0.010032331,0.9866288,0.0033388648,15,False,False,2
+test:5624,Cực kỳ thuyết con mẹ nó phục,0,1,0.98631406,0.00907562,0.98631406,0.004610389,8,False,False,1
+test:1636,từ bỏ thiên đường xhcnvn sang xứ tư bản giãy chết làm culi!😭😹🤣,0,2,0.98631185,0.0028402894,0.010847853,0.98631185,21,False,False,2
+test:5414,Coi muốn cười muốn ỉa luôn z trời đmmmm,0,1,0.9859104,0.011854116,0.9859104,0.0022353705,13,False,False,0
+test:646,Văn Trường 😒 dịch: không làm mà đòi có ăn thì chỉ có ăn cứt 😌,0,1,0.98583,0.012562584,0.98583,0.0016074458,19,False,False,2
+test:2155,Giết nó,2,1,0.98572147,0.012959165,0.98572147,0.001319402,4,False,False,1
+test:3603,Ong Tran Dan lam Tong Thong Viet Nam cho dan nga ngua dfo. Mot la gia 2...... Gia roi de cho lop tre no len nam quyen dNG CHUNG NO DU NHAN TAI VE GIUP DO XAY D7UNG vIET nAM.,0,2,0.9855812,0.0066993856,0.0077194367,0.9855812,64,False,False,2
+test:231,Bỏ măy con điếm đấy đi là thông minh đấy,2,1,0.9855738,0.012312813,0.9855738,0.00211343,13,False,False,2
+test:5307,Chưa cạo râu kìa con bóng Lông xiên,2,1,0.98556584,0.0075972187,0.98556584,0.0068369657,10,False,False,1
+test:4205,QuynhAnh DT thấy mà tứccccc,0,1,0.985487,0.013081754,0.985487,0.001431292,12,False,False,0
+test:459,Đr chỗ thì gọi Li quăng chỗ thì gọi là cái giường có chỗ thì gọi dạc mà chuyện đó bình thường mà,0,1,0.9854505,0.013110732,0.9854505,0.001438707,25,False,False,0
+test:2041,Thượng đẳng j mà chậm quá trend này Việt Nam làm biết bao lâu rồi 🙊,0,2,0.98535985,0.009954671,0.004685494,0.98535985,16,False,False,0
+test:4398,"Phạm Vũ Nói dân trí thấp lại tự ái . Không biết thì ngậm con mẹ nó mồm đi , còn tinh tướng . EU là liên minh kinh tế . Còn \""Trời Âu\"" ở đây là đang nói đến vị trí địa lý thuộc \""Châu Âu\"" . Đéo phân biệt được \""Kinh Tế\"" và \""Địa Lý\"" à ? Đúng là thùng rỗng thì kêu to.",2,1,0.985297,0.0019870044,0.985297,0.012715966,77,False,False,2
+test:6052,Chu cờ mo cho mò cu,0,1,0.98511106,0.012340857,0.98511106,0.0025480704,8,False,False,0
+test:5631,Bên ngoài là phát triển doanh nghiệp sản xuất ô tô trong nước nhưng bản chất thật sự là ..... Cướp tiền 1 cách công khai để đút vào túi mình.,2,1,0.98505265,0.01305099,0.98505265,0.0018963724,27,False,False,1
+test:4416,Thật sự nể phục khả năng phá hoại của băng đảng này.,2,0,0.98504364,0.98504364,0.0034807664,0.011475585,11,False,False,0
+test:2115,Bỏ số dt ra xài mạng gì ... Khùng chết mịa,1,0,0.98500144,0.98500144,0.013788327,0.0012102172,15,False,False,1
+test:5062,Chưởi bk chó là nó sắp tới số nữa con này khg bc loại nào ln,0,2,0.9849311,0.010885145,0.004183722,0.9849311,23,False,False,2
+test:4928,Mất dương chỉ,0,1,0.98478645,0.01389041,0.98478645,0.0013232224,5,True,False,0
+test:227,GAM thua cái củ cặc nhé !!,1,2,0.9846998,0.0037093256,0.011590887,0.9846998,12,False,False,1
+test:2368,Khác nào ăn cướp !,0,1,0.98465896,0.013425732,0.98465896,0.0019153509,6,False,False,0
+test:1592,Moá.,1,0,0.9843464,0.9843464,0.008623332,0.0070302524,5,False,False,0
+test:6324,Ngo BoiNgoc giống bên Úc lợn. Tự cách ly nên mới có chuyện dương tính vẫn đi siêu thị shopping. Đang chờ kqua xét nghiệm vẫn đi hoà nhạc 🤣 vl dân chủ. Nghĩ nó chán,2,1,0.9842858,0.00770059,0.9842858,0.0080135465,41,False,False,1
+test:4919,Công nhận bà hiếu dử nhưng mặt bả thánh thiện mới ngặt chứ,0,2,0.98428,0.013484211,0.002235834,0.98428,14,False,False,0
+test:6575,Tui puồn gke ợ 🤧,0,1,0.98416984,0.010245621,0.98416984,0.0055844793,9,False,False,0
+test:6475,cakhia cực mạnh :)),0,1,0.9838702,0.014061291,0.9838702,0.0020685557,10,False,False,0
+test:6145,Trên bờ thì hít khí bẩn ăn hoá chất nhé,0,1,0.9838643,0.015092019,0.9838643,0.0010436991,11,False,False,2
+test:440,Vẫn không chừa được những lời nói thô tục,0,1,0.98365384,0.01462642,0.98365384,0.0017196873,9,False,False,0
+test:446,Khoái nhất là khúc cây búa,0,1,0.9835593,0.012577011,0.9835593,0.003863755,7,False,False,0
+test:2353,"Vãi cả 84% ==""",1,0,0.98344016,0.98344016,0.014475196,0.0020847213,9,False,False,1
+test:3299,mấy con cá đấy gọi chung là quân đội và cớm :v,2,0,0.98340315,0.98340315,0.0059399027,0.01065704,15,False,False,0
+test:4697,Khánh Con Sao Ko lấy số người chết của Ý ra nhỉ. Ý cũng là châu Âu đó. Hi sinh người chết vừa làm tăng miễn dịch cộng đồng vừa cho đỡ chật đất. Cách làm của Tây hay thật ta ơi 😌,2,0,0.9833174,0.9833174,0.0045366324,0.012145938,45,False,False,0
+test:3226,Nhìn tội vl =))),0,1,0.98328614,0.015930489,0.98328614,0.00078332634,10,False,False,1
+test:3366,k rãnh loz làm gì lên xem abe,2,1,0.98317885,0.006808592,0.98317885,0.010012498,11,True,False,0
+test:2261,Cộng sản nói về Trần Dần,0,2,0.9831466,0.014550077,0.002303335,0.9831466,7,False,False,2
+test:3368,Gặp lol xỉu 3 ngày,0,1,0.98305684,0.013305807,0.98305684,0.0036373104,8,False,False,1
+test:2723,ở Việt Nam rất khó...vì lý do...( ai sẽ là người đứng lên chỉ mặt người đàn áp...vì lỗi do thằng đánh máy...thằng đọc hay thằng ký không có tội )...ví dụ thực tế...1 nhóm người tụ tập kêu gọi hòa bình...ông A ký lệnh do ông B đánh chữ: giải tán nhóm ng,2,0,0.9830346,0.9830346,0.005455577,0.011509779,61,False,False,2
+test:1549,cả đoàn trốn trại...nói chuyện điên khùng,2,1,0.9828037,0.015494604,0.9828037,0.0017017882,10,False,False,1
+test:3232,anh trung cô hồn,2,0,0.982681,0.982681,0.0043862746,0.012932751,5,False,False,0
+test:807,Con trai làm trưởng phòng kế toán nữa thì quả là một dân tộc Hạnh Fúck,1,0,0.9826529,0.9826529,0.0038293325,0.013517805,18,False,False,0
+test:2415,sao ko lấy tên là Linh Láo Lồn nhỉ ae ??,2,0,0.98210585,0.98210585,0.0063750343,0.011519177,15,False,False,2
+test:2010,"Quỳnh Hương thật, t tưởng nó viết thiếu dấu nặng, mẹ nó chứ",2,1,0.9819566,0.013954394,0.9819566,0.004088995,16,False,False,1
+test:4202,"Vì tết rất ngắn nên ta mới biết quý trọng cái tết dù nó có nhạt và chán rất nhiều so với ngày xưa. Chứ nếu như ngày nào cũng là tết, thì hóa ra ngày nào cũng là một ngày bình thường. Cũng như là việc khỏa thân ra đường thì đó là một người bệnh hoạn, nhưng nếu cả thế giới đều vậy thì đó lại là một điều bình thường, ai mặc áo quần mới là đứa bệnh hoạn",0,1,0.9815408,0.016232511,0.9815408,0.0022267338,78,False,False,2
+test:5943,"Ad tên Thắm à , hehe , em lại nhớ tới cái con em học cùng cấp 1 cũng tên là Thắm và em toàn trêu nó là \"" Thắm mồm khắm như nước mắm \"" ad à :D",2,0,0.98127556,0.98127556,0.007103609,0.01162084,45,False,False,2
+test:5389,Kệ cụ mày,2,0,0.9806553,0.9806553,0.0046733227,0.014671357,5,False,False,2
+test:3898,Yêu đương đ gì tầm này em còn phải đi cà khịa đã 😒,1,0,0.98062277,0.98062277,0.01715817,0.0022190805,17,False,False,0
+test:1750,"Phải nói có sách mách có chứng thế thì nhiều người mới biết được đâu là ngụy đâu là chính, đâu là ngu dốt đâu là văn minh..",0,1,0.9804662,0.0058297124,0.9804662,0.013704196,30,False,False,1
+test:2833,Xin mời :))) to mồm đòi làm cách mạng vậy làm đi :))) lật đổ cộng sản đi :))),0,2,0.9803718,0.014521407,0.0051067653,0.9803718,27,False,False,2
+test:2728,Bài hát phải nói là như con cac.,2,1,0.98035496,0.012493881,0.98035496,0.007151178,12,False,False,2
+test:1315,Thầy em là phải hơn. Nhưng ngu hơn ă🤧,0,2,0.98025423,0.011329857,0.008415874,0.98025423,13,False,False,0
+test:1720,Bất hạnh nhất cuộc đời là ra trường rồi mà bạn vẫn ngu dốt .😔 đáng buồn cho nghành giáo dục,1,0,0.980229,0.980229,0.017368106,0.0024028635,22,False,False,1
+test:1962,Co ba oi ke nguoi ta di con day ngheo lam doan loto kho lam sdt con que con ben tre 0347569004,0,2,0.9801512,0.015036732,0.0048121302,0.9801512,34,False,False,2
+test:2515,Già mà tập quyền vậy...coi...khỏe...re...,0,1,0.9801441,0.013419307,0.9801441,0.0064365817,14,False,False,0
+test:934,Cút,1,0,0.97992706,0.97992706,0.018581875,0.0014910807,4,False,False,0
+test:266,Kinh đấy,0,1,0.97989386,0.018810965,0.97989386,0.0012950823,4,False,False,0
+test:4035,Đhs cứ mặc định nghĩ là nội bài là tđn nào nhỉ? Qatar thì nó cũng có sân bay mà từ qatar về hà nội phải transit qua bangkok nhé :))). Sân bay nào cũng có trộm cả thôi :))),2,0,0.979677,0.979677,0.0077978643,0.012525181,56,False,False,0
+test:685,usertoken trần Tao lao.,1,0,0.97967166,0.97967166,0.011564761,0.008763628,10,False,False,2
+test:264,"Báo bọn phản động đấy bà con, những người kia bị kích động muốn chung ta cũng kíchđộng giống họ đây mà. Đập phá nhà máy của họ cuối cùng mất tiền là nước mình thôi vì nc mình vi phạm hợp đồng mà. Còn biểu tình gọi nhà nc phải có trách nhiệm tìm hiểu nguyên nhân thì đc.",0,2,0.9795247,0.017404482,0.0030708665,0.9795247,58,False,False,2
+test:704,toàn các cô gái ngồi xổm trym quệt đất ạ..,1,0,0.9793118,0.9793118,0.01698001,0.0037081507,13,False,False,0
+test:2150,Chả làm cái mẹ gì cũng lên fan cứng:))),0,1,0.97930557,0.014100305,0.97930557,0.006594156,15,False,False,1
+test:739,giàu mà ko biết chia chác cho tụi nó thì bầu Kiên đã là một ví dụ.,2,0,0.97915274,0.97915274,0.010357854,0.010489443,19,False,False,2
+test:5369,"Nói đạo nhái mà đến giờ vẫn đéo lòi ra một đơn kiện. Chỉ có các tHiên tÀi âM nHạC các bạn phán đạo thôi, lmao.",1,0,0.97909236,0.97909236,0.008933605,0.011974007,40,False,False,2
+test:2319,TPhcm có chợ nổi,0,1,0.97880256,0.0033661935,0.97880256,0.017831294,7,False,False,1
+test:3791,Làm tí game gủng cho đỡ puồn,0,1,0.9782768,0.020185664,0.9782768,0.0015374675,11,False,False,0
+test:3812,Sa sỉ phẩm k đánh thuế mạnh thì để làm ccc gì :v,1,0,0.9782736,0.9782736,0.018855002,0.002871442,17,False,False,1
+test:434,Lắm tiền mà chả có nổi ý thức của loài người :)),1,2,0.97804797,0.008355291,0.013596694,0.97804797,14,False,False,2
+test:1841,Nguyễn Thuận ca sĩ ra bài fan ý kiến chứ clg căng,2,0,0.9779668,0.9779668,0.017830865,0.0042023696,12,False,False,0
+test:3220,Sống chậmmmmm 🙄,0,1,0.9776213,0.0048116874,0.9776213,0.017567042,8,False,False,0
+test:2904,Cuộc sống này khốn nạn hơn mình tưởng,0,1,0.97741914,0.020817036,0.97741914,0.0017638609,8,False,False,1
+test:2467,D' Đức d hiểu nhìn cái hình là cừ ỉa,0,1,0.9772273,0.016849551,0.9772273,0.0059231482,13,False,False,0
+test:2272,"Biết bao nhiêu vụ đi bắt người bị quay xong bảo bắt bớ dân lành ? Thì đm bây giờ CA nó chờ đủ hết mọi thủ tục cần thiết nó mới dám bắt chứ không thì đm ""cư dân mạng"" chửi sml ra à ?",0,2,0.9770642,0.0020457907,0.020889983,0.9770642,47,False,False,2
+test:3698,"Biết bao nhiêu vụ đi bắt người bị quay xong bảo bắt bớ dân lành ? Thì đm bây giờ CA nó chờ đủ hết mọi thủ tục cần thiết nó mới dám bắt chứ không thì đm ""cư dân mạng"" chửi sml ra à ?",1,2,0.9770642,0.0020457928,0.020890003,0.9770642,47,False,False,2
+test:290,Ngoài mình kêu con này là cua xanh tên khác là cua chó bởi vì nó dữ lắm,0,1,0.97686225,0.019824283,0.97686225,0.0033135263,19,False,False,2
+test:3979,muốn ckầm kảm,0,1,0.9768312,0.020712988,0.9768312,0.0024558222,7,False,False,0
+test:1169,"Ở đéo đâu chả có ung thư :/ đời sống đi lên tỷ lệ bệnh tật nhiều. Vn còn hơn chán bọn tây lông là hầu như đứa nào cũng dị ứng nhé. Lại cái bài ca vn trong top tỉ lệ ung thư cao, còn cao nhiêu thì số liệu đéo rõ ràng. Top các nước ung thư cao thế giới toàn eu với mỹ hết :/",2,1,0.976439,0.01453074,0.976439,0.0090301875,67,False,False,2
+test:2598,Con linh loc nay chat kiep sau no moi noi chuyen dang hoang lai.,0,2,0.9759764,0.022053327,0.0019703186,0.9759764,20,False,False,2
+test:1442,Đưa lên kiểu này có khi ngày mai nó cho người ra đập bỏ luôn là hiểu nhé 😭,2,0,0.9751321,0.9751321,0.023057526,0.0018104325,19,False,False,0
+test:764,Quốc sư phải khỏe để lãnh đạo 3/ chứ ko thì 3/ biết đi đâu về đâu 😭😭,0,2,0.97489536,0.0232669,0.0018377705,0.97489536,22,False,False,2
+test:6539,"Thiều Thị Thanh Nga 🤭 thế mà cái kết ko có hậu cho hệ sinh thái j cả, ức chế vãi",0,1,0.97471696,0.023067765,0.97471696,0.0022152655,18,False,False,0
+test:2839,CÔ BA VÀNG MÃ :)),0,2,0.97469497,0.021241363,0.004063704,0.97469497,13,False,False,0
+test:3224,"Ko phải chê gì chứ khả năng win của sbtc quá cao. Sela kidz clear vs petland toàn những thanh niên chuyên nghiệp try hard vkl sao những ""ông già"" bên kia chơi lại. Còn thầy lồn thì t xin mạng phép bỏ qua ko nói tới coi như sbtc 4 đánh 6",2,0,0.97463894,0.97463894,0.006841261,0.018519877,69,False,False,0
+test:1675,Chu cờ mo là cho mò cu á. Chết đứng vs minh tuân. Kkk,0,1,0.97432035,0.022945186,0.97432035,0.0027345028,21,False,False,0
+test:3405,Anh vừa nói cc gì vậy Abe :D??,0,2,0.9742226,0.019671645,0.0061057103,0.9742226,13,False,False,1
+test:3549,Thằng hùng vs bà 4 Nha đụ nín thở nhe a tuân.,1,2,0.9737449,0.015851714,0.010403421,0.9737449,16,False,False,1
+test:3102,"Thôi nó dở dang thế rồi, giờ cố gắng vay mượn để làm hoàn thành cho dân đi lại đỡ khổ chứ biết làm thế nào. Sáng ra đi từ Hà Đông lên Ngã tư Sở mất tiếng thấy đến nhục!",0,1,0.9736299,0.024427999,0.9736299,0.0019420834,39,False,False,1
+test:1493,Bạn nói như phát tự vả vào mồm bạn vậy! Tự chơi 1 mình đi chứ thế này đ ai dám chơi cùng,2,0,0.97331685,0.97331685,0.009655338,0.017027909,25,False,False,0
+test:4100,Phò người ta có làm gì bọn bây ko ? Hàng ngày có những đứa hiếp dâm cướp tiền bọn bây sao im lặng vậy.,0,2,0.97312737,0.02303063,0.0038419922,0.97312737,27,False,False,2
+test:3047,day la mot ong gia dien thoi dai ong co xau ho khong ??,2,0,0.9728056,0.9728056,0.011690701,0.015503652,21,False,False,2
+test:4129,Bú l ngọc Trinh sẽ tinh,2,0,0.97254354,0.97254354,0.0084537715,0.019002741,9,False,False,0
+test:975,:DD,0,1,0.9720258,0.02647761,0.9720258,0.001496641,4,False,False,0
+test:960,Công nghệ xây cầu mới của đảng và nhà nước ta đấy! Thế giới chưa nước nào có đâu,1,0,0.971854,0.971854,0.008104605,0.020041421,19,False,False,2
+test:5570,"Đấu đá nhau khốc liệt,giã dối hơn cả XH Đen.vì có quyền điều khiển đc dư luận qua báo chí",1,2,0.97159946,0.0019787585,0.026421819,0.97159946,23,False,False,2
+test:6560,Abe mua áo như này là chet con di me sela rồi =)),1,2,0.97157335,0.020955214,0.007471413,0.97157335,18,True,False,2
+test:2650,Đảng viên CS Trần Dần...,0,2,0.97094125,0.026530465,0.0025282735,0.97094125,7,False,False,2
+test:3209,Vải lờ thầy😂😂😂,0,1,0.9705438,0.022897467,0.9705438,0.006558838,9,False,False,0
+test:1029,:vv ăn đấm khong trượt phát nào anh ạ,0,1,0.9704691,0.028436879,0.9704691,0.0010940045,13,False,False,0
+test:808,"Trên đời này mấy thằng to xác thường được tạo hóa ban cho tính bắt nạt, chỉ một cách duy nhất trị được chúng nó là phải tỏ ra mặt mình không sợ chúng nó, sẵn sàng đập lại đến chết. Ngay cả Mỹ thời gian trước bị Thổ Nhĩ Kỳ bắn hạ drone quân sự, tụi chín",0,2,0.97016317,0.027437543,0.0023992641,0.97016317,52,False,False,2
+test:2114,Đánh chết mẹ nó đi chị để nó mất dạy quá,1,2,0.97009933,0.0020043324,0.0278963,0.97009933,13,False,False,2
+test:566,Thêm cái gì mà thêm. T đếch thèm qt đến vì chưa có thông báo nghĩ học 🙈,1,0,0.969815,0.969815,0.029146187,0.0010388043,22,False,False,1
+test:4491,best xạo lol ý,1,2,0.96979684,0.0017630128,0.028440164,0.96979684,8,False,False,1
+test:2082,Cứ có tiền là muốn lz cũg đc à:)),1,0,0.9694911,0.9694911,0.02852355,0.0019853045,16,False,False,0
+test:3689,Quần lột quần,0,1,0.96925384,0.029350856,0.96925384,0.0013952669,5,False,False,1
+test:1765,Hàng họ giề,0,1,0.96925014,0.026889743,0.96925014,0.003860116,6,False,False,0
+test:3234,Tôi thấy ông lần này nói nhiều cái đúng quá . cs mẹ rồi 😘,0,1,0.9691135,0.022619031,0.9691135,0.0082674455,17,False,False,2
+test:3422,Cái mỏ của nó cho khẩu súng vào bấm nút cái bùm,2,1,0.9685249,0.023638994,0.9685249,0.007836078,15,False,False,1
+test:6611,giống lão gà mên teong là xì trum vl,2,0,0.9684296,0.9684296,0.015481741,0.016088642,14,False,False,0
+test:3609,Thùng rác mà cũng phải nhập TQ đúng là pó tay !,0,1,0.96833235,0.018510778,0.96833235,0.013156865,15,False,False,0
+test:968,vào phòng kín cho đấm lại là huề :v chứ rùm ben kiểu này xấu mặt nội bộ hết :v,0,1,0.96785015,0.030968256,0.96785015,0.0011815624,25,False,False,2
+test:1598,Không có tiền thì gọi là mơ ước chứ đéo phải đam mê đâu,0,1,0.9678229,0.030706404,0.9678229,0.0014706557,15,False,False,1
+test:5974,Con này chắc không có gì làm nên rảnh nên bày ra tay đôi nói bậy,0,2,0.96764404,0.02951562,0.0028402784,0.96764404,16,False,False,2
+test:847,Bố m cũng đến chịu cách ăn mac khác người của nó !,2,0,0.96705973,0.96705973,0.0058863307,0.02705397,15,False,False,2
+test:272,Cái mặt là nhìn dell ưa nổi với bị nứng lâu năm,2,1,0.9663736,0.0020389284,0.9663736,0.031587407,16,False,False,1
+test:3645,Ko thich VN thì cút sang Campuchia mà sống (DLV cho biết),2,0,0.96630067,0.96630067,0.016864922,0.016834382,18,False,False,1
+test:3766,ad của page này chửi như muốn đổ cả rổ lồn vào mồm người khác ý :),2,1,0.9661065,0.0073875426,0.9661065,0.026505943,21,False,False,2
+test:1096,Mom cho ko moc dc nga Voi,1,0,0.9656348,0.9656348,0.0076467185,0.02671848,12,False,False,1
+test:3418,loạn cực,1,0,0.96507436,0.96507436,0.030562025,0.0043635606,4,False,False,1
+test:1062,Phan Linh đb ct có lm j đâu ? Mà ss chán,1,0,0.96453035,0.96453035,0.029246844,0.0062229102,15,False,False,0
+test:613,"Mikhai chốp còn biết nhảu khỏi tàu đắm,chứ bọn này đéo nhẩy đâu,ảo thuật gia và phim ở hollywood phải gọi bằng ""Cụ""🤣",1,2,0.96435577,0.030573523,0.0050707115,0.96435577,36,False,False,2
+test:5598,Đợi Đợi Đợi con cặc thích câu này v*l 😂,1,2,0.9642886,0.021403491,0.0143078705,0.9642886,17,False,False,1
+test:2736,Toang thật nhỉ,1,0,0.9641422,0.9641422,0.03378514,0.00207258,6,False,False,0
+test:5944,Khiem Huynh Đọc cmt của bác mà đéo nhịn dc cười🤣,0,1,0.9640541,0.033967867,0.9640541,0.0019779208,21,False,False,0
+test:5443,"ĐN đúng là TP gương mẫu, khổ cho cái SG vs HN",0,1,0.9633831,0.02166314,0.9633831,0.014953755,14,False,False,0
+test:4620,Căng đétt :)))),0,1,0.9632502,0.03495079,0.9632502,0.0017989678,11,False,False,0
+test:4140,"dẹp mịe cái "" hội bảo vệ người tiêu dùng đi. tốn tiền",2,1,0.9626579,0.03232523,0.9626579,0.005016871,15,False,False,1
+test:3722,di lam tu thien ma chui vay thi cong duc dau con nua,0,1,0.96243894,0.0064628245,0.96243894,0.0310983,18,False,False,0
+test:811,Tức phọt sữa,0,1,0.9624325,0.035653364,0.9624325,0.0019141925,6,False,False,0
+test:1500,Thời trang với thời chủng nhìn mất hết cảm tình 😬😬,1,0,0.96159756,0.96159756,0.02291258,0.015489803,12,False,False,0
+test:3470,"1 quốc gia không có đường để ĐI, SỐ BOT thật chóng mặt",2,1,0.96129644,0.026808538,0.96129644,0.01189505,16,False,False,2
+test:2488,Cho chết cái tội cà khịa Việt Nam🤣,0,1,0.9609927,0.03726979,0.9609927,0.0017375252,11,False,False,1
+test:852,"Tiếp theo sẽ là sự phân hóa trong nội bộ lãnh đạo Bắc Kinh. Bộ mặt thật của tình ""đồng chí"" lộ diện !",0,2,0.9609402,0.03571555,0.0033442162,0.9609402,23,False,False,2
+test:2810,"1 ăn cả, ngã ăn l*n :))) Lê Chi",1,0,0.9603181,0.9603181,0.03716977,0.0025121178,17,False,False,1
+test:3193,Dừa cái lone lắm nghe 🙃🙃🙃,1,0,0.9597781,0.9597781,0.037912764,0.0023091892,10,False,False,1
+test:3957,Yen than muon ma muon luot qua zao than.dung la het thuoc chua,1,0,0.95975477,0.95975477,0.008168685,0.032076556,23,False,False,2
+test:3944,"Đu me mây cho vay tiên gop ma noi lam tư thiên, bơt sao lôn đi minh hiêu tui mây ăn chăn tiên tư thiên thi đung hơn",2,0,0.95934594,0.95934594,0.017449774,0.023204308,37,False,False,2
+test:1756,Đtr v~,0,1,0.95924425,0.03502843,0.95924425,0.005727428,6,False,False,0
+test:4143,Mỗi lần lên sóng là đeo vàng làm như giàu lắm hay sao mà khoe của thấy ghê.còn cái mặt mình nhìn chung ko có 1 chỗ nào thiện cảm hết.nhìn mặt là biết cái thứ đàn bà độc mồm độc miệng.hung dữ.nói tục chửi thề v...v tưởng z là hay lắm,2,1,0.958969,0.0022956023,0.958969,0.03873545,62,False,False,2
+test:5915,"Đó cũng là 1 cách để khách du lịch 1 đi kg trở lại.....Đáng buồn thay. Kêu trời kg thấu, kêu đất kg nghe......",0,1,0.9586282,0.039956823,0.9586282,0.0014149855,29,False,False,0
+test:3122,Danh hiệu nói xạo k ai xứng đáng hơn ngoài trần dần,0,1,0.95851964,0.031495616,0.95851964,0.00998475,13,False,False,0
+test:2206,Thằng Trung có con *** to lắm,1,2,0.9581473,0.010573255,0.03127949,0.9581473,11,False,False,2
+test:1333,Ức chế vl... Bán bó rau lời ko bao nhiêu..,0,1,0.9577436,0.041267168,0.9577436,0.0009891705,15,False,False,1
+test:3853,"Ngộ ha! Mấy bố cứ ngồi đây mà phán ""Thử hỏi làm sao phát triển được"" ... Ủa nếu có chinhd sách phát triển gì gì đó của mấy bố vào đây thì VN chắc gì đã tiế bộ? Đã đéo giúp ích đc cho đất nước rồi còn ngồi đây ""Thử hỏi sao phát triển được"" :)))))) có cảm thấy hài hay là tự nhục miếng nào k ? Hay chỉ biết ngồi mà rên rỉ, lăng mạ đất nước mình, nơi mà mình đc ỉa ra?",2,1,0.9565489,0.027846433,0.9565489,0.015604586,97,False,False,1
+test:5716,thối quá rồi,0,1,0.95628524,0.039113913,0.95628524,0.0046008467,5,False,False,0
+test:5158,Lê Danh Đoàn dkm :v,1,0,0.95308095,0.95308095,0.03056805,0.016350918,9,False,False,0
+test:5127,"Long Nguyễn khs lợn, gà, bò, dê ăn đủ mà lại chừa chó :))) thương động vật thì nhịn ăn mẹ đi nhỉ.",0,2,0.9529517,0.0034563295,0.04359195,0.9529517,30,False,False,2
+test:5385,Cđ châu md quá tr r🤣🤣,2,0,0.95255435,0.95255435,0.022473508,0.024972118,12,False,False,0
+test:5997,Phim dở vl,2,1,0.95232594,0.045723893,0.95232594,0.0019501502,6,False,False,0
+test:2960,Chào thầy ba girl😌nứng vcl,2,0,0.95227265,0.95227265,0.017157245,0.030570026,12,False,False,2
+test:1971,Đm! Đen méo chơi nữa,0,2,0.95180404,0.0023364678,0.04585948,0.95180404,9,False,False,1
+test:529,Túm lại: Muốn giết người mà vẫn vô tội hoặc án gãi ghẻ thì phấn đấu làm cán bộ đi.,2,1,0.95136213,0.020556929,0.95136213,0.028080912,22,False,False,2
+test:4635,Oke Hasagi chết mọe đi 💀,1,2,0.95134366,0.040780358,0.007875957,0.95134366,11,False,False,1
+test:1133,"Bơm chủ nghĩa dân tộc như bơm ma túy. Càng ngày càng nhiều, ngày càng trầm trọng.",2,1,0.9512027,0.0026713249,0.9512027,0.04612606,16,False,False,2
+test:5154,Chó nhà căng nhau rồi hả,0,1,0.95093936,0.029580308,0.95093936,0.01948037,8,False,False,0
+test:4718,Dân chống nhưng quan chức không chống,2,0,0.9495495,0.9495495,0.03412332,0.016327139,8,False,False,2
+test:6513,cái này người ta kêu là vừa ăn cắp vừa la làng,0,1,0.9493628,0.049162988,0.9493628,0.0014741998,13,False,False,0
+test:424,Bốc sư tất nhiên là xạo quá ròi tất nhiên là súng bắn không tói ông nhưng tất nhiên rằng corona tất nhiên là sẽ tới thăm viếng bốc sư tất nhiên,2,0,0.94935596,0.94935596,0.008442442,0.042201582,32,False,False,0
+test:6050,có học thức chỉ tiếc văn hoá quá kém ...ý thức thua cả một con chó,1,2,0.94917065,0.002273405,0.04855595,0.94917065,17,False,False,2
+test:3648,Ra đường nhớ cằm theo não,2,1,0.94792217,0.014421008,0.94792217,0.037656847,8,False,False,0
+test:1367,Cây bút hình con cu à :>>,1,0,0.94750077,0.94750077,0.048936553,0.003562705,10,False,False,0
+test:3456,Trường Giang ụa . Bả biết bả nhiễm s bả đ chịu khai báo cách ly đi . Chị bả nhiễm nguy cơ lay cho bả là rất cao . Hành khánh trên chuyến bay đó cũg bị nhiễm theo . Lớn r chứ phải con nít con noi,2,0,0.946903,0.946903,0.0032004288,0.04989647,48,False,False,2
+test:778,"Hà Nguyễn Khánh Duy Gái Nhật đi tàu đi ngầm nó ngứa mu quá, lấy tay móc gãi tỉnh queo. Nhìn ghê lắm kìa",2,0,0.94566005,0.94566005,0.045083784,0.009256137,27,False,False,0
+test:3282,Arlios Trinh kinh tởm,0,2,0.9443283,0.053280555,0.0023911472,0.9443283,7,False,False,1
+test:3335,"Thưa Đảng và Nhà Nước, nếu bỏ tù chung thân được bọn cố ý giấu bệnh và tránh cách ly thì cứ làm! Dân xin cảm ơn nhiều lắm ạ!",0,2,0.9435775,0.05259319,0.0038292464,0.9435775,30,False,False,2
+test:4511,K thích cho đi tù ở cách li cho đỡ ngột,0,1,0.9432613,0.046743225,0.9432613,0.009995363,13,False,False,2
+test:6423,Đg leen thjeen đường đó,0,1,0.94324076,0.04066849,0.94324076,0.016090728,11,False,False,0
+test:3534,Nhạc bắt tay vai lon,0,1,0.9432169,0.01322697,0.9432169,0.043556046,6,False,False,1
+test:5936,Lại Hợp Sâm clm đến v thì /ff,2,0,0.9425435,0.9425435,0.027565714,0.029890746,12,False,False,1
+test:4322,Huỳnh Tuấn phản động đó bạn,2,0,0.94216335,0.94216335,0.0050501237,0.052786563,7,False,False,2
+test:714,Mới vào nghe bã chửi banh nhà lồng chợ luôn vãi thật,0,1,0.9420085,0.054870676,0.9420085,0.003120841,14,False,False,2
+test:5826,Cái a nào hi sinh xe máy cũng đáng. Giờ thì quy định mới mỗi xe phải có 4 bình cứu hoả loại to. Vl mấy bố đầu tôm,2,0,0.9419381,0.9419381,0.039516717,0.018545123,30,False,False,0
+test:684,Style khoe cu của mấy anh biến thái à 🙃,2,1,0.94165593,0.05046427,0.94165593,0.007879783,11,False,False,0
+test:3713,"Chưa thử loz xách tay bao h,có thì ới 😂",1,0,0.94119453,0.94119453,0.056485016,0.0023205075,15,False,False,1
+test:453,K đáng bao nhiêu mà nhục cho sinh viên Việt Nam bị nó khinh!,0,2,0.9384173,0.04923585,0.012346884,0.9384173,14,False,False,2
+test:4369,dkm chung no ko tiem cho cac chau sau nay lay ai giu nuoc,2,1,0.9380659,0.0051512374,0.9380659,0.05678284,21,False,False,2
+test:5045,chỉ để kiếm chút tiền bằng cách vá xe thay lốp ...người ta sẵn sàng giết người !,0,1,0.9379364,0.059821162,0.9379364,0.0022423866,20,False,False,0
+test:296,Cái mỏ i chang cá lóc lun,0,2,0.93694234,0.03675515,0.026302494,0.93694234,9,False,False,0
+test:4610,Dụ khỉ đấy,0,1,0.9368174,0.026041746,0.9368174,0.03714084,5,False,False,0
+test:5831,ung thư giờ đó mà,1,0,0.9364483,0.9364483,0.057786442,0.005765341,6,False,False,0
+test:55,Đập què giò đi a ba,0,2,0.9361034,0.034831624,0.029064955,0.9361034,8,False,False,1
+test:4034,..,0,1,0.93601704,0.062241938,0.93601704,0.0017410103,3,False,False,0
+test:2009,..,0,1,0.93601704,0.062241938,0.93601704,0.0017410103,3,False,False,0
+test:6525,"Trâu bò chứ ko phải người mà. 🤔 Sức chịu đựng của dân thủ đô thật đáng ngưỡng mộ. Hàng ngày họ hít thủy ngân, bụi mịn ô nhiễm, uống nước thải qua đường ống làm bằng vật liệu phế thải trung quốc (ống nước bể mấy chục lần), ăn thực phẩm chứa chất độc hại",1,2,0.93426746,0.008188801,0.057543714,0.93426746,55,False,False,2
+test:917,"Hãy để lạnh trước khi sử dụng, tránh ấng truc tiep mat troi",0,1,0.9337623,0.060989313,0.9337623,0.0052482574,19,False,False,0
+test:2762,Được vãi đái nhờ,0,1,0.93342465,0.065324694,0.93342465,0.0012506257,6,False,False,1
+test:3591,Phụ nữ vn làm gi có ai xấu tai xấu hại vậy xấu hết phần chó,1,2,0.93321997,0.004738755,0.062041223,0.93321997,17,False,False,2
+test:6343,trong khi tao đang đau đầu vì nợ nần thì chúng mày chỉ nghỉ đến việc đit nhau thôi à,2,0,0.93291783,0.93291783,0.06430586,0.0027762847,20,False,False,2
+test:5596,Ý thức đâu hết rồi,0,1,0.9314774,0.062037967,0.9314774,0.006484655,6,False,False,1
+test:4242,tai chua cung cho bon quan chuc an truoc.,2,0,0.92941,0.92941,0.011837647,0.058752418,14,False,False,2
+test:3413,Cố gắng làm cán bộ.giết người ko sao nhé,2,0,0.9288969,0.9288969,0.014627612,0.056475468,12,False,False,0
+test:3198,nó joke mà sao mấy ông nhạt vl vậy,0,1,0.9279611,0.06853834,0.9279611,0.0035004856,13,False,False,1
+test:1869,"Ông Dần là 3/// nhưng là 3/// zui, khác vs 3/// lol kia",2,0,0.9268719,0.9268719,0.025300728,0.04782735,27,False,False,2
+test:1504,Lê Thuần Triệu official v là chưa coi clip TD nói vàng ma so với kim cương này nọ rồi. Fan làm gì là 1 chuyện mắc mớ gì lôi MH dô.,0,2,0.9263067,0.0672483,0.006444988,0.9263067,37,False,False,0
+test:984,dlv đây chỉ là trường hơp ngoại lệ k tính :v,0,1,0.92376965,0.06706419,0.92376965,0.009166271,15,False,False,0
+test:549,chuẩn cmnl anh ơi,0,1,0.923578,0.06820855,0.923578,0.0082133915,8,False,False,0
+test:6007,Bon con chau TQ lam j co van hoa,2,0,0.9234243,0.9234243,0.01400311,0.062572576,11,False,False,2
+test:34,"K nói thì tự kiêu,nói thì lại tự ái chứ í thức thế ai mà chịu nổi😡",1,0,0.92133534,0.92133534,0.070061006,0.008603675,22,False,False,1
+test:2444,hahaha . Mvp nỗi tiếng r,0,1,0.92122036,0.07727967,0.92122036,0.0014998763,12,False,False,0
+test:1346,"Lê Trọng Nghĩa Phục làm gì bạn? Phục xong về hít bụi mịn, ăn đồ trộn hoá chất, hộ chiếu chỉ đi được Châu Phi với Đông Nam Á như bạn hả?",1,0,0.9211317,0.9211317,0.013008199,0.06586015,32,False,False,0
+test:234,"Dân không có giàu nhé, chỉ nó nước mạnh thôi.",2,0,0.9209145,0.9209145,0.008261954,0.07082357,14,False,False,0
+test:3111,Đây đây sdt của cháu là 113 hoặc 114 cho cháu 1 cái xác đàn bà cháu đang thấy và 1 cái nhà mặt bà đang ở . ok,0,2,0.92035574,0.061736584,0.01790768,0.92035574,31,False,False,1
+test:333,Bao giờ chết,1,0,0.91989154,0.91989154,0.077813454,0.0022949723,4,False,False,1
+test:5100,Mỏng như tường nhà :3 tường nhà còn dày hơn,0,1,0.91742736,0.05775204,0.91742736,0.024820538,14,False,False,0
+test:3833,Tại sao những đứa như này lại tồn tại trong khi những người tốt thì lại bị tan nạn & mất mạng vì lũ lụt mà méo do thiên tai gây ra nhể ???,1,2,0.91730857,0.07782517,0.004866286,0.91730857,34,False,False,2
+test:2900,Ba noi oi ng ta lay ba ra lam tro he.cho ba khau nghiep.tuog dau ba hay lam ha.,2,0,0.9163671,0.9163671,0.005396474,0.07823648,31,False,False,0
+test:494,"Đậu Văn Cường nhìn như thằng nghiện, ghê bỏ mẹ ra",0,2,0.91492015,0.0024843307,0.08259551,0.91492015,13,False,False,2
+test:177,Chuoi boi làm gì chi mang toi khau nghiep chư có iit loi gì,0,1,0.91458964,0.06273076,0.91458964,0.022679629,22,False,False,1
+test:765,Bạn bè bên dai loan và bên nước Việt Nam mình kg tha thứ cho no cho nó một bài học cho nó biết thế nào la suc Phạm dân tộc Việt Nam kg cho nó bài hoc nó kg sợ dau an nói tuc tĩu mất dạy quá,2,0,0.91458607,0.91458607,0.01410266,0.071311295,48,False,False,2
+test:6441,Võ Công Hoàng cái lon má,1,2,0.91448087,0.005916992,0.07960215,0.91448087,7,False,False,1
+test:4493,Võ Công Hoàng cái lon má,1,2,0.91448087,0.005916992,0.07960215,0.91448087,7,False,False,1
+test:3027,bị tâm thần vẫn có thể có học vị TS nhé. Cám ơn TS Vũ Tiến Lộc đã mang lại niềm tin cho cộng đồng bệnh nhân tâm thần.,2,0,0.91441315,0.91441315,0.048236117,0.037350647,25,False,False,2
+test:1209,Người ta đi vào chỗ nổi tiếng chứ ai giam đi vào mấy chống này,0,2,0.914176,0.04424153,0.0415825,0.914176,16,False,False,0
+test:501,Bê đê hả,0,1,0.9139571,0.083888076,0.9139571,0.002154856,5,False,False,1
+test:2443,"Ngu thì chết, phải vì chính nghĩa thì đã ko bị hậu quả... Cứ chính trực thì ai làm đc gì mình...",0,1,0.9135878,0.0832266,0.9135878,0.0031856007,24,False,False,1
+test:2545,Chán không thèm nói!,1,0,0.9135692,0.9135692,0.08485942,0.0015713851,7,False,False,1
+test:3267,Nguyễn Nhật chuẩn cmnr . nhạc ko nhai nổi. đên bon fan cũng đéo thể yêu thương nổi luôn,2,1,0.91331786,0.08275346,0.91331786,0.003928633,23,False,False,1
+test:5436,đi học mà xâm hình Thầy lol,2,1,0.9126112,0.0344741,0.9126112,0.05291463,10,False,False,0
+test:5435,Nhờ mọi người kiếm con này rạch mồm nó ra,2,1,0.91227573,0.022036852,0.91227573,0.06568744,12,False,False,2
+test:3133,Cái thứ hạ đẳng :)),2,1,0.91056514,0.0025743244,0.91056514,0.08686047,9,False,False,1
+test:3980,Thằng này nó nghĩ nó là ai. Không cách ly thì cút qua nước khác mà sống.,2,0,0.9104774,0.9104774,0.014483165,0.07503945,20,False,False,2
+test:285,hiếp tao,1,0,0.91030854,0.91030854,0.081227385,0.008464004,4,False,False,1
+test:1448,Óc ti thờ ry óc ty thờ ry,0,1,0.9096016,0.00979615,0.9096016,0.08060222,11,False,False,0
+test:4583,Tôi hết sức quan ngại về chn này..dm..tôi ngày cứ quan ngại,1,0,0.90830547,0.90830547,0.08560143,0.0060930746,17,False,False,1
+test:4274,Trước khi chết vì ô nhiễm cũng phải quyết tử giữ nhà(Hà nội),0,1,0.90804696,0.089073285,0.90804696,0.002879705,16,False,False,0
+test:4051,đkm đứa nào bảo idol trần dần t mắc covid đấy :v,2,0,0.90745467,0.90745467,0.08919335,0.0033519769,18,False,False,0
+test:1185,Xứ tư bản của ba que,0,2,0.90651864,0.08938549,0.004095821,0.90651864,7,False,False,2
+test:4663,"Cuốn dell nhặt đc mồm, toàn danh hài đất Việt :))",1,0,0.9058452,0.9058452,0.041260798,0.052893974,16,False,False,0
+test:4047,Mấy bài trước hợp tác với kicm còn hay chứ vô nghe bài mới như hạch vậy,2,0,0.9055253,0.9055253,0.08890213,0.0055725607,19,False,False,0
+test:5403,Đợi muốn đập đt đây anh,0,1,0.90536356,0.09159225,0.90536356,0.0030442076,9,False,False,0
+test:360,90tr dân Việt Nam đang vả nhung nè,2,0,0.9037384,0.9037384,0.009215718,0.08704596,10,False,False,0
+test:641,"Nhà nước CSVN cứ ứng trước tiền trả cho Slovakia, rồi đưa vào án phí, bắt Trịnh Xuân Thanh trả lại, hoặc trừ vào tài sản của TXT. Nếu không, Slovakia tính lãi trả chậm cũng chết.",0,2,0.9028646,0.07502044,0.022115,0.9028646,40,False,False,0
+test:965,Ông nói clg nghe cũng thấy hay :)) đợi concard :)),1,0,0.902135,0.902135,0.09321126,0.0046537323,19,False,False,1
+test:176,Một u nhọt quá lớn thì cần phải cắt bỏ nó đi chứ ko nên điều trị bằng thuốc tiếp tiền mất tật vẫn mang!!,0,1,0.90043896,0.09314958,0.90043896,0.0064114677,28,False,False,2
+test:4778,"Bùi Thịnh qua bên trang comcom mà xem ! mà giờ bọn chúng xóa cả rồi ,làm tuyên giáo thì phải biết nói xuôi lẫn nói ngược bạn à !",0,2,0.90041864,0.09385438,0.005726933,0.90041864,33,False,False,2
+test:3756,"Cho chừa cái tội tài lanh, DMCS",2,0,0.8986022,0.8986022,0.08644303,0.014954773,11,False,False,2
+test:1423,Emma Nguyen vậy mà ca ngợi bên kia lắm... Về làm lol gì,1,2,0.8983746,0.005263515,0.0963619,0.8983746,15,False,False,1
+test:2712,Chơi ngu thì chịu v 😂,0,1,0.8981977,0.099786706,0.8981977,0.0020156035,8,False,False,1
+test:2857,"Thuế thu từ các cty cũng có nguồn gốc từ lao động của tấc cả các thành viên của cty, từ chủ tới công nhân. Đéo có nhân viên, công nhân cty có hoạt động được ko. Thuế vat là thuế do người tiêu dùng cuối cùng trả. Doanh nghiệp chỉ thu hộ cho nhà nước. Nghĩa là người dân phải ghánh chịu tấc cả các loại thuế, phí.",0,1,0.89786756,0.09103758,0.89786756,0.011094831,68,False,False,2
+test:6450,Ông Dần là người Việt gốc Hoa nhưng ông ấy có tâm với nước Việt hơn lũ công giáo Việt Nam rất nhiều. Tuy rằng tư tưởng có chút lệch lạc.,0,2,0.8949014,0.101878785,0.003219851,0.8949014,30,False,False,2
+test:6013,Khổ thân a. Nhìn mặt a e thấy ngột ngạt r á,2,0,0.8932187,0.8932187,0.10241318,0.0043681045,14,False,False,0
+test:2846,"Cụ đã nói rõ,.VNCH đã chết do ý trời.giờ phải quay lại ủng hộ Đảng cộng sản Việt Nam ủng hộ dân tộc Việt nam đoàn kết,thương yêu nhau,xây dựng đất nước.",0,2,0.89181936,0.10380522,0.0043753837,0.89181936,35,False,False,2
+test:5295,Phạm Văn Lộc phát biểu hay nhưng mà là “yên nghỉ” nha dm😞,1,0,0.89107245,0.89107245,0.08659954,0.022327937,15,False,False,0
+test:2176,Thanglon nào cũng từng như thế cacban ạ 😌😌😌,1,2,0.89070576,0.07728172,0.032012567,0.89070576,15,False,False,0
+test:3958,Bà này Người ở Bề Trên hả gì á... toàn nói chuyện kiểu người khuất mặt khuất mài ko... chắc ở bên trại Tâm Thần xuất trại...,2,0,0.8904316,0.8904316,0.010568868,0.09899946,31,False,False,2
+test:4223,O ko thây so đsng chông dich ma con tam trang đang .,0,2,0.8897828,0.09443471,0.015782496,0.8897828,18,False,False,0
+test:563,Chi oi chi chua gap bac ky dau .chi ma gap roi chi khong con kip keu mot tieng troi dau chi ak.it nhat chi cung nghi den nguoi nha chi chu.chi o dai loan ma chi dang noi tieng viet ma .chi tu chui minh thoi.nguoi ta khong xem chi ra ji nen nguoi ta goi noi vay thay loi xi nhuc do.,2,0,0.8889027,0.8889027,0.028586263,0.082510926,94,False,False,0
+test:4603,Nghe cai giong thick wa nhung tra biet cau chuyen ai dung ai sai nhung nghe giong rat thick ai nem da em xin chiu va xl hjjj,0,1,0.88752663,0.09118042,0.88752663,0.021293001,40,False,False,0
+test:6031,Nhiệt điện. Thì tro lò thải ra. Luyện thép thì sĩ lò thải ra. Khi các ông ký với nhau là đổ đi đâu hay mang về đất nước họ xử lý. Hay là đổ trên đất nước Việt Nam! Giờ biết kêu ai.,0,1,0.88610405,0.09135716,0.88610405,0.022538742,46,False,False,2
+test:4341,Xh gìơ lợi dụng nhau mà sống đi. :),0,1,0.88367486,0.112886116,0.88367486,0.0034390336,15,False,False,0
+test:1194,Khóc😂,0,1,0.8833543,0.115177885,0.8833543,0.0014677997,5,False,False,0
+test:4821,"bộ hàng hải :)) admin ngu đéo chịu đc :)))))))))))) ôi ""bộ hàng hải"" =)))))",2,1,0.8823961,0.03326102,0.8823961,0.08434292,37,False,False,1
+test:3026,Ăn của dân ko từ cái gì và bây giờ là ăn của dân không còn cái gì thì làm gì còn ai tin yêu nữa! Mọi sự so sánh đều là khập khiễng nhé!,0,1,0.880627,0.114910156,0.880627,0.0044628256,35,False,False,2
+test:3289,"cứ như là ân huệ ấy! hèn mọn, sao không kiện nó ra tòa án quốc tế! sông mekong là của chung, có phải riêng TQ đâu!",0,2,0.8803578,0.10242895,0.017213233,0.8803578,33,False,False,2
+test:4990,Đừng bao h so sánh abe với sela bởi vì abe tuổi lol mà so đc,2,1,0.8798253,0.009476064,0.8798253,0.11069862,18,False,False,0
+test:3903,Đừng bao h so sánh abe với sela bởi vì abe tuổi lol mà so đc,2,1,0.8798253,0.009476064,0.8798253,0.11069862,18,False,False,0
+test:3428,Óc chó hi hi,1,2,0.877667,0.02270241,0.09963055,0.877667,7,False,False,2
+test:1416,Cho em liếm lỗ nhị Thầy,2,0,0.87756807,0.87756807,0.013809987,0.10862197,8,False,False,1
+test:3785,Đm nhắn tin ủng hộ thì chịuuuuu =)))),0,1,0.8774611,0.11709331,0.8774611,0.005445573,18,False,False,0
+test:1886,Dương =)) Làm gì kệ mẹ bạn,2,1,0.87732935,0.118858255,0.87732935,0.003812415,11,False,False,1
+test:604,Đã nói bao lần rồi các anh các chị có tiền đi du lịch vẫn đ** hiểu à😒,2,0,0.875648,0.875648,0.12096993,0.0033820688,22,False,False,0
+test:2948,Tao gõ chớt mẹ mày chứ ở đó mà múa . Abe said :)),2,0,0.87489486,0.87489486,0.08097993,0.04412523,20,True,False,0
+test:2492,Tien Loc Truong l** ấy bạn,2,0,0.8745102,0.8745102,0.09693648,0.028553264,13,False,False,2
+test:2815,Trung đẹp đấy mà đéo ngầu bằng tao đâu 🤪,0,1,0.87334836,0.10615075,0.87334836,0.020500887,13,False,False,1
+test:2617,Biết là Nhật cũng có người này người kia nhưng chú bao nhiêu tuổi rồi mà hành động ấu trĩ như thế 😖😖😖,2,0,0.87295294,0.87295294,0.012278055,0.114769004,24,False,False,0
+test:5381,Má 🙂 Kiều Oanh Nguyễn Thị,1,0,0.87244874,0.87244874,0.12037257,0.007178641,6,False,False,0
+test:6530,Ma nây giau nhieu ma che nguoi ngheo khâu nghiep qua chi oi,0,1,0.86952114,0.064174384,0.86952114,0.06630448,21,False,False,1
+test:504,Biết Gì Đâu con tinh trùng khuyết tật,2,1,0.86837584,0.12262072,0.86837584,0.009003384,10,False,False,2
+test:5680,Cô La nhất nhất nhất nhất cô ơi...! Khoái câu clip trc “ xả tóc xụ xụ như ma đụ đống rơm” z🤣🤣🤣🤣🤣🤣,0,1,0.86823815,0.09240139,0.86823815,0.039360516,36,False,False,0
+test:3809,Con ông cháu cha,0,2,0.8680503,0.116844304,0.01510536,0.8680503,6,False,False,0
+test:5603,"cũng thế thôi. quân đội có súng ống mới đàn áp đc dân chứ, ko thì đảo chính từ lâu rồi",2,0,0.86569244,0.86569244,0.08740461,0.046902917,21,False,False,0
+test:4352,MỘT NỤ CƯỜI =10 than thuốc bổ.,0,1,0.86564773,0.04117956,0.86564773,0.09317262,14,False,False,0
+test:1913,"Ô nhiễm là do ko rửa đường nhé, có khi nào ô nhiễm môi trường do dân thủ đô đi ngủ không rửa chân không các bác nhỉ",2,0,0.8647718,0.8647718,0.13021176,0.005016474,26,False,False,0
+test:6304,Phò cũng có phò yêu nước chứ 😂,0,2,0.8645112,0.11122974,0.024259102,0.8645112,11,False,False,2
+test:3370,Chắc đây làng có nhiều phẫn nộ nhất trog cái nhóm cmt này,0,2,0.8640829,0.11792602,0.01799118,0.8640829,16,False,False,0
+test:2355,"Cô ba chở vàng qua mỹ :)) nghe hư cấu vl,mày vào xem ký sự 30/4 đi nhé",1,0,0.8633482,0.8633482,0.13280272,0.003849045,23,False,False,0
+test:60,Một phút bóc đồng bằng cả đời bóc cức 😂,1,0,0.86305946,0.86305946,0.13496779,0.0019728562,12,False,False,0
+test:64,Éo thích thì biến đi thọc con mắt chóng cái tai lên xem làm ghì,1,0,0.8624409,0.8624409,0.1103384,0.027220719,19,False,False,1
+test:974,Cj chửi nhìn đã z,0,1,0.86054814,0.13593377,0.86054814,0.003518011,8,False,False,0
+test:3045,Thà éo bh e nói dối😑😑,0,1,0.8595568,0.13800497,0.8595568,0.002438176,13,False,False,0
+test:2121,"Tăng thu, giảm chi, tích cực tham nhũng. Dân biết khổ sở nhiều sẽ bớt ngu đi thì 1,2 năm nữa sẽ có biến.",0,2,0.8594711,0.013462343,0.1270666,0.8594711,27,False,False,2
+test:1273,Súc vật,1,0,0.85843843,0.85843843,0.13839677,0.0031648127,4,False,False,1
+test:963,Huyền Vy dẹp mẹ đi,2,0,0.8576581,0.8576581,0.13476272,0.007579163,7,False,False,1
+test:647,có cái DB bố mày tin ấy,1,0,0.85765004,0.85765004,0.11711988,0.025230167,9,False,False,2
+test:6349,Tụi m hong học thầy bắn sml 🤣🤣,0,2,0.8573345,0.06530323,0.07736229,0.8573345,12,False,False,2
+test:3012,Anh trung bú đá,2,0,0.85640466,0.85640466,0.009975971,0.13361932,6,False,False,0
+test:3715,"Nhìn tác phong, biết tư cách...",0,1,0.8535851,0.14330941,0.8535851,0.0031054332,8,False,False,1
+test:6516,Giống vl,0,1,0.85330576,0.14436181,0.85330576,0.0023324988,5,False,False,1
+test:5993,"Cá chết vẫn chưa rõ nguyên nhân, biển thì vẫn đầy chất độc, chính quyền vẫn hô hào những chuyện tào lao và im lặng những chuyện cấp bách. Cứ thế này bà con ta sẽ sống như thế nào đây?",2,0,0.8511031,0.8511031,0.06979604,0.07910075,37,False,False,2
+test:2845,Nhìn cái mặt nó kìa. Cặn bã 🖕🖕,2,0,0.8503511,0.8503511,0.13457716,0.015071791,12,False,False,2
+test:556,Gai tre,0,1,0.85033375,0.14555502,0.85033375,0.0041111396,4,False,False,0
+test:5145,Có làm giống bố cũng k được học mấy cái thói giống bố nha,0,1,0.8492972,0.13835886,0.8492972,0.012343926,16,False,False,0
+test:2780,"Đơn giản vì chết ít, nhiều bệnh khác còn chết nhiều hơn.",0,1,0.8481329,0.14870858,0.8481329,0.0031585805,15,False,False,0
+test:3559,Phương Thảo nom có như thằng trẻ trâu ở quê không,2,1,0.8452751,0.12829669,0.8452751,0.026428252,12,False,False,2
+test:1086,"Dkm phat ,noi nhu c",2,1,0.83886623,0.104446486,0.83886623,0.05668723,9,False,False,0
+test:2060,Nguyễn Trọng Thái ong giám bảo anh tôi sai à ? Sai cc đéo sai 😆,2,1,0.8348616,0.08377171,0.8348616,0.08136669,18,False,False,1
+test:4065,Uiss cùi vl :)) lương mấy chục ngìn đồng còn đc ăn pizza loại kẹo dẻo đây :)),1,0,0.8320974,0.8320974,0.16247566,0.005426898,27,False,False,0
+test:510,Ma mày đau ma mày đau bóp cu ba may sung con cười muốn chết luôn co kim oi,2,0,0.83149576,0.83149576,0.15529628,0.013207992,21,False,False,2
+test:420,Và thằng ko có 500 triệu đang viết stt bôi xấu thằng có 500 triệu,0,2,0.82962954,0.16094168,0.009428786,0.82962954,18,False,False,2
+test:2706,Như vậy bổ đầu nguời thì mình chịu bao tiền nợ nhể để còn biết sau này chết thì ghi giấy nợ bảo con cháu trả hộ :v,0,1,0.82875323,0.16659613,0.82875323,0.004650538,29,False,False,2
+test:2189,Lựa cái đầu buồi ABe nè,2,1,0.8281103,0.029318528,0.8281103,0.14257121,11,False,False,1
+test:3379,"chúng nó quên nhiều thứ, nhưng ăn cướp là việc chúng nó không bao giờ quên",2,0,0.82798237,0.82798237,0.16815872,0.003858901,15,False,False,2
+test:1237,Chỗ này chắc buổi sáng và buổi chiều là cũng tắc đg như hn ấy nhỉ sao k lam cái cầu tạm cho dân đi nhỉ... quan tiền thì nhiều dân nghèo vẫn hoàn nghèo,0,1,0.82700235,0.13722327,0.82700235,0.03577445,38,False,False,2
+test:259,200.000 hộp thuốc giết người.,1,0,0.82479745,0.82479745,0.14795649,0.02724611,8,False,False,0
+test:5509,thằng cha nào đó sáng lên ti vi phỏng vấn danh nhân thời đại chiều là thấy nó vào khám rồi chuyện vn,2,0,0.82176304,0.82176304,0.16706403,0.011172891,22,False,False,0
+test:828,Nổ quá,0,1,0.8215671,0.17515995,0.8215671,0.0032728896,4,False,False,1
+test:5880,"Sao tụi bây toàn chửi nhau mà ko thấy làm gì hết,cao lông nó chưa hay nói cho vui",1,2,0.8206789,0.16634552,0.012975537,0.8206789,23,False,False,2
+test:1101,Bê đê hả ta???,0,1,0.81980675,0.17730305,0.81980675,0.0028902101,9,False,False,0
+test:859,"Kệ đi thớt , 1 lũ trẻ trâu",2,1,0.81901175,0.0053351955,0.81901175,0.17565304,10,False,False,2
+test:1757,"hi sinh thầm lặng cho mấy thằng sếp của nó đứng đằng xa, nó cũng có phần chia chát trong đó rồi còn gì bạn ! Tôi muốn cứ 3km lại có 1 trạm bắn tốc độ công khai, hoặc gắn camera. Như thế dân sẽ sợ và tự giác chấp hành hơn. Còn cái thể loại núp lùm ăn tiền thế này ai khen nổi mà đăng bài chia sẻ với cả động viên !",1,0,0.81734854,0.81734854,0.02852507,0.15412648,71,False,False,2
+test:4670,Nhịn tham nhũng sẽ có lợi hơn cho các lãnh đạo Việt Nam .,0,2,0.8166588,0.15949309,0.023848156,0.8166588,13,False,False,2
+test:4631,Nguyễn Bảo Chấn clm,2,1,0.8153227,0.006625335,0.8153227,0.17805198,6,False,False,0
+test:1358,Đừng đùa ko khéo đem vào giảm dạy như mac lenin thì khối thằng ốm đòn sách này 500k là ít,0,2,0.81493735,0.045548603,0.13951406,0.81493735,25,False,False,2
+test:1728,Gan vđ,0,1,0.81406564,0.17627497,0.81406564,0.009659397,5,False,False,1
+test:5819,ai kêu đi kím chuyện đá xéo minh hiếu trong khi ngta dell dụng j đến mình,1,0,0.81269634,0.81269634,0.17256922,0.0147344535,22,False,False,1
+test:6162,Giong phúc xo,0,1,0.80934495,0.15101361,0.80934495,0.039641455,6,False,False,0
+test:4646,Tóc đẹp lồn lộn vcl anh :))) đan xen từ ngữ chất vl,1,0,0.8072186,0.8072186,0.1876893,0.0050919573,20,False,False,1
+test:2265,Đi lang thang vu vơ mà cũng gặp nhà chó quyền :)))~ chịu thua,2,1,0.8061267,0.090941586,0.8061267,0.10293167,17,False,False,0
+test:1432,Đức Toàn ổng đưa link của garena thì liên quan mẹ gì mất acc?,0,1,0.8059476,0.11104076,0.8059476,0.08301164,18,False,False,0
+test:5117,"Ở mỹ có xả súng,khủng bố,hiếp dâm,nghèo đói,thuế thừa kế 40%,bị cảnh sát đàn áp lạm quyền",2,1,0.80498403,0.16715522,0.80498403,0.027860789,22,False,False,2
+test:457,Co.hieu.oi.hoang.canh.con.kho.khan.qua.co.oi.giup.con.voi.co.oi.con.noi.thuc.su.la.nha.con.khong.co.gao.an.luon.do.co.oI.con.noi.thiet.la.nha.con.khong.biet.chung.nao.xap.nua.do.co.co.long.hao.tam.co.giup.con.voi.co.oI.co.hieu.oI.sdt.cua.con.ne.co.oI.0369546059.do.co.con.o.ap3xatanhoitrunghuyencaolanhtinhdongthap.do.co.con.noi.thiet.do.co.oI.giup.gium.con.voi.con.kho.wa.co.oI,0,1,0.8018083,0.029094275,0.8018083,0.16909745,193,False,False,0
+test:611,đm ông điêu ít thôiii :))),2,1,0.79847026,0.079805784,0.79847026,0.121723905,13,False,False,0
+test:2527,Sống chậmmmmm,0,2,0.7973331,0.0055967052,0.19707021,0.7973331,7,False,False,0
+test:6418,Mặc bộ đồ công an ở trong gặp biến thì lột ngay,0,1,0.7971732,0.18485506,0.7971732,0.017971788,12,False,False,0
+test:6405,Đủ Thứ Thích Ad đăng bài này cũng là Bồn Kỳ Lắc nè nè nè 🙂,2,0,0.7967334,0.7967334,0.0055443007,0.19772232,21,False,False,2
+test:2133,mịe con chó nàyyyy,2,0,0.7932503,0.7932503,0.009092179,0.1976574,10,False,False,2
+test:6328,"Tôi đọc tin này tôi cũng đau khổ lắm, tôi rất đau đớn và quan ngại khi hết ông tướng làm đánh bạc online giờ đến con ông trưởng CA, tôi đau lắm.",0,2,0.7874798,0.15741584,0.055104338,0.7874798,34,False,False,0
+test:5186,Bánh bèo cái l.ồ.n như cái bánh xèo. Má cười ĩa á.,0,1,0.78249574,0.20959012,0.78249574,0.0079141455,19,False,False,1
+test:1163,Giac phuong bac ma,0,1,0.7812622,0.12682365,0.7812622,0.09191408,9,False,False,0
+test:5988,Thế Vinh linh vật thờ là con quỷ dữ :Đ,0,1,0.78008413,0.113566995,0.78008413,0.10634884,12,False,False,2
+test:6260,éo thèm nhé =)),1,0,0.77995044,0.77995044,0.21792702,0.0021226143,8,False,False,1
+test:4613,mặt nhìn giống cái âm hộ gái nhật Ge,2,0,0.77705014,0.77705014,0.21247071,0.010479133,11,False,False,1
+test:49,Co ba oi co giau lam vay co giup nhung nguoi kho giong nku tui con di co,0,2,0.77337325,0.2104217,0.016205037,0.77337325,25,False,False,2
+test:2823,Mũn Ciu :)))),0,2,0.77040386,0.025924968,0.20367114,0.77040386,11,False,False,0
+test:1248,"đ m, thầy giáo cũng sống ảo",2,1,0.7677305,0.21685046,0.7677305,0.015418991,9,False,False,0
+test:1162,"DLV sẽ nói gì à?? : ""Phản đôôộoong! - chỉ thế thôi nhé :v",2,0,0.76681954,0.76681954,0.18184036,0.05134008,27,False,False,0
+test:9,"Lý khùng thì có,kk",0,2,0.7644549,0.013808084,0.22173709,0.7644549,8,False,False,1
+test:3005,Truyền thông nó cứ nói thổi phồng giá trị của TPP thôi chứ VN đang tham gia hàng chục cái hiệp định tương tự này mà có cái mẹ gì thay đổi đâu,0,1,0.7630348,0.10482115,0.7630348,0.13214399,28,False,False,2
+test:2893,Có những đứa còn chửi kinh hơn cả page này nữa 😒 vkl xúc phạm tôn giáo còn cãi cố,0,2,0.76177394,0.19485365,0.04337242,0.76177394,22,False,False,2
+test:4898,Bat dau tien trinh ban nuoc cua bon cs.,2,1,0.76174825,0.06514003,0.76174825,0.17311177,16,False,False,2
+test:2204,Máu cộng sản ăn vào người rùi nên vậy.,1,0,0.7605591,0.7605591,0.032344896,0.20709601,12,False,False,2
+test:1225,"bò đỏ đâu ròi, cho tôi thấy cánh tay của các bạn nào :))",2,0,0.75890875,0.75890875,0.02038246,0.22070876,18,False,False,0
+test:5375,"Tôi không chạy cũng không xin, không thoái thác bất cứ nhiệm vụ nào Đảng và nhà nước đã phó thác , thế thì có cái căng củ cọt gì mà tôi phải tuyên thệ .",0,2,0.75683844,0.114369765,0.1287918,0.75683844,34,False,False,0
+test:5559,Mắc ói,1,0,0.75586474,0.75586474,0.2417769,0.0023583747,4,False,False,1
+test:2804,"các bạn hãy nghĩ theo hướng tích cực, cứ nghĩ tiêu cực rồi lại bảo PĐ, tâm các bạn nghĩ xấu thì sẽ nghĩ ng khác xấu :D",0,2,0.7509046,0.23759224,0.011503141,0.7509046,32,False,False,0
+test:6407,Trần Vỹ nếu nó ko đạo nhái thì đâu có tiếng xấu muôn đời,2,0,0.7476484,0.7476484,0.010309629,0.24204187,15,False,False,2
+test:3630,Mẹ kiếp. Công lý của đồng tiền.,1,0,0.74756116,0.74756116,0.06803237,0.18440646,9,False,False,0
+test:2276,"Độ Mixi : 2 viên ốp rồi Bô ơi , yếu vãi lon rồi em ơi",0,1,0.74730384,0.2448522,0.74730384,0.007844018,19,False,False,0
+test:4326,Lúc chửi thì to mòm giờ thì khóc lóc năn nỉ các thứ đứa con nik còn thấy nhục dùm,2,1,0.7462702,0.23826881,0.7462702,0.01546107,21,False,False,2
+test:3515,"NO RECORDING, FILMING, PHOTO TAKING mà nó ghi là TALKING. Cấm nói luôn à.",1,0,0.74572426,0.74572426,0.052258644,0.20201717,33,False,False,0
+test:4500,Vẫn còn nhiều người ý thức kém hơn cả điểm English của toi=))),2,0,0.74459183,0.74459183,0.07185985,0.18354827,19,False,False,1
+test:4521,đíu tin được luôn =)))))))),0,1,0.7434872,0.25368255,0.7434872,0.0028303382,16,False,False,0
+test:3181,"Qua đại hội đãng là nó bỏ ngay cái quy định này, giờ nó muốn mọi người chửi mà quên đi diễn biến thôi",0,1,0.74144816,0.0376339,0.74144816,0.220918,24,False,False,0
+test:5220,Đéo tin.chả nhẽ nó để lộ liễu như thế này á hả,1,2,0.7374405,0.0033446366,0.25921485,0.7374405,15,False,False,1
+test:2122,Trông bần bần da đen thế thôi chớ thật ra bần thật anh ạ..,0,1,0.7371546,0.25587603,0.7371546,0.006969312,16,False,False,0
+test:2927,Làm chết người khác với giết người!,0,1,0.7367833,0.25929672,0.7367833,0.00392,10,False,False,1
+test:2921,"Ở xứ thiên đường an sinh xã hội như ccc nên nghèo đói bệnh tật cũng phải lết đi làm đủ thứ nghề kiếm cơm k thì chết đói, trách ông này nhưng cũng đừng đổ hết trách nhiệm lên ng ta như vậy.",2,0,0.7307299,0.7307299,0.21417026,0.055099893,42,False,False,2
+test:6075,Nguyễn Minh nhật bổn bệnh vl thế này á minh béo :)),2,0,0.7294153,0.7294153,0.2676876,0.0028971252,16,False,False,0
+test:2875,"Xin lỗi các bác nhé , lụt ở chỗ nào chứ ở tp có xây bờ kè cao ngất có lũ vào mắt, chỉ tội cho dân vùng hạ lưu thôi",0,1,0.72844833,0.2650722,0.72844833,0.0064794132,32,False,False,1
+test:4348,Xạo có tiếng :)) haha,0,1,0.72789633,0.267817,0.72789633,0.004286701,11,False,False,0
+test:2806,Tỷ phú tiền le,0,1,0.72608626,0.15830618,0.72608626,0.11560757,5,False,False,0
+test:1130,"nhìn cái mỏ giống cái L quá, cho nên mở miệng ra là L kg hà.",2,1,0.7231388,0.004179941,0.7231388,0.2726814,18,False,False,2
+test:3259,Cho con xin cai cavi vina,0,1,0.72278786,0.11024245,0.72278786,0.16696963,9,False,False,0
+test:5185,Nhân danh fan cứng và theo kinh nghiệm 18năm ăn mì tôm thì đây là mì giả .vì mì thật thì làm đéo gì có tôm . độ mixi tiêu thụ hàng giả t báo Công an,0,1,0.71996623,0.2626667,0.71996623,0.017367102,40,False,False,0
+test:858,troi ui con nay do lai cai,0,2,0.7141158,0.14250618,0.143378,0.7141158,10,False,False,2
+test:2391,"Người ta đã xin lỗi rồi sao cứ vào nick người ta xem rồi đăng lên chửi hoài,nó chửi thề thì kệ nó,nó chửi mấy người chửi nó chứ đau có dám đem người VN ra chửi nữa đau mà nhào vào chửi nó cả vô duyên thế",1,0,0.7137212,0.7137212,0.20899193,0.07728691,52,False,False,2
+test:1256,"K cần giặt đánh, cứ để dân tự chết vì ngu thôi :v",2,1,0.71188647,0.03198298,0.71188647,0.25613058,17,False,False,1
+test:958,Tập Cận Bình qua Mĩ cũng bị dân TQ bên đó treo băng rôn biểu tình chửi như chó =)),2,1,0.71015805,0.089005284,0.71015805,0.20083664,21,False,False,2
+test:5019,"Tiêu Chảy Cấp e đồng ý với ý kiến của bác,cmt của e bên kia cũng có vài thanh niên tay nhanh hơn não,vào một cái là trách móc nhà nc thế này thế kia ngay đc,thử hỏi k có nhà nc một ngày thôi xem chúng nó có còn ngồi yên mà bình tĩnh ấn phím k?với mấy thanh niên kiểu đấy tốt nhất cứ kệ cmc nó đi bác à,rồi xem chúng nó làm đc cái gì mà chúng nó trách nhà nc",0,2,0.70803225,0.2789134,0.013054376,0.70803225,91,False,False,2
+test:4098,Quan chức lương thì cũng như ta thôi. Nhưng ng nào ng nấy khi lên làm quan toàn nhà lầu xe hơi. Lạ.,2,0,0.707288,0.707288,0.2716807,0.0210313,25,False,False,2
+test:1719,Đồ Uyển Đình Ngọc dcm=)) chai sting vô đầu nha,1,0,0.7071589,0.7071589,0.2557855,0.037055522,17,False,False,0
+test:1645,Nguễn Trường vcl intro,1,0,0.69803256,0.69803256,0.29125476,0.010712616,10,False,False,1
+test:1005,"Cứ chờ xem , chưa nói đc gì chứ ngày thu 10.000ty chứ ít méo đâu",0,1,0.6976671,0.29511824,0.6976671,0.007214598,19,False,False,1
+test:3695,Dang la voi luc xuong cho moi biet mat .,0,1,0.6935177,0.016805574,0.6935177,0.28967676,16,False,False,0
+test:4938,Đéo BTW gì về cô nói cô chẵn ??,0,2,0.6926091,0.1305859,0.17680511,0.6926091,14,False,False,0
+test:540,R.I.P Anh thị bò dát vàng,0,2,0.69033396,0.29325405,0.016411949,0.69033396,10,False,False,0
+test:2597,Đất nước ta có bao nhiêu thành phần Nông dân và lao động phổ thông với đồng lương thu nhập rất thấp. Bà bộ trưởng có vạch ra được một lộ trình để cải thiện tình trạng thu nhập quá thấp của người dân chưa ??? Nếu đến năm 2020 mà vẫn è ạch với việc xoá n,0,1,0.6835111,0.23203772,0.6835111,0.08445115,49,False,False,0
+test:802,Nếu giết người chắc là tuyển vào quân đội làm sát thủ à,0,1,0.67987657,0.31606555,0.67987657,0.004057926,13,False,False,0
+test:3511,nhin cai mac hok bt la trông hay mai ma sao lôn va nô wa z troi,1,2,0.67622256,0.3139597,0.009817749,0.67622256,24,False,False,0
+test:1496,Mất thằng K cái nhạc dở quoãi,0,1,0.67296296,0.28638175,0.67296296,0.040655226,10,False,False,2
+test:824,mong cho nó trút moẹ tro vào quần !,1,2,0.6724448,0.18587789,0.14167723,0.6724448,12,False,False,1
+test:502,Dem me minh ra lam tro cuoi noi tuc tieu khg hay dau,0,1,0.6693647,0.28146306,0.6693647,0.04917227,21,False,False,0
+test:3714,Moi tới lỗ mũi mà không hung dữ sao được,1,0,0.66781014,0.66781014,0.049574073,0.28261584,12,False,False,0
+test:6293,R nó đi ngược chiều gây tai nạn cũng chửi,0,2,0.6628989,0.07351939,0.26358166,0.6628989,11,False,False,0
+test:5059,"Dân thì cần gì vk, giang hồ thiếu gì đâu 😂",0,1,0.6625404,0.33084875,0.6625404,0.006610843,13,False,False,0
+test:3469,Đồn ý kiến vs bác thớt.Thằng đó tống tiền đích cmn thực r ấy chứ.Cho vào tù nhanh hộ cái :)),2,1,0.6585371,0.20642278,0.6585371,0.13504016,29,False,False,2
+test:2779,đ nhặt đc mồm với nỗi nhục của bạn này :v,1,2,0.655349,0.011169646,0.3334813,0.655349,14,False,False,0
+test:6151,ôi a dg nhai bcs rùi đấy,1,0,0.65502185,0.65502185,0.33784312,0.007135049,12,False,False,0
+test:480,Thối CC chỉ không ngửi đuợc thôi,1,0,0.6547822,0.6547822,0.07325006,0.27196786,10,False,False,1
+test:3169,Phương Thảo đừng có thằng boom ăn bậy bạ nha m,0,2,0.65398836,0.34044454,0.0055671423,0.65398836,12,False,False,0
+test:4553,Cc 3 m,2,0,0.65312296,0.65312296,0.17510898,0.17176805,6,False,False,0
+test:2778,Thực dân Pháp xâm lược và 2 ông truyền đạo đưa chữ quốc ngữ vào Việt nam khác nhau không nên gộp vào làm mất hết ý nghĩa của việc tôn thờ 2 vị đó ta cần biêt ơn họ,0,2,0.65022427,0.3441316,0.005644076,0.65022427,36,False,False,2
+test:4157,"Khī Pacpo hôm nay đi bảo , ngày mai bán dâm nuôi đảng",2,1,0.6421001,0.21118574,0.6421001,0.1467142,15,False,False,0
+test:235,Ko xin nó thì đái ra mà hết hạn hán nhé,2,1,0.6417176,0.3556823,0.6417176,0.0025999998,12,False,False,1
+test:3400,NÓI SAO CON LINH NÓ KHÔNG CHỬI ĐIỆN THOẠI LẠI CHỬI NGƯỜI TA TỤC TĨU,2,0,0.630241,0.630241,0.098963134,0.27079588,34,False,False,2
+test:5517,Cao dau con 3 vang ngoc truoc. Cao con linh ca loc sau,0,2,0.629231,0.36525306,0.0055159577,0.629231,20,False,False,2
+test:5847,Nguyên nhân do chết đuối đấy. Bình thường cứ ăn đi không sao. 😆,0,1,0.6260934,0.36987004,0.6260934,0.00403658,15,False,False,0
+test:1811,Đỡ buồn thôi chứ ham hố cà khịa gì đâu,0,1,0.62532645,0.37196526,0.62532645,0.0027082677,13,False,False,0
+test:2588,PHÚC TOÀN bạn là người có ăn có học hãy làm chuyện có ít cho xã hội những người có bệnh tâm thần đáng thương lắm bạn,0,2,0.6228079,0.32867405,0.04851802,0.6228079,27,False,False,2
+test:4455,Như con bóng dạ.:)),1,0,0.6195929,0.6195929,0.12923291,0.2511741,10,True,False,2
+test:6374,Khịa 😂,0,1,0.61845434,0.37905172,0.61845434,0.002493908,5,False,False,0
+test:4264,"Độc lập, tự do, hạnh phúc hơn 40 năm rồi mà vẫn phải ngửa tay xin tiền tư bản a. Sao đảng ta tài tình thế ... ;-)",2,0,0.61443293,0.61443293,0.012600193,0.37296686,31,False,False,0
+test:1935,Cái mỏ lồn,1,2,0.61427015,0.0035752202,0.38215464,0.61427015,6,False,False,2
+test:3060,Ở Mỹ sao người vn don bây ác quá,2,0,0.6127119,0.6127119,0.007291429,0.37999666,11,False,False,2
+test:4640,Trường học thì có cái quỹ xây dựng trường trong khi trường xây tiền thuế của nhân dân trẻ em đi học từ lớp 1 đến lớp 12 có cái quỹ này,0,1,0.61031157,0.3613449,0.61031157,0.02834355,30,False,False,2
+test:4781,"Đang nói về vấn đề nước nôi ở sông cửu long, bạn dong tran có đọc hết cm k vậy?",0,1,0.6097893,0.34745955,0.6097893,0.042751137,24,False,False,2
+test:4436,Mẹ làm cx nói k làm cx nói:)) mai đại hội r đấy sủa đi:)),1,2,0.6084749,0.0100032985,0.3815218,0.6084749,24,False,False,0
+test:4707,"mn làm sao thế nhỉ, chửi vậy tội thân con gái nta. Tại xem não có nảy số được để mà hiểu đâu nên thấy hay làm sao được 🙂",0,2,0.605833,0.14181563,0.25235146,0.605833,34,False,False,0
+test:3635,Bảo vệ thì ăn chia rồi. Còn lãnh đạo trường thì đang cố giấu!,2,0,0.5970671,0.5970671,0.005111429,0.39782146,15,False,False,2
+test:5844,Con này nó như con hấp ấy,2,0,0.58369094,0.58369094,0.040274173,0.3760348,9,False,False,2
+test:3374,"Xam quá đi , gặp mấy con quỷ khùng cười muốn sạc luôn",2,1,0.58155483,0.38480195,0.58155483,0.033643242,16,False,False,2
+test:2553,Ai ăn hết của nhà thằng Dương Dương trả cho nó đi bây. Thấy nó sủa thấy thương ghê á.,2,0,0.5802262,0.5802262,0.007557641,0.4122162,23,False,False,2
+test:4724,Đi nạo hết cái độn ngày xưa xong lại đi độn lại nên mặt nó ngày càng bị cứng lại,0,1,0.5789793,0.41159847,0.5789793,0.00942223,20,False,False,2
+test:4709,Lee Sin lol mẹ giáo án kiểm soát của thầy Tú,0,2,0.5787779,0.04057841,0.38064364,0.5787779,12,False,False,2
+test:6141,Có mấy đứa sợ thì thôi đừng có đú trang chủ liên minh nó đưa ra mà sợ còn mấy cái link ngu thì lại vào,0,2,0.57863,0.13606669,0.28530326,0.57863,27,False,False,2
+test:181,Nữ sinh chạm tay vào má c.a thì đi tù. Rất VN...,0,1,0.5784703,0.41256174,0.5784703,0.0089680115,16,False,False,0
+test:6192,Huỳnh My đỉ mẹ. T vs m đi trước thời đại mất tiêu r bé 🤣,0,1,0.57622343,0.15479387,0.57622343,0.26898262,19,False,False,0
+test:1211,Úi zồi sắp đến đoạn phệt thì lại bị bắt,0,1,0.57465833,0.40939143,0.57465833,0.015950298,15,False,False,0
+test:4163,Đọc comment mà cười ỉ*,0,1,0.57424295,0.422244,0.57424295,0.0035130694,8,False,False,0
+test:5390,Cưng vl,0,1,0.57243747,0.38892275,0.57243747,0.038639788,5,False,False,0
+test:1160,Anh ơi :( đau vcl,1,0,0.56577826,0.56577826,0.4303499,0.003871846,10,False,False,1
+test:1070,Bạn Ba còn gạ bạn Thơ vô to lét nữa :))),0,2,0.5622948,0.27647367,0.1612316,0.5622948,16,False,False,0
+test:4203,"Dạo này mấy bố ts giấy phát biểu hơi nhiều, phần lớn cho thấy tư duy kiến thức quá lạc hậu, nhiệt tình cộng với sự ngu dốt thì sẽ thành phá hoại 😤",2,0,0.5613497,0.5613497,0.018450603,0.42019975,31,False,False,2
+test:77,Công an mà muốn xử lý thì 2 ông luật sư này sẽ biến mất ngay lập tức. Chứ chả phải bị đánh giữa đường rồi chụp ảnh máu me post lên mạng rầm rầm đâu,0,2,0.56038374,0.40338358,0.036232732,0.56038374,32,False,False,1
+test:5378,":)) nó chửi cho đúng :)) chứ k phải là nó chửi sai.nó chửi cho khôn ra chứ nó chửi k phải là để cho tụt hậu,cho đi xuống...tuy văn phong Thô- Tục nhưng nó Thật...nên đéo thể cãi được ,thấy xấu hổ thì phải thay đổi",1,2,0.55415094,0.0076743546,0.43817478,0.55415094,61,False,False,1
+test:2348,chắc đang bị ngạt mũi nên mở mồm ra thở đấy mà :v,0,1,0.5468059,0.4496452,0.5468059,0.0035488347,16,False,False,1
+test:4976,"ông khác với các vị tù khác ở chỗ là ông chẳng khổ như họ ở tù, quan chức ở tù cũng sướng.. có trà bưng nước rót, ở phòng riêng, người nhà vô chơi thoải mái..",1,0,0.5466003,0.5466003,0.062444042,0.39095566,41,False,False,2
+test:3242,Sang đài loan nó kiện cho công ty đi tù ý còn ở việt nam thì dmcs nun,2,1,0.5452004,0.037144236,0.5452004,0.41765538,22,False,False,2
+test:5137,"lấy về tế ông nội , tổ tiên đó mà :V",1,0,0.5434949,0.5434949,0.21859856,0.23790649,13,False,False,0
+test:1281,Thanh Trẻ Trâu đm :)))),2,1,0.5415134,0.058393728,0.5415134,0.4000929,12,False,False,1
+test:3512,nhạt như Thái Sơn,0,1,0.5409378,0.42106467,0.5409378,0.037997637,5,False,False,0
+test:4764,lol,0,1,0.53952736,0.3662416,0.53952736,0.09423103,4,False,False,1
+test:6090,Em tự hào vì làm chó cho Mể,1,0,0.53946805,0.53946805,0.047088962,0.41344303,10,False,False,1
+test:6118,Mieng c qui nay chac co doi k,0,1,0.5392847,0.43449795,0.5392847,0.026217317,12,False,False,0
+test:4729,Lần sau bắt gặp chụp thành quả + chủ vũng nước đái = ghép lại. Up nó lên gr cty cho đội quần luôn 😃,2,0,0.53778905,0.53778905,0.45895907,0.0032518571,26,False,False,1
+test:3378,"Với tài năng của thủ tướng cộng với trí tuệ của ông Kiên, minh tin rằng năm sau kinh tế VN sẽ hóa rồng lộn xuống thiên đường XHCN",2,0,0.5340776,0.5340776,0.012145085,0.4537774,27,False,False,2
+test:1499,nguoi ta co tien lam rang gia.cgu.bon minh tien dau.lam.bactram trieu do bo,0,1,0.5339806,0.19942874,0.5339806,0.26659074,30,False,False,2
+test:634,"Chuyển qua insta thì hack bằng lol,bằng niềm tin",1,0,0.53138876,0.53138876,0.45822316,0.010388084,15,False,False,0
+test:2128,Đéo thể cãi được vì anh tôi giống . . . À . Gờ đờ ra gon giống anh tôi vl :))),1,0,0.52944845,0.52944845,0.45310998,0.017441474,30,False,False,0
+test:2570,Lên top chỉ qua được ng ta ủng hộ sau vụ việc thg KICM nhạc dell hay chổ nào,2,0,0.52808815,0.52808815,0.14285414,0.32905772,24,False,False,0
+test:4260,Sao đi so sánh ngừoi dân như chó vậy Admin..coi vậy có đc ko?,0,2,0.5279585,0.022276124,0.44976535,0.5279585,21,False,False,2
+test:6536,ngành CA tìm được người như vậy thật hiếm( vạn người chỉ có một) toàn tham nhũng và bắt lạt dân,0,1,0.5188728,0.08006779,0.5188728,0.4010594,23,False,False,1
+test:2595,"Khuyên ông nên đi xét nghiệm, tiểu đường, huyết áp, tuỵ gan, đục thuỹ tinh thể.",0,1,0.5145698,0.40661678,0.5145698,0.078813456,20,False,False,0
+test:1466,"Anh mày thiếu nợ giang hồ hóc môn, mày cũng thiếu nợ không dám về Việt Nam, bày đặc làm banh",2,0,0.5142129,0.5142129,0.025128558,0.46065852,23,False,False,0
+test:4914,Bọn này luôn gây hiệu ứng đám đông để nôi tiếng . Ngứa dai. Moi người còn đang lo chông dịch lo cơm áo gạo tiền đủ thứ phải lo. Làm loạn để mọi người chú ý. Không khác gì một con vi rút luôn luôn gây mệt mỏi.,2,0,0.5118888,0.5118888,0.007902117,0.4802091,49,False,False,2
+test:2867,Anh Ann dòng nhà m à 😞,0,2,0.51002747,0.48163116,0.008341387,0.51002747,9,False,False,0
+test:3996,Tuấn Mạnh :))) Nhật nổi tiếng biến thái mà,2,1,0.5067818,0.4596428,0.5067818,0.033575356,11,False,False,0
+test:2002,Tính lấy máy ra nói đạo lý mà chưa kịp nói đã toang 😞,0,1,0.50555915,0.48960188,0.50555915,0.0048390008,15,False,False,0
+test:3784,Chỉ còn cach này,0,1,0.5048923,0.19459204,0.5048923,0.3005157,7,False,False,0
+test:1305,Hỏi b ý xem có đi tiếp xúc với chị nhung gì k đó k mà thấy bị lây óc tó thể hiện qua lời phát biểu như v,2,0,0.5046732,0.5046732,0.12902212,0.36630467,29,False,False,0
+test:599,Mình nói người ta bê đê mình xem lai mình đi . Mày la cũng loai bê đê co cây đinh chính giữ la may kkkk,2,0,0.50203234,0.50203234,0.006323917,0.49164382,31,False,False,2
+test:6342,Trend như con cật cũng đi đú,1,0,0.50117177,0.50117177,0.46594417,0.03288402,11,False,False,1
+test:2908,Bọn nhật nó biến thái lắm,2,0,0.4930103,0.4930103,0.47451025,0.032479465,7,False,False,1
+test:6636,"Đưa từ vụ bán độ lịch sử 4 cái tàu choán nước hơn nghìn tấn,ngắm bắn bằng radar,F5 thì đậu chật kín đà nẵng,hải quân hạng 6,không quân hạng 4 thế giới,hùng hổ ra trận bắn lẫn nhau rồi bị mấy cái tầu cởi chuồng từ ww2 hiếp dâm chết :v",0,2,0.4917975,0.029256525,0.478946,0.4917975,60,False,False,1
+test:3095,bu fame a` lieu hon` khong cho len td luon bay gio hi`hi` 🤓,0,1,0.49014843,0.4672547,0.49014843,0.04259693,25,False,False,1
+test:485,"Có ai tự nhiên lên phường , rồi đi tự tử trên ấy không ? Giờ thằng nào con nào , muốn tự tự thì cứ việc lên phường cho nó gọn . Đỡ bị mất tài sản , với lại người nhà cũng dễ tìm nhá . chứ đừng có ra cầu rồi nhảy nghe hôn .",1,2,0.48445827,0.24314444,0.27239725,0.48445827,55,False,False,2
+test:3767,"cái này tau biết này , để nuôi mấy ông bụng bự nè",0,2,0.47929573,0.24189301,0.27881122,0.47929573,15,False,False,0
+test:5674,"Ừm thế đấy,chữ nhân dân hiện diện trên khắp danh xưng cơ quan chính phủ, nhưng dân chỉ như cọng cỏ cọng rác bên đường mà họ nhân danh.",0,2,0.47786534,0.35624328,0.16589133,0.47786534,31,False,False,2
+test:3100,lanh dao cua xhcs phat bieu hay that.dag mat wa nhi!,0,1,0.44930947,0.3635635,0.44930947,0.18712696,21,False,False,0
+test:5654,Lan Hoa ăn nói như bộ phận sinh dục vậy bạn êii,2,0,0.4376773,0.4376773,0.296885,0.26543766,12,False,False,2
+test:4721,Dành Mấy cđl đi soi haha nè :)),0,1,0.4287298,0.16494676,0.4287298,0.40632343,16,False,False,0

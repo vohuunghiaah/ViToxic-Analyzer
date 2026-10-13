@@ -1,61 +1,127 @@
 # ViToxic-Analyzer
 
-Đồ án Machine Learning: phân loại bình luận tiếng Việt thành **CLEAN (0), OFFENSIVE (1), HATE (2)** trên ViHSD.
+Đồ án Machine Learning phân loại bình luận tiếng Việt: **CLEAN / OFFENSIVE / HATE** trên ViHSD, sử dụng baseline TF-IDF và PhoBERT.
 
-**Hiện tại: Stage 1 — Data Engineering & EDA.** Chưa huấn luyện PhoBERT và chưa có kết quả đánh giá model. Mục tiêu là một thí nghiệm có thể tái lập, giải thích được các lựa chọn và kiểm soát rò rỉ dữ liệu.
+## Trạng thái hiện tại
 
-## Chạy trên Windows / PowerShell
+- **Stage 1:** đã audit, preprocessing và tạo train decontaminated (21.292 mẫu).
+- **Stage 2:** đã fine-tune PhoBERT trên Colab Tesla T4; model được chọn có best checkpoint epoch 5.
+- **Tuning:** hoàn thành 8 cấu hình tuần tự, seed 42, thử learning rate, max length, dropout và effective batch size. Đây không phải full grid.
+- **Length 256 rerun:** best checkpoint epoch 5 đã reload trên toàn bộ validation và khớp 2.672/2.672 dự đoán; thay run cũ trong bảng tuning. Last checkpoint rerun còn ở epoch 4, xem báo cáo review.
+- **Stage 3:** đã đánh giá đủ 6.680 mẫu test local bằng model và baseline Colab đã khóa. Bảng đầu dưới đây là **validation**, một seed.
+- **Stage 4:** API local đã triển khai và kiểm chứng HTTP với model thật; đã chuẩn bị Docker, chưa build container hoặc deploy public. Xem [hướng dẫn API](docs/STAGE4_API.md).
 
-```powershell
-python -m venv .venv
-.\.venv\Scripts\python -m pip install -r requirements.txt
-.\.venv\Scripts\python -m src.stage1
-.\.venv\Scripts\python -m pytest -q
+| Model — cùng dữ liệu Colab | Macro-F1 | Weighted-F1 | Accuracy |
+|---|---:|---:|---:|
+| Character TF-IDF + Logistic Regression (C=2) | 0.6173 | 0.8380 | 0.8335 |
+| PhoBERT — best epoch 5, effective batch 16 | **0.6843** | **0.8691** | **0.8679** |
+
+Đọc [báo cáo kiểm tra Stage 2](outputs/stage2/review/summary.md) để xem F1 từng lớp, dấu hiệu overfitting và phạm vi xác minh.
+
+### Kết quả test — Stage 3
+
+| Model | Test Macro-F1 | Weighted-F1 | Accuracy |
+|---|---:|---:|---:|
+| Baseline Colab TF-IDF + Logistic Regression | 0.6325 | 0.8494 | 0.8436 |
+| PhoBERT — model chọn bằng validation | **0.6546** | **0.8665** | **0.8647** |
+
+Đã xuất classification reports, confusion matrices, 904 lỗi PhoBERT, phân tích ngữ cảnh và bootstrap.
+OFFENSIVE F1 **0.4162**, HATE recall **0.5770**; chưa đạt mục tiêu ban đầu.
+95 dòng test overlap validation; lát cắt không overlap có Macro-F1 **0.6536**.
+Đọc [báo cáo Stage 3](outputs/stage3/summary.md), [phân tích lỗi](outputs/stage3/qualitative_analysis.md)
+hoặc mở [notebook 03](notebooks/03_evaluation.ipynb). [Hướng dẫn chạy](docs/STAGE3_EVALUATION.md).
+
+## Cấu trúc thư mục
+
+```text
+ViToxic-Analyzer/
+├── configs/                 # Cấu hình mẫu cho run mới
+├── data/
+│   ├── raw/                 # CSV gốc, không chỉnh sửa
+│   ├── processed/           # Các split sau Stage 1
+│   └── cache/segmented/     # Cache tách từ, có thể tái tạo
+├── docs/                    # Hướng dẫn và giải thích cấu trúc
+├── notebooks/               # 01_eda, 02_training, 03_evaluation
+├── outputs/
+│   ├── stage1/              # Audit, EDA, biểu đồ
+│   ├── stage2/              # Baseline, runs, search và review
+│   ├── stage3/              # Test metrics, predictions, biểu đồ và phân tích lỗi
+│   ├── stage4/              # Bundle inference và kiểm chứng API/benchmark
+│   └── archive/             # Kết quả local/tài nguyên cũ để đối chiếu
+├── requirements/
+│   ├── stage1.txt           # Dependencies EDA
+│   ├── stage2.txt           # Dependencies training
+│   └── locks/               # Phiên bản thực tế Windows/Colab
+├── resources/vncorenlp/     # JAR và model tách từ
+├── scripts/                 # Tạo notebook, kiểm tra, migration
+├── src/                     # Pipeline dữ liệu và huấn luyện
+└── tests/                   # Kiểm thử Stage 1–4
 ```
 
-Đầu vào tại `data/ViHSD_train.csv`, `data/ViHSD_validation.csv`, `data/ViHSD_test.csv`, cột `free_text,label_id`. Không tải dữ liệu tự động. Môi trường Stage 1 đã chạy bằng Python 3.14; khi sang Stage 2 cần kiểm tra tương thích phiên bản PyTorch/Transformers riêng. `requirements-lock.txt` ghi lại môi trường Windows thực tế, còn `requirements.txt` chứa khoảng phiên bản.
+Chức năng từng module, vị trí checkpoint và đường dẫn cũ → mới: [PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md).
 
-Mở `notebooks/01_eda.ipynb` bằng VS Code/Jupyter và chọn `.venv` làm kernel. Notebook có outputs đã chạy; chạy lại từ đầu sẽ tái tạo báo cáo. Không cần GPU cho Stage 1.
+## Chạy trên Google Colab
 
-## Đọc kết quả
+Upload thư mục đã sắp xếp lên Drive, mở `notebooks/02_training.ipynb`, chọn GPU và chạy từng ô. Ô đầu mặc định:
 
-- `reports/stage1/summary.md`: số liệu thực, leakage và giới hạn.
-- `reports/stage1/audit.json`: thống kê chi tiết, class weights, cấu hình, SHA-256 dữ liệu và phiên bản thư viện.
-- `reports/stage1/figures/`: phân bố nhãn, độ dài, word clouds chỉ trên train.
-- `reports/stage1/train_ngrams.csv`: top 20 unigram/bigram/trigram mỗi lớp; đếm theo đơn vị chữ, chưa tách từ tiếng Việt.
-- `data/processed/{train,validation,test}.csv`: dữ liệu đã chuẩn hóa, giữ nguyên số dòng/nhãn/split và cột gốc.
-- `data/processed/train_decontaminated.csv`: train thay thế đã bỏ overlap với holdout, nhóm xung đột nhãn, dòng rỗng và bản sao.
-- `data/processed/train_exclusions.csv`: row ID và lý do loại, ưu tiên empty → overlap → conflict → duplicate.
+```python
+PROJECT = Path('/content/drive/MyDrive/ViToxic-Analyzer')
+```
 
-## Quyết định phương pháp
+Notebook đọc trực tiếp Drive, không cần ZIP. Kết quả nằm trong `outputs/stage2/`. Run đã hoàn tất sẽ được đọc lại thay vì train lại. Muốn chạy cấu hình mới, đổi `RUN_NAME`; search mới dùng `search_v2` để giữ nguyên kế hoạch lịch sử. Xem [STAGE2_COLAB.md](docs/STAGE2_COLAB.md).
 
-1. **Giữ split chính thức.** Không chia stratified lại từ ba tập có sẵn. Validation chọn cấu hình; test chỉ đánh giá cuối. Audit nhãn/overlap holdout là kiểm tra chất lượng, không dùng để quyết định mô hình. EDA nội dung chỉ đọc train.
-2. **Hai giao thức tách biệt.** Bản official giữ mọi dòng để đối chiếu benchmark, nhưng vẫn có nguy cơ trùng lặp. Bản decontaminated dùng khóa từ text đã chuẩn hóa + casefold + khoảng trắng; việc mask URL/mention có thể gộp nội dung khác nhau. Chỉ dùng holdout text để lọc overlap; không dùng holdout labels để chỉnh train. Công bố chính sách và số dòng của mỗi thí nghiệm. Chưa kiểm tra near-duplicates.
-3. **Preprocessing thận trọng.** Mặc định NFC, xử lý khoảng trắng/ký tự vô hình, mask URL/mention, giữ nội dung hashtag. Giữ hoa/thường, emoji, emoticon, dấu câu, số và từ tục để tránh mất tín hiệu. Lowercase và map teen code là tùy chọn để ablation bằng validation; từ điển nhỏ cố định, không học từ test. Không sửa nhãn bằng phỏng đoán.
-4. **Imbalance chỉ từ train đang dùng.** Class weights `N/(3*n_c)`, thứ tự `[CLEAN, OFFENSIVE, HATE]`. Thử weighted loss và sampling như các thí nghiệm riêng; không mặc định kết hợp cả hai. Không oversample validation/test; chưa augmentation để tránh đổi nghĩa/nhãn.
-5. **Macro-F1 là metric chính dự kiến.** Báo cáo thêm F1/recall từng lớp, confusion matrix, Weighted-F1 và accuracy. Chưa cam kết các target trong roadmap khi chưa có baseline. TF-IDF + Logistic Regression nên là baseline trước khi fine-tune PhoBERT.
-6. **PhoBERT cần word segmentation.** `text_clean` chưa phải đầu vào hoàn chỉnh cho PhoBERT. Stage 2 phải nối bộ tách từ tương thích (theo hướng dẫn VinAI), rồi tokenizer; đo tỷ lệ truncation bằng tokenizer trên train/validation trước khi chốt `max_length`. Histogram hiện tại không phải số subword tokens. Giữ thống nhất pipeline train/inference.
+Không cần upload `.git/`, `.venv/`, `.venv-stage2/`, `.pytest_cache/` hoặc `outputs/archive/`. Giữ run đã huấn luyện, processed data, source, config, requirements và notebook. Bản Drive cũ chưa được tự động thay đổi: hãy upload bản cấu trúc mới này.
 
-`src/data_loader.py` cung cấp CSV loader, class weights và wrapper PyTorch tùy chọn. Torch chưa nằm trong dependencies Stage 1; các wrapper Torch chưa được kiểm chứng trong môi trường này. Tokenized Dataset, collator và training thuộc Stage 2.
+## Chạy và kiểm tra cục bộ
 
-## Những gì cần hiểu để bảo vệ đồ án
+Chạy từ root sau khi kích hoạt môi trường tương ứng:
 
-- Vì sao accuracy cao có thể che giấu lỗi ở lớp OFFENSIVE/HATE?
-- Vì sao không xóa mọi emoji, từ tục và dấu câu?
-- Duplicate giữa train/test làm lệch đánh giá thế nào? Exact matching bỏ sót điều gì?
-- Vì sao cần tính lại weights sau khi lọc train?
-- Từ tiếng Việt, đơn vị phân cách bằng khoảng trắng và subword khác nhau thế nào?
+```text
+python -m pip install -r requirements/stage1.txt
+python -m src.stage1
+python -m pytest -q tests/test_stage1.py
+```
 
-## Phạm vi CV
+Với môi trường Stage 2 đã có PyTorch:
 
-Có thể mô tả sau khi tự chạy và giải thích được kết quả: “Built a reproducible data auditing and preprocessing pipeline for Vietnamese hate-speech classification, including split-overlap analysis, configurable Unicode normalization and train-only class balancing.”
+```text
+python -m pip install -r requirements/stage2.txt
+python -m pytest -q
+python scripts/verify_stage2.py
+python scripts/audit_downloaded_stage2.py
+```
 
-Chưa ghi “trained/deployed PhoBERT”, F1 hay khả năng moderation thực tế. Khi hoàn thành các stage sau, bổ sung baseline, kết quả trên test, giao thức chống leakage và phân tích lỗi. Ba nhãn là các lớp phân loại; không mặc định xác suất model là thang điểm mức độ độc hại đã được hiệu chuẩn.
+`verify_stage2.py` kiểm tra run ban đầu trên 12 mẫu. `audit_downloaded_stage2.py` kiểm tra các artifact Colab đã tải về, bảng chọn model và chạy lại toàn bộ 2.672 mẫu validation bằng checkpoint cuối trên CPU. Báo cáo ở `outputs/stage2/review/full_audit.json`. Không huấn luyện hoặc đánh giá test.
+
+Stage 3: `python -m src.evaluate` (đọc lại kết quả nếu đã hoàn tất);
+`python scripts/verify_stage3.py` kiểm tra artifact mà không inference lại.
+Không fit lại baseline hoặc dùng test để đổi cấu hình. Baseline lưu bằng scikit-learn 1.6.1,
+local dùng 1.9.1 có cảnh báo phiên bản; đã tái tạo đúng validation Macro-F1 trước test.
+
+## API local — Stage 4
+
+```text
+python -m pip install -r requirements/stage4.txt
+python scripts/package_stage4.py
+python -m uvicorn src.api:app --host 127.0.0.1 --port 8000 --workers 1 --no-access-log
+```
+
+Mở [Swagger UI](http://127.0.0.1:8000/docs). Hỗ trợ `POST /predict`, `POST /predict/batch`,
+`GET /health`, `GET /ready`, `GET /model`. Model được nạp một lần, dùng đúng preprocessing và
+checkpoint đã đánh giá; confidence chưa calibration. Kiểm chứng: `python scripts/verify_stage4.py`.
+Gói model chưa gồm cơ chế moderation tự động hoặc chất lượng production.
+
+## Nguyên tắc thí nghiệm
+
+- Giữ nguyên raw data và split chính thức. Train decontaminated lọc overlap/conflict/duplicate; công bố giao thức này khi so benchmark.
+- EDA nội dung chỉ trên train. Validation chọn model; test đánh giá cuối.
+- Preprocessing giữ emoji, dấu câu, số và tín hiệu ngôn ngữ; VnCoreNLP tách từ trước PhoBERT tokenizer.
+- Class weights chỉ từ train; không oversample holdout. Macro-F1 chọn checkpoint/early stopping.
+- Mỗi run giữ model, tokenizer, config, manifest, hashes, history và predictions cùng nhau. Config/manifest cũ bất biến, dù chứa đường dẫn Colab trước migration.
+- Source snapshot của run cũ được bảo toàn. Đổi code thì không resume checkpoint bằng source mới; dùng run mới.
 
 ## Nguồn và giới hạn
 
-- [ViHSD — tác giả và nguồn dữ liệu](https://github.com/sonlam1102/vihsd)
-- [Bài báo ViHSD](https://arxiv.org/abs/2103.11528)
-- [PhoBERT — hướng dẫn word segmentation](https://github.com/VinAIResearch/PhoBERT)
+[ViHSD](https://github.com/sonlam1102/vihsd) · [Bài báo ViHSD](https://arxiv.org/abs/2103.11528) · [PhoBERT](https://github.com/VinAIResearch/PhoBERT) · [VnCoreNLP](https://github.com/vncorenlp/VnCoreNLP).
 
-CSV hiện có do người dùng cung cấp; hash phục vụ truy vết, chưa chứng minh trùng bản phát hành gốc. Trước khi chia sẻ lại dữ liệu cần xác minh điều kiện sử dụng từ nguồn. `.gitignore` loại dữ liệu CSV/processed khỏi commit mới, nhưng không untrack file đã có trong Git. Word clouds và n-grams có thể chứa ngôn từ xúc phạm; cần xem trước khi đưa lên portfolio. Nhãn phản ánh bộ dữ liệu và có thể có thiên lệch hoặc thiếu ngữ cảnh.
+CSV do người dùng cung cấp; hashes truy vết đầu vào, không chứng minh nguồn phát hành. Có overlap validation/test được ghi ở Stage 1. Đã có test score một seed, chưa đánh giá moderation thực tế. Gọi đúng **0.6843 là validation Macro-F1**, **0.6546 là test Macro-F1**. Không suy rộng kết quả thành chất lượng production; không tuning tiếp trên test đã xem.

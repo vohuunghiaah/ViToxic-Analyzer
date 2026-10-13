@@ -1,0 +1,6 @@
+**
+!Dockerfile
+!requirements/
+!requirements/stage4.txt
+!src/
+!src/*.py

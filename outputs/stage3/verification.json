@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "rows": 6680,
+  "validation_overlap_rows": 95,
+  "train_overlap_rows": 0,
+  "raw_test_sha256_verified": true,
+  "processed_test_reproduced_from_raw": true,
+  "metrics_recomputed": true,
+  "checkpoint_matches_stage2_full_validation_audit": true,
+  "selected_from_validation": "phobert_lr3e-5_len128_drop01_batch16_seed42",
+  "packages": {
+    "torch": "2.6.0+cpu",
+    "transformers": "4.57.6",
+    "scikit-learn": "1.9.1",
+    "numpy": "2.4.6",
+    "pandas": "2.3.3"
+  },
+  "limitations": [
+    "Checks saved test probabilities and metrics; does not repeat PhoBERT inference.",
+    "Baseline saved on Colab with scikit-learn 1.6.1; local version differs. Validation Macro-F1 reproduced before test."
+  ]
+}

@@ -1,0 +1,5 @@
+INFO:     Started server process [14484]
+INFO:     Waiting for application startup.
+2026-10-13 22:56:04 INFO  WordSegmenter:24 - Loading Word Segmentation model
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:54187 (Press CTRL+C to quit)

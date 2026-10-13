@@ -1,0 +1,18 @@
+{
+  "selection": "013d291ae709ba979c4e32a59dc22e61684373574f7d49621765659b60100a20",
+  "checkpoint": "f8a6a9a785c4f7fefcaba2e228944e6fe29d0ac673eb96864937e9ffb8ea9156",
+  "baseline": "c09d96fec0d912e210dd2db3d3c840b16a1a4aac9e1df0c06960a3674fd29531",
+  "config": "d6308d3c1016dc6cea985c6e60edc0a82d28ec319958484b5e334e33f34ce270",
+  "test": "a590a37b7b7edf7cc816c3881d9c655d87fed186d793b8102b9f8639417a6582",
+  "data_hashes": {
+    "train": "ffde47a70685f908b112751de59d00c4d9f35f063e858f64cf644df50bfa0e88",
+    "validation": "b46f58b9b40941c83ea80d3914548864f96258389c49aa4d00f18f0944fa3cd9"
+  },
+  "selected_run": "phobert_lr3e-5_len128_drop01_batch16_seed42",
+  "evaluation_split": "test",
+  "segmenter": {
+    "VnCoreNLP-1.2.jar": "9e2811cdbc2ddfc71d04be5dc36e185c88dcd1ad4d5d69e4ff2e1369dccf7793",
+    "models/wordsegmenter/vi-vocab": "0a47c5b55bbce163029d37730a67b9479740388695c29c106c112b815613eaa5",
+    "models/wordsegmenter/wordsegmenter.rdr": "9e62f96bd93e37a24f364238e8d8ae986fa5dad6dbc9f4eae622ab3651b7fa06"
+  }
+}

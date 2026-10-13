@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "checked_at": "2026-10-13T15:56:17.784716+00:00",
+  "metadata": {
+    "run": "phobert_lr3e-5_len128_drop01_batch16_seed42",
+    "checkpoint_sha256": "f8a6a9a785c4f7fefcaba2e228944e6fe29d0ac673eb96864937e9ffb8ea9156",
+    "device": "cpu",
+    "max_length": 128,
+    "labels": [
+      "CLEAN",
+      "OFFENSIVE",
+      "HATE"
+    ],
+    "confidence_calibrated": false,
+    "limits": {
+      "max_text_chars": 5000,
+      "max_batch_size": 32,
+      "max_batch_chars": 20000
+    }
+  },
+  "startup_seconds_including_warmup": 23.601346000000376,
+  "validation_rows": 12,
+  "validation_prediction_mismatches": 0,
+  "checks": [
+    "real HTTP",
+    "health/readiness/OpenAPI",
+    "raw preprocessing + segmentation",
+    "Unicode NFC/NFD equivalence",
+    "single/batch equivalence",
+    "long text truncation",
+    "invalid input 422",
+    "oversized body 413"
+  ],
+  "benchmark": [
+    {
+      "batch_size": 1,
+      "requests": 20,
+      "latency_p50_ms": 111.18845000009969,
+      "latency_p95_ms": 145.22063999925197,
+      "texts_per_second": 9.074697144471177
+    },
+    {
+      "batch_size": 8,
+      "requests": 5,
+      "latency_p50_ms": 365.65449999943667,
+      "latency_p95_ms": 435.91897999940556,
+      "texts_per_second": 23.630006090659272
+    }
+  ],
+  "max_observed_rss_mb": 1008.21484375,
+  "benchmark_scope": "Warm local HTTP, repeated short synthetic sentence; no concurrent load. Sum of process-tree RSS sampled after requests, not peak allocation; shared pages may be counted more than once.",
+  "source_sha256": {
+    "src/api.py": "b66217fffd086373a23729b3d2258ecfcb3a6c02a4565c1937fe36dd880df87d",
+    "src/serving.py": "af499f185f4f2b7ddda787fcc61d184c4d52c7fcd25c7b8e3d8bb5808338cd1b",
+    "scripts/verify_stage4.py": "23290ab7792bc0b2333cbedfbfe13c193ce21f56f6d62c9b6b77d46723c3df9f"
+  },
+  "packages": {
+    "fastapi": "0.143.0",
+    "uvicorn": "0.54.0",
+    "pydantic": "2.14.1",
+    "torch": "2.6.0+cpu",
+    "transformers": "4.57.6",
+    "py-vncorenlp": "0.1.4"
+  },
+  "docker_verified": false,
+  "public_deployment": false
+}

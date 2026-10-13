@@ -102,7 +102,7 @@ def make_figures(train, out):
     fig.tight_layout(); fig.savefig(out / "wordclouds.png", dpi=150); plt.close(fig)
 
 
-def run(data_dir=Path("data"), output=Path("reports/stage1"), processed=Path("data/processed")):
+def run(data_dir=Path("data/raw"), output=Path("outputs/stage1"), processed=Path("data/processed")):
     data_dir, output, processed = map(Path, (data_dir, output, processed))
     config = PreprocessingConfig()
     frames = {}
@@ -174,8 +174,8 @@ def run(data_dir=Path("data"), output=Path("reports/stage1"), processed=Path("da
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--data-dir", type=Path, default=Path("data"))
-    parser.add_argument("--output", type=Path, default=Path("reports/stage1"))
+    parser.add_argument("--data-dir", type=Path, default=Path("data/raw"))
+    parser.add_argument("--output", type=Path, default=Path("outputs/stage1"))
     parser.add_argument("--processed", type=Path, default=Path("data/processed"))
     args = parser.parse_args()
     result = run(args.data_dir, args.output, args.processed)
