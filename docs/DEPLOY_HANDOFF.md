@@ -92,9 +92,9 @@ Không train lại, chỉnh threshold hoặc đổi preprocessing trong bước 
 - `scripts/verify_handoff.py`, `scripts/smoke_deploy.py`: kiểm tra gói và API độc lập.
 - `tests/test_stage4.py`: unit tests; cài thêm pytest nếu muốn chạy.
 - `outputs/stage4/verification.json`, `summary.md`, `openapi.json`: bằng chứng local trước bàn giao.
-- `AI_TRACKER.md`, `AGENTS.md`: lịch sử và quy tắc tiếp tục dự án.
 
 Không kèm `.venv`, `.git`, CSV dữ liệu, cache, model tuning khác, baseline hoặc optimizer state.
+Tài liệu riêng `output/pdf/`, `AGENTS.md`, `AI_TRACKER.md` chỉ giữ local, không nằm trong gói deploy.
 Các link tới artifact training trong tài liệu lịch sử có thể không có trong gói deployment này.
 Không có mật khẩu/tài khoản hosting được tạo hoặc gửi kèm. Tài nguyên bên thứ ba giữ nội dung gốc;
 khi phân phối rộng hơn cần kiểm tra điều khoản của nguồn PhoBERT và VnCoreNLP.

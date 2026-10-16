@@ -19,3 +19,6 @@ data/raw/
 *.safetensors
 outputs/stage4/bundle/
 tmp/
+output/pdf/
+AGENTS.md
+AI_TRACKER.md

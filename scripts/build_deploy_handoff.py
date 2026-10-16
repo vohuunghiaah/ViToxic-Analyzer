@@ -27,7 +27,7 @@ def main():
     names = ['Dockerfile', 'compose.yaml', '.dockerignore', 'requirements/stage4.txt',
              'requirements/locks/windows-stage4-cpu.txt', 'docs/STAGE4_API.md', 'docs/DEPLOY_HANDOFF.md',
              'scripts/verify_handoff.py', 'scripts/smoke_deploy.py', 'tests/test_stage4.py',
-             'AGENTS.md', 'AI_TRACKER.md', 'outputs/stage4/verification.json',
+             'outputs/stage4/verification.json',
              'outputs/stage4/summary.md', 'outputs/stage4/openapi.json']
     names += [p.relative_to(ROOT).as_posix() for p in sorted((ROOT / 'src').glob('*.py'))]
     names += [p.relative_to(ROOT).as_posix() for p in sorted(source_bundle.rglob('*')) if p.is_file()]
