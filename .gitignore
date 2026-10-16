@@ -18,3 +18,4 @@ data/raw/
 *.pt
 *.safetensors
 outputs/stage4/bundle/
+tmp/

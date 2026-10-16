@@ -18,6 +18,12 @@ Mở [Swagger UI](http://127.0.0.1:8000/docs), chọn `/predict`, **Try it out**
 Swagger UI cần tải JS/CSS từ CDN; inference và OpenAPI JSON không cần mạng.
 Ctrl+C trong terminal chạy server để dừng. Không dùng `--reload` khi đo hiệu năng.
 
+Nếu Swagger báo **Failed to fetch**, kiểm tra `http://127.0.0.1:8000/ready` trước.
+Tab Swagger còn mở không có nghĩa API vẫn chạy. Sau khi server dừng hoặc khởi động lại máy,
+chạy lại lệnh `uvicorn` ở trên, giữ terminal đó mở, đợi `Application startup complete`, rồi
+tải lại trang `/docs`. Không cần cài dependencies hoặc export bundle lại mỗi lần khởi động.
+Thông báo CORS của Swagger là gợi ý chung; kết nối bị từ chối cũng gây thông báo này.
+
 ```powershell
 $payload = @{text = 'Chúc bạn một ngày vui vẻ!'} | ConvertTo-Json
 Invoke-RestMethod -Uri http://127.0.0.1:8000/predict -Method Post -ContentType 'application/json; charset=utf-8' -Body ([System.Text.Encoding]::UTF8.GetBytes($payload))

@@ -2,6 +2,8 @@
 
 Đồ án Machine Learning phân loại bình luận tiếng Việt: **CLEAN / OFFENSIVE / HATE** trên ViHSD, sử dụng baseline TF-IDF và PhoBERT.
 
+**Vừa làm project vừa học:** đọc [ViToxic-Analyzer.md](ViToxic-Analyzer.md) để học theo 18 phần, từ kiến thức nền và luồng mã nguồn đến huấn luyện, đánh giá, API; có lộ trình, bài thực hành và checklist tự đánh giá.
+
 ## Trạng thái hiện tại
 
 - **Stage 1:** đã audit, preprocessing và tạo train decontaminated (21.292 mẫu).
@@ -99,6 +101,10 @@ Không fit lại baseline hoặc dùng test để đổi cấu hình. Baseline l
 local dùng 1.9.1 có cảnh báo phiên bản; đã tái tạo đúng validation Macro-F1 trước test.
 
 ## API local — Stage 4
+
+Bàn giao cho người deploy: [DEPLOY_HANDOFF.md](docs/DEPLOY_HANDOFF.md).
+Gói ZIP deployment đã gồm model và assets; clone Git riêng không có weights vì các file lớn
+được Git ignore. Người nhận cần ZIP hoặc thư mục `outputs/stage4/bundle/` do người gửi cung cấp.
 
 ```text
 python -m pip install -r requirements/stage4.txt

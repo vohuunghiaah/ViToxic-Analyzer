@@ -1,6 +1,6 @@
 # AI_TRACKER — ViToxic-Analyzer
 
-Cập nhật: **2026-10-13**. Theo dõi công việc, bằng chứng kiểm chứng và phần còn lại của đồ án. Đây không phải bảng tự đánh giá năng lực của người học; không tự đánh dấu checkbox tự đánh giá.
+Cập nhật: **2026-10-16**. Theo dõi công việc, bằng chứng kiểm chứng và phần còn lại của đồ án. Đây không phải bảng tự đánh giá năng lực của người học; không tự đánh dấu checkbox tự đánh giá.
 
 ## Trạng thái tổng thể
 
@@ -28,6 +28,34 @@ Cập nhật: **2026-10-13**. Theo dõi công việc, bằng chứng kiểm ch�
 - Bảo toàn config, manifest và source snapshot của run cũ. Đổi source/hyperparameters thì tạo run mới; không bỏ cơ chế kiểm tra resume.
 
 ## Lịch sử thay đổi
+
+### 2026-10-16 — Chuẩn bị gói bàn giao deploy
+
+- Thêm `docs/DEPLOY_HANDOFF.md`, builder ZIP theo allowlist, verifier SHA-256 dùng standard library và smoke test HTTP không phụ thuộc dữ liệu train/test.
+- Gói gồm source, model đã khóa, VnCoreNLP, tokenizer/config, Docker/Compose, dependencies, unit tests API và bằng chứng Stage 4; loại virtualenv/Git/dữ liệu/checkpoint thừa. README trong gói là hướng dẫn cho người nhận.
+- Giữ rõ phạm vi: đã kiểm chứng API Windows CPU, chưa build Docker/Linux hoặc triển khai public. Người nhận phụ trách máy chủ, build container, HTTPS/truy cập và kiểm thử tải.
+- Đã tạo `dist/ViToxic-Analyzer-deploy-2026-10-16.zip`, 492.272.470 bytes, 47 file. Xác minh trực tiếp ZIP khớp danh sách và đủ 46 SHA-256 trong manifest; API thật chạy từ source/bundle bàn giao độc lập trả batch HTTP 200 (2 câu).
+- SHA-256 ZIP: `067f84295ac3621c91735ae70ecf669bab94b3145a4751a6c6560a4d6c781e14`; checksum nằm cạnh ZIP. Tracker trong ZIP là snapshot lúc đóng gói; xác minh cuối được ghi trong tracker workspace này.
+- Theo yêu cầu người dùng, chuẩn bị commit/push các thay đổi lên `origin/main` (`vohuunghiaah/ViToxic-Analyzer`), gồm tài liệu học tập Markdown/PDF và scripts. Thêm ignore `tmp/` cho ảnh QA tạm; ZIP/model vẫn bàn giao riêng theo ignore hiện có, không ép đưa weights vào Git.
+
+### 2026-10-16 — Khôi phục API khi Swagger báo Failed to fetch
+
+- Kiểm tra cổng 8000 không có listener, HTTP bị từ chối với WinError 10061; API đã dừng trong khi tab Swagger còn mở. Chưa xác định nguyên nhân tiến trình trước đó kết thúc; không có bằng chứng đây là lỗi CORS.
+- Khởi động lại Uvicorn local với checkpoint hiện tại. `/ready`, `/docs` và `/predict/batch` với hai câu tổng hợp đều trả HTTP 200; giữ server chạy để người dùng thử.
+- Bổ sung hướng dẫn xử lý Failed to fetch trong `docs/STAGE4_API.md`, giải thích cần giữ server chạy và cách khởi động lại; không đổi code inference hoặc cấu hình CORS.
+
+### 2026-10-16 — Xuất tài liệu học tập sang PDF
+
+- Tạo `output/pdf/ViToxic-Analyzer.pdf` từ Markdown bằng `scripts/build_learning_pdf.py`, nhúng font tiếng Việt, định dạng bảng và đánh số trang A4.
+- Render PDF bằng Poppler để kiểm tra bố cục; kiểm tra trích xuất tiếng Việt và phần tự đánh giá bằng pypdf. Emoji trong ví dụ code dùng escape Unicode kèm chú thích để tránh thiếu glyph ở font monospace.
+- Không thay đổi pipeline ML hoặc kết quả nghiên cứu; không phát hiện thêm lỗi triển khai trong phạm vi chuyển đổi tài liệu.
+
+### 2026-10-16 — Tài liệu vừa làm project vừa học
+
+- Tạo `ViToxic-Analyzer.md` cùng tên project: 18 phần giải thích pipeline Stage 1–4, kiến thức nền, bản đồ hàm/module, toán TF-IDF/softmax/loss/metrics/bootstrap và quy trình kiểm chứng.
+- Bổ sung lộ trình 11 buổi linh hoạt, 12 bài thực hành có tiêu chí kiểm tra, mẫu ghi chép và checklist tự đánh giá để trống cho người học.
+- Đối chiếu nội dung với source, tests và báo cáo đã lưu; phân biệt config mẫu/model cuối, validation/test, best/last checkpoint, test giả/verifier model thật và Docker chưa xác minh. Không huấn luyện, inference hay chạy lại bộ tests trong lần viết tài liệu.
+- Thêm đường dẫn tài liệu vào README; bảo toàn các thay đổi tracker đã có trước phiên làm việc. Không phát hiện thêm lỗi triển khai được xác nhận khi đọc phục vụ biên soạn.
 
 ### 2026-10-02 — Stage 1
 
@@ -120,6 +148,13 @@ Cập nhật: **2026-10-13**. Theo dõi công việc, bằng chứng kiểm ch�
 - Thêm `requirements/stage4.txt`, lock môi trường Windows, Dockerfile/Compose/.dockerignore, hướng dẫn API và báo cáo. Chưa build/run Docker vì máy không có Docker; chưa deploy public hoặc kiểm chứng CUDA.
 - Đã khởi động server local `127.0.0.1:8000`, kiểm tra `/ready`, `/predict` và `/docs` thành công; lưu OpenAPI schema vào `outputs/stage4/openapi.json`. Server local được giữ chạy để người dùng thử.
 
+### 2026-10-13 — Push toàn bộ lên GitHub
+
+- Cập nhật `.gitignore`: thêm `outputs/stage2/` (chứa JAR 26 MB, tokenizer BPE, cache) và `data/raw/` (CSV 1.5 MB) để giữ repo gọn.
+- Stage all changes (81 files, +14.406 / −34.204 dòng), commit `0e05a9a` và push thành công lên `origin/main`.
+- Nội dung push bao gồm: toàn bộ source stages 2-4, notebooks, tests, scripts, configs, requirements, docs, Dockerfile/Compose, outputs stage 1/3/4, và AI_TRACKER/AGENTS.
+- Không push: `outputs/stage2/` (training runs, VnCoreNLP JAR, tokenizer, cache), `data/raw/` (raw CSV), model weights (*.pt, *.safetensors).
+
 ## Tổng hợp tuning Colab
 
 Tất cả dùng seed 42. Đã kiểm chứng local config, metrics và predictions của đủ tám cấu hình. Bảng hiện dùng rerun length 256: best checkpoint đã đạt kiểm chứng reload đầy đủ; trạng thái resume còn hạn chế CKPT-02. Số hiển thị làm tròn sáu chữ số.
@@ -147,6 +182,8 @@ Tất cả dùng seed 42. Đã kiểm chứng local config, metrics và predicti
 - Kết quả inference minh họa người dùng gửi xác nhận tensor hợp lệ/reload thành công, không phải bài đánh giá chất lượng model.
 
 ## Lỗi còn tồn đọng
+
+- [x] **API-03 — Swagger không kết nối được vì API dừng (2026-10-16):** khởi động lại, xác minh readiness/docs/batch HTTP 200. Chưa có cơ chế tự khởi động API sau khi tắt server hoặc khởi động lại máy.
 
 Các checkbox dưới đây theo dõi lỗi kỹ thuật, không phải self-assessment của người học.
 
@@ -182,6 +219,14 @@ Các checkbox dưới đây theo dõi lỗi kỹ thuật, không phải self-ass
 - Windows JVM từng lỗi với classpath có dấu; smoke test đã chạy thành công bằng đường dẫn ASCII. Chưa có fix tổng quát cho mọi đường dẫn Windows; Colab là môi trường training chính.
 
 ## Đề xuất cải thiện
+
+- **Bàn giao deploy:** dùng ZIP kèm SHA-256 và chạy verifier ngay sau giải nén; lưu image digest/phiên bản Linux và kết quả smoke test khi thành viên hoàn tất triển khai.
+
+- **Khởi động API dễ hơn:** cân nhắc launcher có kiểm tra readiness hoặc service tự khởi động nếu cần demo thường xuyên; hiện chạy thủ công bằng Uvicorn, chưa triển khai tự khởi động.
+
+- Khi cập nhật tài liệu Markdown, chạy lại script xuất PDF và kiểm tra các trang có bảng/code để giữ hai bản đồng bộ.
+
+- **Học qua thực hành:** dùng mẫu ghi chép trong `ViToxic-Analyzer.md` để lưu câu hỏi, dự đoán trước khi chạy và bằng chứng sau mỗi bài; khi source thay đổi, cập nhật phần giải thích tương ứng. Đây là đề xuất học tập, chưa đánh dấu người học đã hoàn thành.
 
 1. **Ưu tiên bàn giao:** kiểm tra last checkpoint của rerun trên Drive và đối chiếu SHA-256 với bản tải về. Nên xuất manifest checksum sau khi training kết thúc để phát hiện lệch phiên bản. Best checkpoint rerun đã xác minh; không cần chạy lại training.
 2. **Stage 3 đã hoàn tất:** bảo toàn lock, predictions và báo cáo; không điều chỉnh hyperparameters dựa trên test. Có thể bổ sung cluster bootstrap theo nhóm duplicate nếu cần đánh giá độ bất định chặt chẽ hơn.
