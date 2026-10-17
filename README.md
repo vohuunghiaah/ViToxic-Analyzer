@@ -104,7 +104,10 @@ local dùng 1.9.1 có cảnh báo phiên bản; đã tái tạo đúng validatio
 
 Bàn giao cho người deploy: [DEPLOY_HANDOFF.md](docs/DEPLOY_HANDOFF.md).
 Gói ZIP deployment đã gồm model và assets; clone Git riêng không có weights vì các file lớn
-được Git ignore. Người nhận cần ZIP hoặc thư mục `outputs/stage4/bundle/` do người gửi cung cấp.
+được Git ignore. Tải ZIP đầy đủ và checksum tại
+[GitHub Release — deployment bundle](https://github.com/vohuunghiaah/ViToxic-Analyzer/releases/tag/deploy-2026-10-17).
+Chọn asset `ViToxic-Analyzer-deploy-2026-10-16.zip` (không chọn “Source code”), giải nén,
+chạy `python scripts/verify_handoff.py`, rồi làm theo README trong gói.
 
 ```text
 python -m pip install -r requirements/stage4.txt
