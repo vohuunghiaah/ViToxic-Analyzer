@@ -22,3 +22,4 @@ tmp/
 output/pdf/
 AGENTS.md
 AI_TRACKER.md
+.playwright-mcp/

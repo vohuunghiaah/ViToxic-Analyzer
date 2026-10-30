@@ -9,7 +9,8 @@ from typing import Annotated, Literal
 
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.exceptions import RequestValidationError
-from fastapi.responses import JSONResponse
+from fastapi.responses import FileResponse, JSONResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, ConfigDict, Field, StringConstraints, model_validator
 
 from .serving import MAX_BATCH_CHARS, MAX_BATCH_SIZE, MAX_TEXT_CHARS, Predictor
@@ -104,6 +105,17 @@ def create_app(predictor_factory=None):
                               'Confidence is uncalibrated softmax; model is a research demo.')
     app.add_middleware(BodyLimit)
     app.state.ready, app.state.busy = False, False
+
+    web = ROOT / 'web'
+    app.mount('/static', StaticFiles(directory=web), name='static')
+
+    @app.get('/', include_in_schema=False)
+    async def index():
+        return FileResponse(web / 'index.html', headers={'Cache-Control': 'no-cache'})
+
+    @app.get('/workspace', include_in_schema=False)
+    async def workspace():
+        return FileResponse(web / 'workspace.html', headers={'Cache-Control': 'no-cache'})
 
     @app.exception_handler(RequestValidationError)
     async def validation_error(request: Request, exc: RequestValidationError):

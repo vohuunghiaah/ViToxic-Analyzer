@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="ViToxic Analyzer — Phân tích bình luận tiếng Việt với PhoBERT.">
+  <title>ViToxic — Phân tích bình luận tiếng Việt</title>
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <script src="/static/theme.js"></script>
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#analyzer">Đến phần phân tích</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="ViToxic trang chủ">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="12"/><path d="m10 13 10 16 10-16M15 13l5 8 5-8"/></svg>
+      <span>ViToxic<span class="brand-sub">Analyzer</span></span>
+    </a>
+    <nav aria-label="Điều hướng chính"><a class="current" href="#analyzer">Phân tích</a><a href="/workspace">Kiểm duyệt</a><a href="#about">Về mô hình</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Bật chế độ tối" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></svg><span id="theme-name">Dark</span></button></nav>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div><p class="intro-note"><span class="tiny-mark" aria-hidden="true"></span>Không gian phân tích tiếng Việt</p><h1 id="page-title">Hiểu sắc thái.<br>Nhìn rõ ngôn từ.</h1><p class="intro-description">Nhận diện nội dung bình thường, xúc phạm và thù ghét<br class="desktop-break"> trong bình luận tiếng Việt cùng ViToxic.</p></div>
+      <div class="intro-aside"><span class="model-tag">PhoBERT</span><p>Ngôn ngữ có ngữ cảnh.<br>Kết quả cần góc nhìn của bạn.</p><a href="#about">Tìm hiểu cách đọc kết quả <span aria-hidden="true">↗</span></a></div>
+    </section>
+    <section id="analyzer" class="workspace" aria-label="Phân tích bình luận">
+      <div class="editor-panel">
+        <div class="panel-heading"><h2>Nội dung cần phân tích</h2><span class="language-tag">Tiếng Việt</span></div>
+        <div class="mode-switch" role="group" aria-label="Chế độ phân tích"><button id="single-mode" type="button" aria-pressed="true">Một bình luận</button><button id="batch-mode" type="button" aria-pressed="false">Nhiều bình luận</button></div>
+        <form id="analyze-form" novalidate>
+          <label class="sr-only" for="comment">Bình luận cần phân tích</label>
+          <textarea id="comment" rows="8" placeholder="Viết hoặc dán bình luận tiếng Việt tại đây…" aria-describedby="input-help input-count input-error" spellcheck="false"></textarea>
+          <div class="input-meta"><span id="input-help">Một góc nhìn mới, bắt đầu từ một câu.</span><span id="input-count">0 / 5.000</span></div>
+          <div class="samples"><span>Thử một ví dụ</span><button type="button" data-example="Cảm ơn bạn đã chia sẻ, bài viết rất hữu ích!">Lời cảm ơn</button><button type="button" data-example="Mình không đồng ý với quan điểm này, bạn có thể giải thích thêm không?">Ý kiến khác</button></div>
+          <p id="input-error" class="error-message" role="alert" hidden></p>
+          <div class="editor-actions"><button id="clear-button" class="text-button" type="button">Xóa nội dung</button><button id="submit-button" class="primary-button" type="submit"><span id="submit-label">Phân tích bình luận</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12m-5-5 5 5-5 5"/></svg></button></div>
+          <p class="shortcut">Ctrl / ⌘ + Enter để phân tích</p>
+        </form>
+      </div>
+      <section class="result-panel" aria-labelledby="result-heading" aria-busy="false">
+        <div class="panel-heading"><h2 id="result-heading">Kết quả phân tích</h2><span id="result-count" class="result-count" hidden></span></div>
+        <div id="result-content" aria-live="polite" aria-atomic="true">
+          <div class="empty-state"><div class="analysis-symbol" aria-hidden="true"><span></span><span></span><span></span><i></i></div><h3>Mỗi câu chữ, một sắc thái.</h3><p>Nhập bình luận và chọn phân tích.<br>Kết quả sẽ xuất hiện tại đây.</p><div class="label-preview"><span>Bình thường</span><span>Xúc phạm</span><span>Thù ghét</span></div></div>
+        </div>
+        <div id="result-actions" class="result-actions" hidden><span id="result-timing"></span><button id="download-button" class="text-button" type="button">Tải kết quả JSON ↓</button></div>
+      </section>
+    </section>
+    <div class="workspace-footer"><span id="service-status" class="service-status" role="status"><i></i><span>Đang kiểm tra kết nối…</span></span><span>Nội dung không được lưu trong trình duyệt.</span></div>
+    <section id="about" class="about-section" aria-labelledby="about-title">
+      <div class="about-intro"><h2 id="about-title">Đọc kết quả<br>đúng ngữ cảnh.</h2><p>Mô hình hỗ trợ nhận diện nội dung. Quyết định cuối cùng luôn cần con người xem xét.</p></div>
+      <div class="label-guide"><article><span class="label-dot clean"></span><div><h3>Bình thường <small>CLEAN</small></h3><p>Không phát hiện dấu hiệu xúc phạm hoặc thù ghét theo mô hình.</p></div></article><article><span class="label-dot offensive"></span><div><h3>Xúc phạm <small>OFFENSIVE</small></h3><p>Ngôn từ có thể mang tính công kích, thô tục hoặc thiếu tôn trọng.</p></div></article><article><span class="label-dot hate"></span><div><h3>Thù ghét <small>HATE</small></h3><p>Nội dung có thể thể hiện sự thù ghét hoặc công kích một nhóm người.</p></div></article></div>
+      <aside class="model-note"><span class="note-icon" aria-hidden="true">i</span><h3>Một gợi ý, không phải kết luận</h3><p>Điểm dự đoán là đầu ra của mô hình, chưa được hiệu chỉnh thành độ tin cậy thực tế.</p><p id="model-limit">Văn bản dài có thể bị rút gọn khi phân tích.</p><a href="/docs">Tài liệu API <span aria-hidden="true">↗</span></a></aside>
+    </section>
+  </main>
+  <footer class="site-footer"><span>ViToxic Analyzer</span><span>Tiếng Việt. Được nhìn nhận cẩn trọng.</span><span>Phiên bản nghiên cứu</span></footer>
+  <noscript><p class="noscript">Hãy bật JavaScript để phân tích bình luận và đổi chế độ sáng/tối.</p></noscript>
+</body>
+</html>

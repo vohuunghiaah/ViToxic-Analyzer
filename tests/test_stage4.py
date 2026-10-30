@@ -43,6 +43,23 @@ def test_routes_and_load_once():
         assert len(calls) == 1
 
 
+def test_web_assets_and_api_are_served_together():
+    with TestClient(create_app(FakePredictor)) as client:
+        page = client.get('/')
+        assert page.status_code == 200
+        assert 'text/html' in page.headers['content-type']
+        assert 'id="analyze-form"' in page.text
+        workspace = client.get('/workspace')
+        assert workspace.status_code == 200
+        assert 'id="review-rows"' in workspace.text
+        for asset in ['app.js', 'theme.js', 'styles.css', 'favicon.svg',
+                      'data.js', 'workspace.js', 'workspace.css']:
+            assert client.get('/static/' + asset).status_code == 200
+        assert client.get('/static/missing.js').status_code == 404
+        assert client.get('/static/%2e%2e/src/api.py').status_code == 404
+        assert client.post('/predict', json={'text': 'Xin chào!'}).status_code == 200
+
+
 @pytest.mark.parametrize('payload', [{}, {'text': ''}, {'text': ' \n'}, {'text': '\u200b\ufeff'},
                                     {'text': 123}, {'text': None}, {'text': 'a' * 5001},
                                     {'text': 'ok', 'extra': True}, {'text': '\ud800'}])

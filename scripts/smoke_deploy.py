@@ -9,6 +9,14 @@ def main():
     parser.add_argument('--url', default='http://127.0.0.1:8000')
     args = parser.parse_args()
     base = args.url.rstrip('/')
+    with urlopen(base + '/', timeout=30) as response:
+        assert 'id="analyze-form"' in response.read().decode('utf-8')
+    with urlopen(base + '/workspace', timeout=30) as response:
+        assert 'id="review-rows"' in response.read().decode('utf-8')
+    for asset in ['app.js', 'theme.js', 'styles.css', 'favicon.svg',
+                  'data.js', 'workspace.js', 'workspace.css']:
+        with urlopen(base + '/static/' + asset, timeout=30) as response:
+            assert response.status == 200
     def call(path, payload=None):
         data = None if payload is None else json.dumps(payload).encode('utf-8')
         request = Request(base + path, data=data, headers={'Content-Type': 'application/json'})

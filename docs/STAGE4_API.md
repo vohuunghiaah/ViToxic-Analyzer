@@ -6,15 +6,16 @@ test Macro-F1 0,6546, OFFENSIVE F1 0,4162, HATE recall 0,5770.
 
 ## Chạy local trên Windows
 
-Tại root dự án, dùng môi trường `.venv-stage2` hiện có (hoặc Python 3.11 với Java 8+):
+Tại root dự án, dùng môi trường `.venv` đã cài trên máy kiểm tra (hoặc tạo venv mới với Python 3.11 và Java 8+):
 
 ```powershell
-.\.venv-stage2\Scripts\python.exe -m pip install -r requirements/stage4.txt
-.\.venv-stage2\Scripts\python.exe scripts/package_stage4.py
-.\.venv-stage2\Scripts\python.exe -m uvicorn src.api:app --host 127.0.0.1 --port 8000 --workers 1 --no-access-log
+.\.venv\Scripts\python.exe -m pip install -r requirements/stage4.txt
+.\.venv\Scripts\python.exe -m uvicorn src.api:app --host 127.0.0.1 --port 8000 --workers 1 --no-access-log
 ```
 
-Mở [Swagger UI](http://127.0.0.1:8000/docs), chọn `/predict`, **Try it out**, nhập JSON rồi **Execute**.
+Bundle bàn giao đã có sẵn, không cần export lại. Mở [web Light/Dark](http://127.0.0.1:8000/) để sử dụng.
+Web dùng assets local, gọi API cùng origin và chỉ lưu lựa chọn giao diện trong localStorage.
+Có thể mở [Swagger UI](http://127.0.0.1:8000/docs), chọn `/predict`, **Try it out**, nhập JSON rồi **Execute**.
 Swagger UI cần tải JS/CSS từ CDN; inference và OpenAPI JSON không cần mạng.
 Ctrl+C trong terminal chạy server để dừng. Không dùng `--reload` khi đo hiệu năng.
 
@@ -39,6 +40,8 @@ Không thay nội dung model trong bundle đang chạy; tạo phiên bản tri�
 
 | Endpoint | Chức năng |
 |---|---|
+| `GET /` | Web tiếng Việt, Light/Dark, một/nhiều bình luận |
+| `GET /static/*` | Assets giao diện local |
 | `GET /health` | Liveness của ứng dụng |
 | `GET /ready` | Model đã nạp/warmup; `busy` cho biết đang xử lý |
 | `GET /model` | Run, checkpoint hash, labels, device, giới hạn và trạng thái calibration |

@@ -1,136 +1,117 @@
-# ViToxic-Analyzer
+# BÀN GIAO TRIỂN KHAI — ViToxic Analyzer
 
-Đồ án Machine Learning phân loại bình luận tiếng Việt: **CLEAN / OFFENSIVE / HATE** trên ViHSD, sử dụng baseline TF-IDF và PhoBERT.
+**Nếu clone từ GitHub:** repository không chứa model weights, VnCoreNLP assets hoặc manifest của gói bàn giao.
+Tải asset ZIP tại [deployment release](https://github.com/vohuunghiaah/ViToxic-Analyzer/releases/tag/deploy-2026-10-17),
+kiểm tra checksum và manifest trong thư mục giải nén, rồi chép riêng `outputs/stage4/bundle/` vào checkout này.
+Giữ mã nguồn trong checkout để chạy web và extension mới; hướng dẫn kiểm tra gói bên dưới dành cho ZIP bàn giao.
 
-**Vừa làm project vừa học:** đọc [ViToxic-Analyzer.md](ViToxic-Analyzer.md) để học theo 18 phần, từ kiến thức nền và luồng mã nguồn đến huấn luyện, đánh giá, API; có lộ trình, bài thực hành và checklist tự đánh giá.
+Gói bàn giao gốc ngày 2026-10-16; bổ sung web ngày 2026-10-24. Người nhận chỉ cần giải nén gói này; không cần thư mục dự án
+của người gửi, Drive, CSV train/test hoặc tải lại PhoBERT. Model và VnCoreNLP assets đã có sẵn.
+Đã có web tiếng Việt tại `/`, hỗ trợ Light/Dark, phân tích một hoặc nhiều bình luận và tải kết quả JSON.
+Web và API chạy chung một ứng dụng; không cần Node.js, CDN hoặc build frontend.
+Trạng thái kiểm tra mới nhất: `docs/DEPLOY_READINESS.md`.
 
-## Trạng thái hiện tại
+## Workspace và extension
 
-- **Stage 1:** đã audit, preprocessing và tạo train decontaminated (21.292 mẫu).
-- **Stage 2:** đã fine-tune PhoBERT trên Colab Tesla T4; model được chọn có best checkpoint epoch 5.
-- **Tuning:** hoàn thành 8 cấu hình tuần tự, seed 42, thử learning rate, max length, dropout và effective batch size. Đây không phải full grid.
-- **Length 256 rerun:** best checkpoint epoch 5 đã reload trên toàn bộ validation và khớp 2.672/2.672 dự đoán; thay run cũ trong bảng tuning. Last checkpoint rerun còn ở epoch 4, xem báo cáo review.
-- **Stage 3:** đã đánh giá đủ 6.680 mẫu test local bằng model và baseline Colab đã khóa. Bảng đầu dưới đây là **validation**, một seed.
-- **Stage 4:** API local đã triển khai và kiểm chứng HTTP với model thật; đã chuẩn bị Docker, chưa build container hoặc deploy public. Xem [hướng dẫn API](docs/STAGE4_API.md).
+Mở `http://127.0.0.1:8001/workspace`: nhập CSV, dashboard, lọc/duyệt bình luận, lịch sử và xuất báo cáo.
+Lịch sử lưu trong trình duyệt (IndexedDB), không đồng bộ giữa máy; có sao lưu/khôi phục JSON.
+Extension Chrome/Edge 0.2 nằm trong `extension/`: tự gắn nhãn bình luận YouTube đang hiển thị khi bạn bật cho website, tách từng comment và bỏ tên tác giả. Nhãn xanh/vàng/đỏ hỗ trợ Light/Dark.
+Hướng dẫn: [docs/WORKSPACE_EXTENSION.md](docs/WORKSPACE_EXTENSION.md).
 
-| Model — cùng dữ liệu Colab | Macro-F1 | Weighted-F1 | Accuracy |
-|---|---:|---:|---:|
-| Character TF-IDF + Logistic Regression (C=2) | 0.6173 | 0.8380 | 0.8335 |
-| PhoBERT — best epoch 5, effective batch 16 | **0.6843** | **0.8691** | **0.8679** |
+## 1. Kiểm tra gói
 
-Đọc [báo cáo kiểm tra Stage 2](outputs/stage2/review/summary.md) để xem F1 từng lớp, dấu hiệu overfitting và phạm vi xác minh.
-
-### Kết quả test — Stage 3
-
-| Model | Test Macro-F1 | Weighted-F1 | Accuracy |
-|---|---:|---:|---:|
-| Baseline Colab TF-IDF + Logistic Regression | 0.6325 | 0.8494 | 0.8436 |
-| PhoBERT — model chọn bằng validation | **0.6546** | **0.8665** | **0.8647** |
-
-Đã xuất classification reports, confusion matrices, 904 lỗi PhoBERT, phân tích ngữ cảnh và bootstrap.
-OFFENSIVE F1 **0.4162**, HATE recall **0.5770**; chưa đạt mục tiêu ban đầu.
-95 dòng test overlap validation; lát cắt không overlap có Macro-F1 **0.6536**.
-Đọc [báo cáo Stage 3](outputs/stage3/summary.md), [phân tích lỗi](outputs/stage3/qualitative_analysis.md)
-hoặc mở [notebook 03](notebooks/03_evaluation.ipynb). [Hướng dẫn chạy](docs/STAGE3_EVALUATION.md).
-
-## Cấu trúc thư mục
+Giải nén ZIP, mở terminal tại thư mục có `compose.yaml`, chạy:
 
 ```text
-ViToxic-Analyzer/
-├── configs/                 # Cấu hình mẫu cho run mới
-├── data/
-│   ├── raw/                 # CSV gốc, không chỉnh sửa
-│   ├── processed/           # Các split sau Stage 1
-│   └── cache/segmented/     # Cache tách từ, có thể tái tạo
-├── docs/                    # Hướng dẫn và giải thích cấu trúc
-├── notebooks/               # 01_eda, 02_training, 03_evaluation
-├── outputs/
-│   ├── stage1/              # Audit, EDA, biểu đồ
-│   ├── stage2/              # Baseline, runs, search và review
-│   ├── stage3/              # Test metrics, predictions, biểu đồ và phân tích lỗi
-│   ├── stage4/              # Bundle inference và kiểm chứng API/benchmark
-│   └── archive/             # Kết quả local/tài nguyên cũ để đối chiếu
-├── requirements/
-│   ├── stage1.txt           # Dependencies EDA
-│   ├── stage2.txt           # Dependencies training
-│   └── locks/               # Phiên bản thực tế Windows/Colab
-├── resources/vncorenlp/     # JAR và model tách từ
-├── scripts/                 # Tạo notebook, kiểm tra, migration
-├── src/                     # Pipeline dữ liệu và huấn luyện
-└── tests/                   # Kiểm thử Stage 1–4
+python scripts/verify_handoff.py
 ```
 
-Chức năng từng module, vị trí checkpoint và đường dẫn cũ → mới: [PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md).
+Lệnh dùng Python standard library, không cần pip. Phải hiện PASS. Manifest kiểm tra SHA-256
+của source/config/model; file ZIP cũng có checksum `.sha256` riêng do người gửi cung cấp.
 
-## Chạy trên Google Colab
+## 2. Triển khai Docker CPU
 
-Upload thư mục đã sắp xếp lên Drive, mở `notebooks/02_training.ipynb`, chọn GPU và chạy từng ô. Ô đầu mặc định:
-
-```python
-PROJECT = Path('/content/drive/MyDrive/ViToxic-Analyzer')
-```
-
-Notebook đọc trực tiếp Drive, không cần ZIP. Kết quả nằm trong `outputs/stage2/`. Run đã hoàn tất sẽ được đọc lại thay vì train lại. Muốn chạy cấu hình mới, đổi `RUN_NAME`; search mới dùng `search_v2` để giữ nguyên kế hoạch lịch sử. Xem [STAGE2_COLAB.md](docs/STAGE2_COLAB.md).
-
-Không cần upload `.git/`, `.venv/`, `.venv-stage2/`, `.pytest_cache/` hoặc `outputs/archive/`. Giữ run đã huấn luyện, processed data, source, config, requirements và notebook. Bản Drive cũ chưa được tự động thay đổi: hãy upload bản cấu trúc mới này.
-
-## Chạy và kiểm tra cục bộ
-
-Chạy từ root sau khi kích hoạt môi trường tương ứng:
+Cài Docker Engine/Desktop và Docker Compose trên máy đích. Chạy từ root vừa giải nén:
 
 ```text
-python -m pip install -r requirements/stage1.txt
-python -m src.stage1
-python -m pytest -q tests/test_stage1.py
+docker compose up --build -d
+docker compose logs -f api
 ```
 
-Với môi trường Stage 2 đã có PyTorch:
+Đợi `Application startup complete`, rồi mở web `http://127.0.0.1:8001/` (Swagger tại `/docs`) trên máy chạy Docker.
+Model nằm tại `outputs/stage4/bundle`, được mount read-only vào `/bundle`.
+**Không chạy `package_stage4.py`**: bundle đã xuất sẵn, gói bàn giao không cần artifact training.
+Build lần đầu cần internet để tải base image/packages; inference sau đó dùng assets local.
+
+Kiểm tra bằng Python trên host hoặc trong container:
 
 ```text
-python -m pip install -r requirements/stage2.txt
-python -m pytest -q
-python scripts/verify_stage2.py
-python scripts/audit_downloaded_stage2.py
+python scripts/smoke_deploy.py --url http://127.0.0.1:8001
+docker compose exec api python -c "import urllib.request; print(urllib.request.urlopen('http://127.0.0.1:8000/ready').read().decode())"
+docker compose ps
 ```
 
-`verify_stage2.py` kiểm tra run ban đầu trên 12 mẫu. `audit_downloaded_stage2.py` kiểm tra các artifact Colab đã tải về, bảng chọn model và chạy lại toàn bộ 2.672 mẫu validation bằng checkpoint cuối trên CPU. Báo cáo ở `outputs/stage2/review/full_audit.json`. Không huấn luyện hoặc đánh giá test.
+Dừng: `docker compose down`. Chạy lại: `docker compose up -d`.
+Docker mặc định dùng cổng host 8001 để tránh xung đột với server local hoặc dự án khác ở 8000.
+Nếu 8001 cũng bận, đặt `VITOXIC_PORT=8002` trong file `.env` cạnh `compose.yaml`, rồi chạy lại
+`docker compose up -d` và dùng URL `http://127.0.0.1:8002`. Cổng nội bộ container vẫn là 8000.
 
-Stage 3: `python -m src.evaluate` (đọc lại kết quả nếu đã hoàn tất);
-`python scripts/verify_stage3.py` kiểm tra artifact mà không inference lại.
-Không fit lại baseline hoặc dùng test để đổi cấu hình. Baseline lưu bằng scikit-learn 1.6.1,
-local dùng 1.9.1 có cảnh báo phiên bản; đã tái tạo đúng validation Macro-F1 trước test.
+**Phạm vi kiểm chứng:** source và model đã chạy thật trên Windows CPU và trong container Linux
+qua Docker Desktop. Container healthy; smoke test web/API/model PASS tại cổng 8001 ngày 24/10/2026.
+Image ID và kết quả được ghi ở `outputs/stage4/docker-verification.json` trên checkout hiện tại.
+Chưa kiểm thử tải production hoặc triển khai public. Dependencies runtime vẫn dùng ranges;
+lock Windows trong `requirements/locks/` không phải lock Linux.
 
-## API local — Stage 4
+## 3. Chạy không dùng Docker
 
-Bàn giao cho người deploy: [DEPLOY_HANDOFF.md](docs/DEPLOY_HANDOFF.md).
-Gói ZIP deployment đã gồm model và assets; clone Git riêng không có weights vì các file lớn
-được Git ignore. Tải ZIP đầy đủ và checksum tại
-[GitHub Release — deployment bundle](https://github.com/vohuunghiaah/ViToxic-Analyzer/releases/tag/deploy-2026-10-17).
-Chọn asset `ViToxic-Analyzer-deploy-2026-10-16.zip` (không chọn “Source code”), giải nén,
-chạy `python scripts/verify_handoff.py`, rồi làm theo README trong gói.
+Cần Python 3.11, Java trên PATH. Tạo virtualenv, kích hoạt rồi chạy:
 
 ```text
 python -m pip install -r requirements/stage4.txt
-python scripts/package_stage4.py
 python -m uvicorn src.api:app --host 127.0.0.1 --port 8000 --workers 1 --no-access-log
 ```
 
-Mở [Swagger UI](http://127.0.0.1:8000/docs). Hỗ trợ `POST /predict`, `POST /predict/batch`,
-`GET /health`, `GET /ready`, `GET /model`. Model được nạp một lần, dùng đúng preprocessing và
-checkpoint đã đánh giá; confidence chưa calibration. Kiểm chứng: `python scripts/verify_stage4.py`.
-Gói model chưa gồm cơ chế moderation tự động hoặc chất lượng production.
+Giữ terminal chạy. Mở Swagger không tự khởi động API. Nếu `Failed to fetch`, kiểm tra `/ready`
+và tiến trình Uvicorn trước; tab còn mở không đảm bảo server còn sống.
 
-## Nguyên tắc thí nghiệm
+## 4. Người deploy cần hoàn thành
 
-- Giữ nguyên raw data và split chính thức. Train decontaminated lọc overlap/conflict/duplicate; công bố giao thức này khi so benchmark.
-- EDA nội dung chỉ trên train. Validation chọn model; test đánh giá cuối.
-- Preprocessing giữ emoji, dấu câu, số và tín hiệu ngôn ngữ; VnCoreNLP tách từ trước PhoBERT tokenizer.
-- Class weights chỉ từ train; không oversample holdout. Macro-F1 chọn checkpoint/early stopping.
-- Mỗi run giữ model, tokenizer, config, manifest, hashes, history và predictions cùng nhau. Config/manifest cũ bất biến, dù chứa đường dẫn Colab trước migration.
-- Source snapshot của run cũ được bảo toàn. Đổi code thì không resume checkpoint bằng source mới; dùng run mới.
+1. Chọn máy chủ và build/run container, xác nhận healthcheck và smoke test PASS.
+2. Ghi lại CPU/RAM, phiên bản dependencies, image digest và URL triển khai.
+3. Nếu public: cấu hình domain/HTTPS, cơ chế truy cập và giới hạn tải ở reverse proxy.
+   Compose hiện chỉ bind localhost; `127.0.0.1` trên laptop người nhận không trỏ tới VPS.
+   Dùng proxy trên host hoặc SSH port forwarding để truy cập VPS; không mở cổng model tùy tiện.
+4. Kiểm tra restart sau reboot, log, tài nguyên và tải đồng thời trên máy đích.
+5. Bàn giao lại URL web `/`, API `/docs`, kết quả smoke test, cấu hình triển khai và cách dừng/khởi động.
 
-## Nguồn và giới hạn
+Khởi đầu nên dành khoảng 4 GB RAM và vài GB đĩa trống, rồi đo lại trên máy đích; đây là dự trù,
+không phải cấu hình tối thiểu đã chứng nhận. Local từng quan sát khoảng 1 GB RSS sau warmup;
+build/startup có thể cần nhiều hơn. Dùng một Uvicorn worker để tránh nhân bản model trong RAM.
+Request inference thứ hai khi model đang bận nhận 503/Retry-After, không xếp hàng vô hạn.
 
-[ViHSD](https://github.com/sonlam1102/vihsd) · [Bài báo ViHSD](https://arxiv.org/abs/2103.11528) · [PhoBERT](https://github.com/VinAIResearch/PhoBERT) · [VnCoreNLP](https://github.com/vncorenlp/VnCoreNLP).
+## 5. API và giới hạn model
 
-CSV do người dùng cung cấp; hashes truy vết đầu vào, không chứng minh nguồn phát hành. Có overlap validation/test được ghi ở Stage 1. Đã có test score một seed, chưa đánh giá moderation thực tế. Gọi đúng **0.6843 là validation Macro-F1**, **0.6546 là test Macro-F1**. Không suy rộng kết quả thành chất lượng production; không tuning tiếp trên test đã xem.
+`POST /predict`: `{"text":"Xin chào!"}`.
+`POST /predict/batch`: `{"texts":["Xin chào!","Cảm ơn bạn."]}`.
+Chi tiết giới hạn/input/output: `docs/STAGE4_API.md`; schema: `outputs/stage4/openapi.json`.
+
+Model giữ nguyên `phobert_lr3e-5_len128_drop01_batch16_seed42`, checkpoint epoch 5, max length 128.
+Test Macro-F1 0,6546; OFFENSIVE F1 0,4162; HATE recall 0,5770. Confidence chưa calibration.
+Không train lại, chỉnh threshold hoặc đổi preprocessing trong bước deploy. API chạy đúng không
+đồng nghĩa chất lượng moderation production; chưa tự động chặn/xóa bình luận.
+
+## 6. Nội dung gói
+
+- `web/`: giao diện HTML/CSS/JavaScript, phục vụ tại `/` và `/static/`.
+- `src/`: mã nguồn dự án; serving không đọc dữ liệu training.
+- `outputs/stage4/bundle/`: checkpoint + tokenizer + VnCoreNLP + config + manifest.
+- `Dockerfile`, `compose.yaml`, `.dockerignore`, `requirements/`: môi trường chạy.
+- `scripts/verify_handoff.py`, `scripts/smoke_deploy.py`: kiểm tra gói và API độc lập.
+- `tests/test_stage4.py`: unit tests; cài thêm pytest nếu muốn chạy.
+- `outputs/stage4/verification.json`, `summary.md`, `openapi.json`: bằng chứng local trước bàn giao.
+
+Không kèm `.venv`, `.git`, CSV dữ liệu, cache, model tuning khác, baseline hoặc optimizer state.
+Tài liệu riêng `output/pdf/`, `AGENTS.md`, `AI_TRACKER.md` chỉ giữ local, không nằm trong gói deploy.
+Các link tới artifact training trong tài liệu lịch sử có thể không có trong gói deployment này.
+Không có mật khẩu/tài khoản hosting được tạo hoặc gửi kèm. Tài nguyên bên thứ ba giữ nội dung gốc;
+khi phân phối rộng hơn cần kiểm tra điều khoản của nguồn PhoBERT và VnCoreNLP.

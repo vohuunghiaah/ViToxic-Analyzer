@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-10-24T02:55:19.824808+00:00",
+  "status": "PASS",
+  "container": "machinelearning-api-1",
+  "health": "healthy",
+  "url": "http://127.0.0.1:8001",
+  "image_id": "sha256:59dc05b04e3dbec07db1303faf85ae08aad0b814b1a964db7cde486627911dae",
+  "checks": [
+    "compose config",
+    "container startup",
+    "Docker healthcheck",
+    "web and static assets",
+    "single and batch real model inference",
+    "pip check"
+  ],
+  "port_conflict_owner": "whybi-api-1",
+  "source_sha256": {
+    "compose.yaml": "e8ab2823d8a6a4bca1762c5c0a2d35a21d15a8ed65003c146d0b4ba8f2fe6de2",
+    "Dockerfile": "d52ebb25cd95397807686e76b205a058067b21254d8b64fb1feb5fec4bf6363e",
+    ".dockerignore": "716bddbbbf47b9d173ce806c3531eccec4105d0f71706aca27a9c6ab8652bf07",
+    "src/api.py": "223fbedf03c3a65c5ee40397ea283f4c837af8f3c82c5eec3346e00fbeb9d622",
+    "src/serving.py": "af499f185f4f2b7ddda787fcc61d184c4d52c7fcd25c7b8e3d8bb5808338cd1b",
+    "web/app.js": "f897bb78df7ad16826ed385eef3d090cb6fe38db7a9ddf03a27610de54d48531",
+    "web/favicon.svg": "f791b9358d0996ced6a668c46a9c6d3ba42b71e49920becc89abacdb3bb63ef1",
+    "web/index.html": "0fa9558228cbeb818a65e2f063542a9b010c1dd975cc893f3ec0798296f68a90",
+    "web/styles.css": "d3473f2bcdac01fa88629a0265ba8bc9db850569f6e6bdcb27dc3fe5b717f320",
+    "web/theme.js": "7d5b2c34ec15c3e3caacac40f8e178e5edd61d837ac7a7a2e69fdadc8c3e209a"
+  }
+}

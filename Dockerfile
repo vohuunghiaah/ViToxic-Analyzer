@@ -9,6 +9,7 @@ COPY requirements/stage4.txt /app/requirements.txt
 RUN pip install --no-cache-dir 'torch>=2.6,<3' --index-url https://download.pytorch.org/whl/cpu \
     && pip install --no-cache-dir -r requirements.txt
 COPY src /app/src
+COPY web /app/web
 RUN useradd --create-home --uid 10001 app
 USER app
 EXPOSE 8000

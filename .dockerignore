@@ -4,3 +4,8 @@
 !requirements/stage4.txt
 !src/
 !src/*.py
+!web/
+!web/*.html
+!web/*.css
+!web/*.js
+!web/*.svg
