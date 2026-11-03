@@ -2,7 +2,7 @@ services:
   api:
     build: .
     ports:
-      - "127.0.0.1:8000:8000"
+      - "127.0.0.1:${VITOXIC_PORT:-8001}:8000"
     volumes:
       - ./outputs/stage4/bundle:/bundle:ro
     environment:

@@ -1,0 +1,47 @@
+name: CI
+on:
+  push:
+    branches: [main, feat/web-workspace-youtube-extension]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: requirements/stage4.txt
+      - run: pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - run: pip install -r requirements/stage4.txt pytest matplotlib seaborn wordcloud
+      - run: python -m compileall -q src scripts tests
+      - run: python -m pytest -m 'not integration' -q
+        env:
+          HF_HUB_OFFLINE: '1'
+          TRANSFORMERS_OFFLINE: '1'
+      - run: git diff --check origin/main...HEAD
+  browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: node scripts/check-js.cjs
+      - run: npm test
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:browser
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker compose config --quiet
+      - run: docker compose build

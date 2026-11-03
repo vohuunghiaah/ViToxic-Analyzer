@@ -1,0 +1,34 @@
+{
+  "checked_at": "2026-10-24T02:34:48.723597+00:00",
+  "python": "3.14.7",
+  "unit_tests": {
+    "passed": 22,
+    "command": "python -m pytest tests/test_stage4.py -q"
+  },
+  "real_model_http_smoke": "PASS",
+  "real_model_browser_single_batch": "PASS",
+  "browser_mock_edge_cases": "PASS",
+  "theme_persistence": "PASS",
+  "responsive_widths": [
+    320,
+    390,
+    1440
+  ],
+  "javascript_errors_real_model": [],
+  "pip_check": "PASS",
+  "compose_config": "PASS",
+  "docker_build_run": "NOT_VERIFIED_ENGINE_UNAVAILABLE",
+  "public_deployment": "NOT_CONFIGURED",
+  "source_sha256": {
+    "src/api.py": "223fbedf03c3a65c5ee40397ea283f4c837af8f3c82c5eec3346e00fbeb9d622",
+    "Dockerfile": "d52ebb25cd95397807686e76b205a058067b21254d8b64fb1feb5fec4bf6363e",
+    ".dockerignore": "716bddbbbf47b9d173ce806c3531eccec4105d0f71706aca27a9c6ab8652bf07",
+    "tests/test_stage4.py": "af214eedaa7a783170272c0c605efc73d0ca33e75e5ebc7701b7666c069e199c",
+    "scripts/smoke_deploy.py": "36cc2481428fe851a2e0165d0f3d2a0ce4d23bc5d2e7e18dc57a0102fad3a71d",
+    "web/app.js": "f897bb78df7ad16826ed385eef3d090cb6fe38db7a9ddf03a27610de54d48531",
+    "web/favicon.svg": "f791b9358d0996ced6a668c46a9c6d3ba42b71e49920becc89abacdb3bb63ef1",
+    "web/index.html": "0fa9558228cbeb818a65e2f063542a9b010c1dd975cc893f3ec0798296f68a90",
+    "web/styles.css": "d3473f2bcdac01fa88629a0265ba8bc9db850569f6e6bdcb27dc3fe5b717f320",
+    "web/theme.js": "7d5b2c34ec15c3e3caacac40f8e178e5edd61d837ac7a7a2e69fdadc8c3e209a"
+  }
+}

@@ -1,8 +1,17 @@
 # BÀN GIAO TRIỂN KHAI — ViToxic Analyzer
 
-Gói bàn giao ngày 2026-10-16. Người nhận chỉ cần giải nén gói này; không cần thư mục dự án
+Gói bàn giao gốc ngày 2026-10-16; bổ sung web ngày 2026-10-24. Người nhận chỉ cần giải nén gói này; không cần thư mục dự án
 của người gửi, Drive, CSV train/test hoặc tải lại PhoBERT. Model và VnCoreNLP assets đã có sẵn.
-Đây là API backend kèm Swagger để thử API, chưa có frontend cho người dùng cuối.
+Đã có web tiếng Việt tại `/`, hỗ trợ Light/Dark, phân tích một hoặc nhiều bình luận và tải kết quả JSON.
+Web và API chạy chung một ứng dụng; không cần Node.js, CDN hoặc build frontend.
+Trạng thái kiểm tra mới nhất: `docs/DEPLOY_READINESS.md`.
+
+## Workspace và extension
+
+Mở `http://127.0.0.1:8001/workspace`: nhập CSV, dashboard, lọc/duyệt bình luận, lịch sử và xuất báo cáo.
+Lịch sử lưu trong trình duyệt (IndexedDB), không đồng bộ giữa máy; có sao lưu/khôi phục JSON.
+Extension Chrome/Edge thử nghiệm nằm trong `extension/`, gọi API local để gắn nhãn bình luận được chọn.
+Hướng dẫn trong gói: `docs/WORKSPACE_EXTENSION.md`.
 
 ## 1. Kiểm tra gói
 
@@ -24,7 +33,7 @@ docker compose up --build -d
 docker compose logs -f api
 ```
 
-Đợi `Application startup complete`, rồi mở `http://127.0.0.1:8000/docs` trên máy chạy Docker.
+Đợi `Application startup complete`, rồi mở web `http://127.0.0.1:8001/` (Swagger tại `/docs`) trên máy chạy Docker.
 Model nằm tại `outputs/stage4/bundle`, được mount read-only vào `/bundle`.
 **Không chạy `package_stage4.py`**: bundle đã xuất sẵn, gói bàn giao không cần artifact training.
 Build lần đầu cần internet để tải base image/packages; inference sau đó dùng assets local.
@@ -32,19 +41,21 @@ Build lần đầu cần internet để tải base image/packages; inference sau
 Kiểm tra bằng Python trên host hoặc trong container:
 
 ```text
-python scripts/smoke_deploy.py
+python scripts/smoke_deploy.py --url http://127.0.0.1:8001
 docker compose exec api python -c "import urllib.request; print(urllib.request.urlopen('http://127.0.0.1:8000/ready').read().decode())"
 docker compose ps
 ```
 
 Dừng: `docker compose down`. Chạy lại: `docker compose up -d`.
-Nếu port 8000 đã được dùng, đổi mapping bên trái thành `127.0.0.1:8001:8000`, rồi thử
-`python scripts/smoke_deploy.py --url http://127.0.0.1:8001`.
+Docker mặc định dùng cổng host 8001 để tránh xung đột với server local hoặc dự án khác ở 8000.
+Nếu 8001 cũng bận, đặt `VITOXIC_PORT=8002` trong file `.env` cạnh `compose.yaml`, rồi chạy lại
+`docker compose up -d` và dùng URL `http://127.0.0.1:8002`. Cổng nội bộ container vẫn là 8000.
 
-**Phạm vi kiểm chứng:** source và model đã chạy thật trên Windows CPU; Dockerfile và Compose
-đã chuẩn bị nhưng máy người gửi không có Docker nên chưa build/run trên Linux. Người nhận phụ trách
-xác nhận container và ghi lại phiên bản/image digest thực tế. Dependencies runtime dùng ranges;
-lock Windows trong `requirements/locks/` là bằng chứng môi trường đã chạy, không phải lock Linux.
+**Phạm vi kiểm chứng:** source và model đã chạy thật trên Windows CPU và trong container Linux
+qua Docker Desktop. Container healthy; smoke test web/API/model PASS tại cổng 8001 ngày 24/10/2026.
+Image ID và kết quả được ghi ở `outputs/stage4/docker-verification.json` trên checkout hiện tại.
+Chưa kiểm thử tải production hoặc triển khai public. Dependencies runtime vẫn dùng ranges;
+lock Windows trong `requirements/locks/` không phải lock Linux.
 
 ## 3. Chạy không dùng Docker
 
@@ -66,7 +77,7 @@ và tiến trình Uvicorn trước; tab còn mở không đảm bảo server cò
    Compose hiện chỉ bind localhost; `127.0.0.1` trên laptop người nhận không trỏ tới VPS.
    Dùng proxy trên host hoặc SSH port forwarding để truy cập VPS; không mở cổng model tùy tiện.
 4. Kiểm tra restart sau reboot, log, tài nguyên và tải đồng thời trên máy đích.
-5. Bàn giao lại URL `/docs`, kết quả smoke test, cấu hình triển khai và cách dừng/khởi động.
+5. Bàn giao lại URL web `/`, API `/docs`, kết quả smoke test, cấu hình triển khai và cách dừng/khởi động.
 
 Khởi đầu nên dành khoảng 4 GB RAM và vài GB đĩa trống, rồi đo lại trên máy đích; đây là dự trù,
 không phải cấu hình tối thiểu đã chứng nhận. Local từng quan sát khoảng 1 GB RSS sau warmup;
@@ -86,6 +97,7 @@ Không train lại, chỉnh threshold hoặc đổi preprocessing trong bước 
 
 ## 6. Nội dung gói
 
+- `web/`: giao diện HTML/CSS/JavaScript, phục vụ tại `/` và `/static/`.
 - `src/`: mã nguồn dự án; serving không đọc dữ liệu training.
 - `outputs/stage4/bundle/`: checkpoint + tokenizer + VnCoreNLP + config + manifest.
 - `Dockerfile`, `compose.yaml`, `.dockerignore`, `requirements/`: môi trường chạy.

@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "ViToxic — Gắn nhãn bình luận",
+  "version": "0.2.0",
+  "description": "Tách nội dung bình luận và tự gắn nhãn trên các website bạn bật. Model chạy local.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "optional_host_permissions": ["https://*/*", "http://*/*"],
+  "host_permissions": ["http://127.0.0.1/*"],
+  "background": {"service_worker": "background.js"},
+  "action": {"default_popup": "popup.html", "default_title": "ViToxic"}
+}

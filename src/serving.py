@@ -23,6 +23,12 @@ def read_json(path):
     return json.loads(Path(path).read_text(encoding='utf-8'))
 
 
+def java_unsafe_path(path):
+    # VnCoreNLP resolves assets from its JAR URL without decoding %20 etc.
+    # Even an ASCII path such as "My Drive" therefore needs relocation.
+    return not str(path).isascii() or any(char in str(path) for char in ' %#')
+
+
 def verify_bundle(directory):
     directory = Path(directory).resolve()
     info = read_json(directory / 'bundle.json')
@@ -71,8 +77,10 @@ class Predictor:
         torch.set_num_threads(threads)
         self.preprocessing = PreprocessingConfig(**read_json(self.bundle / 'preprocessing.json'))
         assets = self.bundle / 'vncorenlp'
-        if os.name == 'nt' and not str(assets).isascii():
+        if os.name == 'nt' and java_unsafe_path(assets):
             assets = Path(tempfile.gettempdir()) / 'vitoxic-api-vncorenlp'
+            if java_unsafe_path(assets):
+                raise ValueError('Set TEMP to an ASCII path without spaces, % or # for VnCoreNLP')
             for name in ASSETS:
                 target = assets / name
                 target.parent.mkdir(parents=True, exist_ok=True)

@@ -12,7 +12,16 @@ import torch
 from src.api import create_app
 from src.experiment import sha256, write_json
 from src.preprocessing import PreprocessingConfig
-from src.serving import Predictor, clean_inputs, verify_bundle
+from src.serving import Predictor, clean_inputs, verify_bundle, java_unsafe_path
+
+
+@pytest.mark.parametrize('path,unsafe', [
+    ('G:/My Drive/bundle/vncorenlp', True), ('C:/tiếng/bundle', True),
+    ('C:/assets%20/bundle', True), ('C:/assets#one', True),
+    ('C:/Users/test/AppData/Local/Temp/vitoxic-api-vncorenlp', False),
+])
+def test_java_asset_url_paths(path, unsafe):
+    assert java_unsafe_path(path) is unsafe
 
 
 class FakePredictor:
@@ -41,6 +50,23 @@ def test_routes_and_load_once():
         assert batch['count'] == 1
         assert client.get('/openapi.json').status_code == 200
         assert len(calls) == 1
+
+
+def test_web_assets_and_api_are_served_together():
+    with TestClient(create_app(FakePredictor)) as client:
+        page = client.get('/')
+        assert page.status_code == 200
+        assert 'text/html' in page.headers['content-type']
+        assert 'id="analyze-form"' in page.text
+        workspace = client.get('/workspace')
+        assert workspace.status_code == 200
+        assert 'id="review-rows"' in workspace.text
+        for asset in ['app.js', 'theme.js', 'styles.css', 'favicon.svg',
+                      'data.js', 'workspace.js', 'workspace.css']:
+            assert client.get('/static/' + asset).status_code == 200
+        assert client.get('/static/missing.js').status_code == 404
+        assert client.get('/static/%2e%2e/src/api.py').status_code == 404
+        assert client.post('/predict', json={'text': 'Xin chào!'}).status_code == 200
 
 
 @pytest.mark.parametrize('payload', [{}, {'text': ''}, {'text': ' \n'}, {'text': '\u200b\ufeff'},
