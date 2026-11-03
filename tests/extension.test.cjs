@@ -2,11 +2,11 @@ const {test}=require('node:test');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const vm=require('node:vm');
-function harness(fetch, {sites={}, allowed=true}={}){
+function harness(fetch, {sites={}, allowed=true, apiURL}={}){
   let listener;
   const scripts=new Map(),event={addListener:()=>{}};
   const chrome={runtime:{id:'test',getURL:p=>'chrome-extension://test/'+p,onMessage:{addListener:f=>listener=f},onInstalled:event,onStartup:event},
-    storage:{local:{get:async()=>({sites}),set:async value=>{sites=value.sites}}},
+    storage:{local:{get:async()=>({sites,...(apiURL===undefined?{}:{apiURL})}),set:async value=>{if(value.sites)sites=value.sites;if(value.apiURL)apiURL=value.apiURL}}},
     permissions:{contains:async()=>allowed,onRemoved:event},
     scripting:{getRegisteredContentScripts:async({ids})=>ids.flatMap(id=>scripts.has(id)?[scripts.get(id)]:[]),
       registerContentScripts:async entries=>entries.forEach(e=>scripts.set(e.id,e)),updateContentScripts:async entries=>entries.forEach(e=>scripts.set(e.id,e)),
@@ -58,4 +58,29 @@ test('extension rejects oversized input and reports busy after bounded retries',
   let calls=0;const h=harness(async()=>{calls++;return {status:503,ok:false};});
   assert.ok((await h.send(['x'.repeat(5001)])).error);assert.equal(calls,0);
   assert.ok((await h.send(['Xin chào'])).error);assert.equal(calls,4);
+});
+
+test('API settings allow only literal loopback and validated ports',async()=>{
+  const requests=[],h=harness(async(url,options)=>{requests.push({url,options});return {ok:true,status:200,json:async()=>({predictions:[{label:'CLEAN',confidence:.8}]})};});
+  assert.equal((await h.call({type:'getAPI'})).apiURL,'http://127.0.0.1:8001');
+  for(const url of ['http://127.0.0.1:1','http://127.0.0.1:65535/','http://127.0.0.1:8002','http://127.0.0.1']){
+    assert.equal((await h.call({type:'setAPI',apiURL:url})).apiURL,new URL(url).origin);
+  }
+  for(const url of ['https://127.0.0.1:8001','http://example.org','http://localhost:8001','http://127.1:8001','http://2130706433','http://127.0.0.1.evil.test','http://127.0.0.1@evil.test','http://user@127.0.0.1','http://127.0.0.1:0','http://127.0.0.1:65536','http://127.0.0.1/predict','http://127.0.0.1?x=1','http://127.0.0.1#x',' http://127.0.0.1',null]){
+    assert.ok((await h.call({type:'setAPI',apiURL:url})).error,String(url));
+  }
+  await h.call({type:'setAPI',apiURL:'http://127.0.0.1:8002'});
+  await h.call({type:'analyze',texts:['ok'],apiURL:'http://evil.test'});
+  assert.equal(requests[0].url,'http://127.0.0.1:8002/predict/batch');
+  assert.equal(requests[0].options.redirect,'error');
+  assert.equal(h.listener({type:'setAPI',apiURL:'http://127.0.0.1:8003'},{id:'test',url:'https://youtube.com',tab:{id:1},frameId:0},()=>{}),undefined);
+});
+
+test('tampered stored API or missing loopback permission never reaches fetch',async()=>{
+  let calls=0;
+  for(const options of [{apiURL:'http://evil.test'},{allowed:false}]){
+    const h=harness(async()=>{calls++;},options);
+    assert.ok((await h.send(['ok'])).error);
+  }
+  assert.equal(calls,0);
 });

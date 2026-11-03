@@ -14,7 +14,7 @@ def main():
     with urlopen(base + '/workspace', timeout=30) as response:
         assert 'id="review-rows"' in response.read().decode('utf-8')
     for asset in ['app.js', 'theme.js', 'styles.css', 'favicon.svg',
-                  'data.js', 'workspace.js', 'workspace.css']:
+                  'data.js', 'storage.js', 'workspace.js', 'workspace.css']:
         with urlopen(base + '/static/' + asset, timeout=30) as response:
             assert response.status == 200
     def call(path, payload=None):

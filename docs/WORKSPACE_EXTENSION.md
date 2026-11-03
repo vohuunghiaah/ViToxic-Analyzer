@@ -1,4 +1,4 @@
-# Workspace và extension — cập nhật 31/10/2026
+# Workspace và extension — cập nhật 03/11/2026
 
 ## Chạy và sử dụng
 
@@ -22,7 +22,7 @@ Trang phân tích nhanh vẫn ở `/`. Có nút “Kiểm duyệt” để chuy�
    Nhãn người duyệt luôn tách biệt nhãn mô hình. Không có hành động tự xóa/chặn bình luận.
 4. **Dashboard:** phân bố nhãn mô hình và tiến độ trên các phiên được lưu trong trình duyệt.
 5. **Xuất:** CSV chứa toàn bộ phiên, nhãn dự đoán, xác suất, nhãn duyệt và ghi chú.
-   CSV vô hiệu hóa các ô có thể bị Excel diễn giải thành công thức. JSON giữ cấu trúc để khôi phục.
+   CSV vô hiệu hóa các ô có thể bị Excel diễn giải thành công thức. JSON giữ cấu trúc để khôi phục (tối đa 64 MiB, vẫn tối đa 1.000 hàng và giới hạn từng trường).
    Xuất không phụ thuộc bộ lọc đang chọn. Khôi phục JSON tạo phiên mới, không ghi đè phiên cũ.
 
 ## Dữ liệu và phạm vi local
@@ -32,7 +32,7 @@ API chỉ nhận nội dung để phân tích; không lưu lịch sử trên ser
 `localhost:8001` và `127.0.0.1:8001` có bộ nhớ riêng. Đổi port hoặc profile cũng không dùng chung lịch sử.
 Xóa dữ liệu trình duyệt có thể mất lịch sử; sao lưu JSON trước. Không chia sẻ giữa thành viên nhóm.
 
-Web Locks ngăn nhiều tab cùng chạy phân tích; revision kiểm tra khi lưu ngăn ghi đè dữ liệu cũ
+Web Locks ngăn nhiều tab cùng chạy phân tích; revision kiểm tra nguyên tử khi lưu và xóa ngăn ghi đè hoặc xóa bản mới từ tab cũ
 ở tab khác. Khi báo lỗi lưu/xung đột, sao lưu JSON rồi tải lại trang để đọc phiên mới nhất.
 Chưa có tài khoản, phân quyền hoặc audit trail nhiều người. Muốn làm việc nhóm cần lưu trên server
 (SQLite/Postgres), xác thực và đồng bộ; đây là bước tiếp theo, không phải chức năng của bản này.
@@ -42,7 +42,7 @@ Chưa có tài khoản, phân quyền hoặc audit trail nhiều người. Muố
 Không cần đóng gói model vào extension. Extension gọi API local đã chạy bằng Docker.
 
 1. Mở `chrome://extensions` hoặc `edge://extensions`.
-2. Bật **Developer mode** → **Load unpacked** → chọn `D:\MachineLearning\extension`.
+2. Bật **Developer mode** → **Load unpacked** → chọn thư mục `extension` trong checkout dự án.
 3. Nếu đã cài bản cũ: bấm **Reload** trên thẻ ViToxic, sau đó **tải lại tab YouTube**.
 4. Mở video YouTube và cuộn xuống bình luận. Mở popup ViToxic, để trống các ô selector
    để dùng bộ nhận diện YouTube có sẵn.
@@ -70,10 +70,19 @@ Quyền gồm `activeTab`, `scripting`, `storage` và host `http://127.0.0.1/*`.
 Quyền HTTP/HTTPS khác là tùy chọn, chỉ yêu cầu cho website khi bạn bật tự động.
 Cấu hình được lưu theo origin; content script được đăng ký cho các website đã bật.
 Quyền host của Chrome không
-giới hạn theo port; code chỉ gửi tới API cố định 8001, không nhận URL tùy ý từ trang web.
+giới hạn theo port; code chỉ gửi tới `http://127.0.0.1` với cổng đã cấu hình, không nhận URL tùy ý từ trang web và không theo redirect.
 Nội dung được gửi từ service worker, không từ JavaScript của website; không cần mở CORS toàn cục.
 Không chạy tự động trên website chưa bật; không lưu lịch sử extension, không sửa/xóa bình luận gốc.
-Chỉ lưu cấu hình website trong `chrome.storage.local`; bộ nhớ đệm kết quả nằm trong tab.
+Chỉ lưu cấu hình website và địa chỉ API trong `chrome.storage.local`; bộ nhớ đệm kết quả nằm trong tab.
+
+### Đổi cổng API
+
+Mở popup → **Kết nối API local**, nhập `http://127.0.0.1:8002` → **Lưu địa chỉ API**.
+Đặt `VITOXIC_PORT=8002` trong `.env` của Compose và chạy `docker compose up -d` tương ứng.
+Mặc định vẫn là 8001. Chỉ chấp nhận host literal `127.0.0.1`, HTTP và cổng 1–65535;
+không nhận hostname ngoài, localhost, URL có tài khoản, đường dẫn, query hoặc fragment.
+Không cần cấp quyền host mới. Chỉ popup có thể đổi cấu hình; lượt đang chạy giữ địa chỉ ban đầu.
+Link workspace trong popup theo địa chỉ đã lưu. Xuất JSON trước khi đổi origin/port của workspace.
 
 ### Giới hạn
 
@@ -92,8 +101,10 @@ Chỉ lưu cấu hình website trong `chrome.storage.local`; bộ nhớ đệm k
 
 ```powershell
 .\.venv\Scripts\python.exe -m pytest tests/test_stage4.py -q
-node --test tests/web-data.test.cjs
-node --test tests/extension.test.cjs
+npm ci
+npm test
+npx playwright install chromium
+npm run test:browser
 .\.venv\Scripts\python.exe scripts/smoke_deploy.py --url http://127.0.0.1:8001
 ```
 
@@ -118,3 +129,9 @@ Tài liệu nền tảng:
 - https://developer.chrome.com/docs/extensions/develop/concepts/network-requests
 - https://developer.chrome.com/docs/extensions/reference/api/scripting
 - https://developer.chrome.com/docs/extensions/reference/api/permissions
+
+Kiểm thử tự động mới: `tests/browser.integration.cjs` dùng Chromium/profile tạm, IndexedDB thật,
+extension native và API giả. DOM YouTube là fixture; không phải YouTube trực tiếp. Host fixture
+loopback được dùng nếu không có quyền YouTube; không coi hộp cấp quyền/toolbar là đã kiểm thử.
+Bộ kiểm thử cũ có đường dẫn máy lịch sử vẫn được giữ làm tài liệu, không nằm trong CI.
+Xem `docs/PR1_REVIEW.md` để biết kết quả kiểm chứng ngày 03/11/2026.

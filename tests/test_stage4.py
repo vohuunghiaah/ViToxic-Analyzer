@@ -12,7 +12,16 @@ import torch
 from src.api import create_app
 from src.experiment import sha256, write_json
 from src.preprocessing import PreprocessingConfig
-from src.serving import Predictor, clean_inputs, verify_bundle
+from src.serving import Predictor, clean_inputs, verify_bundle, java_unsafe_path
+
+
+@pytest.mark.parametrize('path,unsafe', [
+    ('G:/My Drive/bundle/vncorenlp', True), ('C:/tiếng/bundle', True),
+    ('C:/assets%20/bundle', True), ('C:/assets#one', True),
+    ('C:/Users/test/AppData/Local/Temp/vitoxic-api-vncorenlp', False),
+])
+def test_java_asset_url_paths(path, unsafe):
+    assert java_unsafe_path(path) is unsafe
 
 
 class FakePredictor:

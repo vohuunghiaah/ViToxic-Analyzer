@@ -3,6 +3,13 @@ const $=id=>document.getElementById(id);
 let target=null,origin=null,sitePattern=null,preview=null,config={enabled:false},working=false;
 function status(text){$('status').textContent=text;}
 async function message(payload){const result=await chrome.runtime.sendMessage(payload);if(result?.error)throw new Error(result.error);return result;}
+function showAPI(apiURL){$('api-url').value=apiURL;$('workspace-link').href=apiURL+'/workspace';}
+$('save-api').onclick=async()=>{
+  if(working)return;working=true;
+  try{showAPI((await message({type:'setAPI',apiURL:$('api-url').value.trim()})).apiURL);status('Đã lưu địa chỉ API cho các lượt tiếp theo.');}
+  catch(e){status(e.message);}finally{working=false;}
+};
+message({type:'getAPI'}).then(result=>showAPI(result.apiURL)).catch(e=>status(e.message));
 async function engine(method,args=[]){
   const results=await chrome.scripting.executeScript({target:{tabId:target},func:(method,args)=>{
     try{return {value:globalThis.ViToxicPage[method](...args)};}catch(e){return {error:e.message};}
@@ -62,6 +69,6 @@ $('remove').onclick=async()=>{if(working)return;working=true;try{await configure
     await chrome.scripting.executeScript({target:{tabId:target},files:['page.js']});
     if(config.enabled)await chrome.scripting.executeScript({target:{tabId:target},files:['auto.js']});
     sync();$('auto-toggle').disabled=false;autoStatus();
-  }catch(e){status(e.message);document.querySelectorAll('button').forEach(b=>b.disabled=true);}
+  }catch(e){status(e.message);document.querySelectorAll('button').forEach(b=>b.disabled=b.id!=='save-api');}
 })();
 setInterval(autoStatus,1500);

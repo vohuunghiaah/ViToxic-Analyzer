@@ -115,3 +115,27 @@ Tài liệu riêng `output/pdf/`, `AGENTS.md`, `AI_TRACKER.md` chỉ giữ local
 Các link tới artifact training trong tài liệu lịch sử có thể không có trong gói deployment này.
 Không có mật khẩu/tài khoản hosting được tạo hoặc gửi kèm. Tài nguyên bên thứ ba giữ nội dung gốc;
 khi phân phối rộng hơn cần kiểm tra điều khoản của nguồn PhoBERT và VnCoreNLP.
+
+## 7. Kiểm thử và cập nhật 03/11/2026
+
+Cấu hình cổng extension trong popup → **Kết nối API local**; mặc định
+`http://127.0.0.1:8001`, chỉ cho phép host loopback literal này. Xem
+[workspace/extension](docs/WORKSPACE_EXTENSION.md) và [báo cáo kiểm tra PR #1](docs/PR1_REVIEW.md).
+
+```text
+python -m pip install -r requirements/stage4.txt pytest matplotlib seaborn wordcloud
+python -m pytest -m "not integration" -q
+npm ci
+npm test
+npx playwright install chromium
+npm run test:browser
+node scripts/check-js.cjs
+```
+
+CI chạy Python 3.11/Node 22, API với model giả, kiểm thử Chromium và Docker build;
+không tải checkpoint. Kiểm thử model thật được đánh dấu `integration`: đặt
+`VITOXIC_TEST_BUNDLE` tới bundle local hợp lệ rồi chạy
+`python -m pytest tests/test_bundle_integration.py -q`. Nếu không đặt biến, test này SKIP.
+Windows có khoảng trắng/ký tự URL trong đường dẫn bundle sẽ sao chép assets VnCoreNLP
+đã xác minh checksum sang TEMP; TEMP cần là đường dẫn ASCII không có khoảng trắng, `%`, `#`.
+Không thay đổi model, nhãn, tiền xử lý hoặc kết quả nghiên cứu đã khóa.

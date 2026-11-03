@@ -1,6 +1,9 @@
 # Trạng thái web và triển khai — 24/10/2026
 
-**Kết luận:** web và API đã chạy cùng model thật trên Windows CPU và container Linux qua Docker Desktop.
+> Đây là báo cáo lịch sử ngày 24–31/10/2026, không mô tả tiến trình đang chạy trên máy hiện tại.
+> Kiểm chứng mới ngày 03/11/2026: xem [PR1_REVIEW.md](PR1_REVIEW.md).
+
+**Kết luận lịch sử:** web và API đã chạy cùng model thật trên Windows CPU và container Linux qua Docker Desktop.
 Sẵn sàng demo local/Docker; chưa triển khai public, chưa có URL hosting/domain.
 
 Đã bổ sung workspace tại `/workspace` (CSV, duyệt, thống kê, lịch sử IndexedDB và báo cáo)

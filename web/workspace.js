@@ -29,19 +29,8 @@ function transaction(action, value) {
   });
 }
 async function persist(session) {
-  const updated={...session,updatedAt:new Date().toISOString(),revision:(session.revision||0)+1};
   try {
-    await new Promise((resolve,reject)=>{
-      if(!db){reject(new Error('Bộ nhớ chưa sẵn sàng.'));return;}
-      const tx=db.transaction('sessions','readwrite'),store=tx.objectStore('sessions'),get=store.get(session.id);
-      let conflict=false;
-      get.onsuccess=()=>{
-        if((get.result?.revision||0)!==(session.revision||0)){conflict=true;tx.abort();return;}
-        store.put(updated);
-      };
-      tx.oncomplete=resolve;
-      tx.onerror=tx.onabort=()=>reject(new Error(conflict?'Phiên đã thay đổi ở tab khác. Xuất JSON nếu cần giữ thay đổi rồi tải lại trang.':'Không lưu được dữ liệu. Hãy sao lưu JSON và kiểm tra dung lượng trình duyệt.'));
-    });
+    const updated=await window.ViToxicStorage.writeSession(db,session);
     Object.assign(session,updated);storageFailed=false;
   }
   catch(error){storageFailed=true;throw error;}
@@ -89,7 +78,7 @@ function renderHistory(){
     const open=el('button','secondary-button','Mở phiên');open.onclick=()=>selectSession(s.id);
     const remove=el('button','secondary-button danger-button','Xóa');remove.disabled=running;remove.onclick=async()=>{
       if(!confirm(`Xóa phiên “${s.name}” và các nhãn duyệt? Hãy sao lưu JSON trước nếu cần giữ dữ liệu.`))return;
-      try{await transaction('delete',s.id);sessions=sessions.filter(item=>item.id!==s.id);if(active?.id===s.id)active=null;renderHistory();message('Đã xóa phiên.');}catch(e){message(e.message,true);}
+      try{await window.ViToxicStorage.writeSession(db,s,true);sessions=sessions.filter(item=>item.id!==s.id);if(active?.id===s.id)active=null;renderHistory();message('Đã xóa phiên.');}catch(e){message(e.message,true);}
     };
     actions.append(open,remove);row.append(info,actions);return row;
   }));
@@ -113,7 +102,7 @@ function renderReview(){
     const tr=el('tr');tr.append(el('td','',r.id));const text=el('td');text.append(el('div','comment-excerpt',r.text));if(r.error)text.append(el('small','',r.error));
     const pred=el('td');pred.append(pill(r.prediction?.label));if(r.prediction)pred.append(el('small','',pct(r.prediction.confidence)+(r.prediction.truncated?' · Rút gọn':'')));
     const reviewed=el('td');reviewed.append(r.reviewLabel?pill(r.reviewLabel):document.createTextNode('—'));
-    const action=el('td'),button=el('button','secondary-button','Xem / duyệt');button.disabled=running;button.onclick=()=>openReview(r);action.append(button);
+    const action=el('td'),button=el('button','secondary-button','Xem / duyệt');button.disabled=running||storageFailed;button.onclick=()=>openReview(r);action.append(button);
     tr.append(text,pred,reviewed,el('td','',statusNames[r.status]),action);return tr;
   }));
   if(!rows.length){const tr=el('tr'),td=el('td','empty-list',active?'Không có bình luận khớp bộ lọc.':'Chưa chọn phiên dữ liệu.');td.colSpan=6;tr.append(td);$('review-rows').append(tr);}
@@ -128,11 +117,12 @@ $('close-dialog').onclick=()=>$('review-dialog').close();
 $('review-label').onchange=()=>{if($('review-label').value)$('review-status').value='reviewed';};
 $('review-status').onchange=()=>{if($('review-status').value!=='reviewed')$('review-label').value='';};
 $('review-form').onsubmit=async event=>{
-  event.preventDefault();const status=$('review-status').value,label=$('review-label').value;
+  event.preventDefault();if(importing||running||storageFailed)return;const status=$('review-status').value,label=$('review-label').value;
   if(status==='reviewed'&&!label){$('review-error').textContent='Chọn nhãn xác nhận trước khi đánh dấu đã duyệt.';return;}
   const updated=structuredClone(active),row=updated.rows.find(r=>r.id===editing.id);
   row.status=status;row.reviewLabel=status==='reviewed'?label:null;row.note=$('review-note').value;
-  try{await persist(updated);active=updated;$('review-dialog').close();renderReview();message('Đã lưu quyết định. Nhãn mô hình được giữ nguyên.');}catch(e){$('review-error').textContent=e.message;}
+  importing=true;
+  try{await persist(updated);active=updated;$('review-dialog').close();renderReview();message('Đã lưu quyết định. Nhãn mô hình được giữ nguyên.');}catch(e){active=updated;$('review-error').textContent=e.message;message('Quyết định chưa lưu. Xuất JSON trước khi tải lại trang.',true);}finally{importing=false;renderReview();}
 };
 function previewColumn(){
   if(!parsed)return;const index=Number($('text-column').value);
@@ -180,7 +170,7 @@ $('restore-file').onchange=async()=>{
   const file=$('restore-file').files[0];if(!file)return;
   if(importing||running){message('Hãy chờ phiên hiện tại hoàn tất hoặc dừng trước khi khôi phục.',true);$('restore-file').value='';return;}
   importing=true;
-  try{if(file.size>10*1024*1024)throw new Error('File JSON vượt 10 MB.');await newSession(D.importSession(JSON.parse(await file.text())));message('Đã khôi phục thành một phiên mới.');}catch(e){message(e instanceof SyntaxError?'JSON không hợp lệ.':e.message,true);}finally{importing=false;$('restore-file').value='';}
+  try{if(file.size>D.MAX_SESSION_BYTES)throw new Error('File JSON vượt 64 MiB.');await newSession(D.importSession(JSON.parse(await file.text())));message('Đã khôi phục thành một phiên mới.');}catch(e){message(e instanceof SyntaxError?'JSON không hợp lệ.':e.message,true);}finally{importing=false;$('restore-file').value='';}
 };
 async function api(path,payload){
   for(let attempt=0;attempt<4;attempt++){
@@ -240,6 +230,6 @@ $('prev-page').onclick=()=>{page--;renderReview();};$('next-page').onclick=()=>{
 $('desk-theme').onclick=()=>{const theme=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=theme;try{localStorage.setItem('vitoxic-theme',theme);}catch{}};
 async function checkReady(){try{const r=await fetch('/ready',{cache:'no-store',signal:AbortSignal.timeout(5000)});if(!r.ok)throw new Error();const d=await r.json();$('connection').textContent=d.busy?'Mô hình đang bận':'Mô hình sẵn sàng';}catch{$('connection').textContent='API chưa kết nối';}}
 window.addEventListener('hashchange',navigate);
-window.addEventListener('focus',async()=>{if(db&&!running&&!storageFailed&&!$('review-dialog').open){try{sessions=await transaction('getAll');if(active)active=sessions.find(s=>s.id===active.id)||null;navigate();}catch(e){message(e.message,true);}}});
+window.addEventListener('focus',async()=>{if(db&&!running&&!importing&&!storageFailed&&!$('review-dialog').open){try{sessions=await transaction('getAll');if(active)active=sessions.find(s=>s.id===active.id)||null;navigate();}catch(e){message(e.message,true);}}});
 (async()=>{try{db=await openDB();sessions=await transaction('getAll');navigate();}catch(e){message(e.message,true);$('create-session').disabled=true;}checkReady();})();
 setInterval(()=>{if(!document.hidden&&!running)checkReady();},30000);

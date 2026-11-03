@@ -117,7 +117,7 @@
   async function tick() {
     if(!state.auto||state.busy||document.hidden)return;
     if(Date.now()<state.nextTry){schedule(Math.max(1000,state.nextTry-Date.now()));return;}
-    state.busy=true;const generation=state.generation,config={...state.config};
+    state.busy=true;const generation=state.generation,config={...state.config},url=location.href;
     try{
       cleanup();const all=discover(config,true),pending=[];
       for(const item of all){
@@ -130,7 +130,7 @@
       if(!all.length)state.error='Chưa có bình luận được nhận diện trong màn hình. Cuộn đến comment hoặc cấu hình selector.';
       if(pending.length){
         const result=await chrome.runtime.sendMessage({type:'autoAnalyze',texts:pending.map(item=>item.text)});
-        if(generation!==state.generation||!state.auto)return;
+        if(generation!==state.generation||!state.auto||url!==location.href)return;
         if(result?.error)throw new Error(result.error);
         if(result?.predictions?.length!==pending.length)throw new Error('Kết quả API không hợp lệ.');
         state.error='';state.failures=0;
@@ -143,16 +143,18 @@
         });schedule(500);
       }
     }catch(error){state.error=error.message;state.failures++;state.nextTry=Date.now()+Math.min(60000,5000*2**Math.min(state.failures,4));schedule(state.nextTry-Date.now());}
-    finally{state.busy=false;}
+    finally{state.busy=false;if(state.auto)schedule(3000);}
   }
   function start(config={}) {
     validateSelectors(config);state.generation++;state.config={...config};state.auto=true;state.error='';state.nextTry=0;
     clearTimeout(state.timer);state.timer=null;clearLabels();observe();schedule(50);return status();
   }
-  function stop(clear=false) {state.auto=false;state.generation++;clearTimeout(state.timer);state.timer=null;state.nextTry=0;if(clear)clearLabels();return status();}
+  function stop(clear=false) {state.auto=false;state.generation++;clearTimeout(state.timer);state.timer=null;state.nextTry=0;if(clear){clearLabels();state.cache.clear();state.observer?.disconnect();state.observer=null;}return status();}
   function clearLabels(){for(const node of state.records.keys())removeRecord(node);state.preview=null;}
   function status(){return {auto:state.auto,busy:state.busy,count:Array.from(state.records.values()).filter(r=>r.badge?.isConnected).length,error:state.error,adapter:state.adapter};}
   for(const event of ['scroll','resize','visibilitychange'])addEventListener(event,()=>schedule(),{passive:true});
+  addEventListener('yt-navigate-start',()=>{state.generation++;clearLabels();});
+  addEventListener('yt-navigate-finish',()=>schedule());
   setInterval(()=>schedule(),3000);
   globalThis.ViToxicPage={version:2,collect,apply,start,stop,status,clearLabels,discover};
 })();

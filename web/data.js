@@ -2,6 +2,8 @@
 (function (root) {
   'use strict';
   const LABELS = ['CLEAN', 'OFFENSIVE', 'HATE'];
+  // Worst-case escaped JSON for 1,000 valid rows (text, notes and errors).
+  const MAX_SESSION_BYTES = 64 * 1024 * 1024;
   function parseCSV(source, delimiter = ',') {
     const text = source.replace(/^\uFEFF/, '');
     const rows = []; let row = [], field = '', quoted = false, closed = false;
@@ -72,6 +74,7 @@
   function importSession(data) {
     if (data?.schema !== 1 || typeof data.name !== 'string' || !data.name.trim() || data.name.length > 120
       || !Array.isArray(data.rows)) throw new Error('File JSON không đúng định dạng phiên ViToxic.');
+    if(data.rows.some(r=>!r || typeof r!=='object' || Array.isArray(r)))throw new Error('Hàng dữ liệu JSON không hợp lệ.');
     validateTexts(data.rows.map(r => r.text));
     for (const r of data.rows) {
       if ((r.prediction !== null && !validPrediction(r.prediction)) || !['pending', 'flagged', 'reviewed'].includes(r.status)
@@ -84,7 +87,7 @@
       rows: data.rows.map((r, i) => ({id: i + 1, text: r.text, prediction: r.prediction, status: r.status,
         reviewLabel: r.reviewLabel, note: r.note, error: r.error.slice(0, 500)})) };
   }
-  const api = {LABELS, parseCSV, validateTexts, chunks, validPrediction, exportCSV, importSession};
+  const api = {LABELS, MAX_SESSION_BYTES, parseCSV, validateTexts, chunks, validPrediction, exportCSV, importSession};
   if (typeof module !== 'undefined') module.exports = api;
   else root.ViToxicData = api;
 })(globalThis);

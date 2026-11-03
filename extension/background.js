@@ -1,5 +1,14 @@
 'use strict';
-const API='http://127.0.0.1:8001/predict/batch';
+const DEFAULT_API='http://127.0.0.1:8001';
+// Accept only the literal loopback host already covered by host_permissions.
+// Validate before URL parsing so alternate numeric hosts cannot normalize into it.
+function apiBase(value){
+  if(typeof value!=='string'||!/^http:\/\/127\.0\.0\.1(?::[1-9][0-9]{0,4})?\/?$/.test(value))throw new Error('API phải là http://127.0.0.1:<cổng>, không có đường dẫn.');
+  const url=new URL(value);
+  if(url.port && Number(url.port)>65535)throw new Error('Cổng API không hợp lệ.');
+  return url.origin;
+}
+async function configuredAPI(){const {apiURL=DEFAULT_API}=await chrome.storage.local.get('apiURL');return apiBase(apiURL);}
 let inferenceTail=Promise.resolve(),queued=0,settingsTail=Promise.resolve();
 function siteURL(value){const url=new URL(value);if(!['http:','https:'].includes(url.protocol)||url.username||url.password)throw new Error('Website không hợp lệ.');return url;}
 function pattern(origin){const url=siteURL(origin);return `${url.protocol}//${url.hostname}/*`;}
@@ -25,12 +34,14 @@ async function authorizeAuto(sender){
   if(!sites[origin]?.enabled||!await permitted(origin))throw new Error('Tự động chưa bật hoặc quyền truy cập đã bị thu hồi.');
 }
 async function infer(texts,auto){
+  const base=await configuredAPI();
+  if(!await chrome.permissions.contains({origins:['http://127.0.0.1/*']}))throw new Error('Chưa có quyền kết nối API loopback.');
   const limit=auto?8:50;
   if(!Array.isArray(texts)||!texts.length||texts.length>limit||texts.some(t=>typeof t!=='string'||!t.trim()||[...t].length>5000))throw new Error(`Cần 1–${limit} bình luận, tối đa 5.000 ký tự mỗi câu.`);
   async function request(batch){
     let response;
     for(let attempt=0;attempt<4;attempt++){
-      response=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({texts:batch}),signal:AbortSignal.timeout(25000)});
+      response=await fetch(base+'/predict/batch',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({texts:batch}),signal:AbortSignal.timeout(25000),redirect:'error'});
       if(response.status!==503||attempt===3)break;
       await new Promise(resolve=>setTimeout(resolve,1000));
     }
@@ -47,9 +58,15 @@ async function infer(texts,auto){
 }
 chrome.runtime.onMessage.addListener((message,sender,sendResponse)=>{
   const popup=sender.id===chrome.runtime.id&&sender.url===chrome.runtime.getURL('popup.html');
-  if(!['analyze','autoAnalyze','getSite','setSite'].includes(message?.type))return;
+  if(!['analyze','autoAnalyze','getSite','setSite','getAPI','setAPI'].includes(message?.type))return;
   if(message.type!=='autoAnalyze'&&!popup)return;
   const task=async()=>{
+    if(message.type==='getAPI')return {apiURL:await configuredAPI()};
+    if(message.type==='setAPI'){
+      const apiURL=apiBase(message.apiURL);
+      if(!await chrome.permissions.contains({origins:['http://127.0.0.1/*']}))throw new Error('Chưa có quyền kết nối API loopback.');
+      await chrome.storage.local.set({apiURL});return {apiURL};
+    }
     if(message.type==='getSite'){const {sites={}}=await chrome.storage.local.get('sites');return {config:sites[siteURL(message.origin).origin]||{enabled:false,selector:'',exclude:''}};}
     if(message.type==='setSite')return setSite(message);
     if(message.type==='autoAnalyze')await authorizeAuto(sender);
@@ -59,9 +76,9 @@ chrome.runtime.onMessage.addListener((message,sender,sendResponse)=>{
   if(['analyze','autoAnalyze'].includes(message.type)){
     if(queued>=8){sendResponse({error:'Nhiều tab đang chờ phân tích. Sẽ thử lại sau.'});return;}
     queued++;promise=inferenceTail.then(task);inferenceTail=promise.catch(()=>{}).finally(()=>queued--);
-  }else if(message.type==='setSite'){promise=settingsTail.then(task);settingsTail=promise.catch(()=>{});}
+  }else if(['setSite','setAPI'].includes(message.type)){promise=settingsTail.then(task);settingsTail=promise.catch(()=>{});}
   else promise=task();
-  promise.then(sendResponse,error=>sendResponse({error:error.name==='TimeoutError'?'API quá thời gian chờ. Kiểm tra Docker.':error instanceof TypeError?'Không kết nối được ViToxic tại 127.0.0.1:8001. Hãy khởi động Docker.':error.message}));
+  promise.then(sendResponse,error=>sendResponse({error:error.name==='TimeoutError'?'API quá thời gian chờ. Kiểm tra Docker.':error instanceof TypeError?'Không kết nối được API loopback. Kiểm tra địa chỉ trong cấu hình và khởi động dịch vụ.':error.message}));
   return true;
 });
 async function reconcile(){
