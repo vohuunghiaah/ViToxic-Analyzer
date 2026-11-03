@@ -52,3 +52,5 @@ Thêm GitHub Actions: Python syntax/unit/API fake, JavaScript syntax/unit, Chrom
 Chưa chạy YouTube công khai trong đợt này, chưa kiểm chứng hộp cấp quyền/toolbar bằng thao tác người dùng, chưa đo tải production/CUDA/public HTTPS/auth. Native extension dùng host fixture loopback nếu Chromium không cấp quyền YouTube ngoài user gesture; adapter YouTube được kiểm riêng bằng DOM giả lập trên URL YouTube. Các báo cáo/ảnh 24–31/10 là lịch sử, không thay thế kiểm chứng mới.
 
 Giới hạn: browser storage theo origin/profile; thay port cần backup JSON; selector phụ thuộc DOM website; không đồng bộ đa người dùng. Dependencies Python còn ranges, chưa có Linux lock theo image digest. Không tuyên bố production-ready.
+
+CI lần đầu trên GitHub: job Python dừng ở setup-python vì cache không tìm thấy requirements.txt mặc định. Đã chỉ định `requirements/stage4.txt`; checkout full history để kiểm whitespace trên diff với main. Job browser trên Linux đã đạt.
